@@ -48,7 +48,7 @@ RUN rm -rf /var/lib/apt/lists/* && \
     cmake .. && \
     make -j$(nproc) && \
     make install && \
-    cd /opt && rm -rf /opt/sumo-1.15.0
+    cd /opt && rm -rf /opt/sumo-1.15.0 /opt/sumo-src-1.15.0.tar.gz
 
 # ---------------------------------
 # 1. 安装 Miniconda（管理 Python 版本）
