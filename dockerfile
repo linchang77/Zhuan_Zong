@@ -11,15 +11,6 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # ---------------------------------
-# 1. 安装 Python 3.11
-# ---------------------------------
-    RUN apt update && apt install -y \
-    python3.11 python3.11-venv python3.11-dev python3-pip
-
-# 设置默认 python 版本（让 `python` 指向 `python3.11`）
-RUN ln -sf /usr/bin/python3.11 /usr/bin/python
-
-# ---------------------------------
 # 2. 手动下载安装 SUMO 1.15.0
 # ---------------------------------
 
