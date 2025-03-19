@@ -8,6 +8,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
     wget curl git build-essential \
     software-properties-common \
+    x11-apps \
+    xauth \
     && rm -rf /var/lib/apt/lists/*
 
 # ---------------------------------
@@ -68,7 +70,10 @@ RUN rm -rf /var/lib/apt/lists/* && \
 # ---------------------------------
 # 3. 复制代码并安装 Python 依赖
 # ---------------------------------
-    WORKDIR /app
-    COPY . /app      
-    RUN pip install --no-cache-dir -r requirements.txt
+WORKDIR /app
+COPY . /app      
+RUN pip install --no-cache-dir -r requirements.txt
 
+# 设置环境变量
+ENV DISPLAY=host.docker.internal:0.0
+ENV SUMO_HOME=/usr/local/share/sumo
