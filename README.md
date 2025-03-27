@@ -14,13 +14,19 @@ docker build -t airfogsim .
 
 3. 运行容器
 ```bash
-docker run -it --rm airfogsim
+docker run -it --rm \
+    -e DISPLAY=:1 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    airfogsim
 ```
 若需要让 Docker 里的代码和本机同步，可以选择本地挂载
 
 ```bash
-docker run -it --rm -v $(pwd):/app airfogsim
+docker run -it --rm \
+    -e DISPLAY=:1 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v $(pwd):/app \
+    airfogsim
 ```
-
-
+- 在终端中输入``` echo $DISPLAY ``` 查看你的DISPLAY变量
 

@@ -932,6 +932,9 @@ class TaskManager:
         """
         done_task_id_for_node = [task_info.getTaskId() for task_info in self._done_tasks.get(task_node_id, [])]
         failed_task_id_for_node = [task_info.getTaskId() for task_info in self._out_of_ddl_tasks.get(task_node_id, [])]
+        # 需要先检查task_node_id 是否在字典中
+        if task_node_id not in self._task_dependencies:
+            self._task_dependencies[task_node_id]=nx.DiGraph()
         task_dag = self._task_dependencies[task_node_id] # nx.DiGraph
         parents = []
         if task_dag is not None and task_id in task_dag:

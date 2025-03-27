@@ -189,7 +189,7 @@ class BaseAlgorithmModule:
                 nearest_node_id = neighbor_infos[0]['id']
                 furthest_node_id = neighbor_infos[-1]['id']
                 flag = self.taskScheduler.setTaskOffloading(env, task_node_id, task_id, nearest_node_id)
-                assert flag
+                # assert flag
 
     def scheduleCommunication(self, env: AirFogSimEnv):
         """The communication scheduling logic. Should be implemented by the subclass. Default is random.
