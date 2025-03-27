@@ -9,6 +9,8 @@ import random
 import yaml
 import sys
 from airfogsim.scheduler import RewardScheduler, TaskScheduler
+# 导入数据处理的库
+from airfogsim.data_manager import DataManager
 
 def load_config(path):
     with open(path, 'r') as file:
@@ -22,6 +24,10 @@ config = load_config(config_path)
 # 2. Create the environment
 env = AirFogSimEnv(config, interactive_mode='graphic')
 # env = AirFogSimEnv(config, interactive_mode=None)
+
+# 初始化DataManager
+
+data_manager = DataManager(env)
 
 # 3. Get algorithm module
 algorithm_module = BaseAlgorithmModule()
@@ -37,15 +43,21 @@ for _ in range(10):
     while not env.isDone():
         algorithm_module.scheduleStep(env)
         env.step()
-        accumulated_reward += algorithm_module.getRewardByTask(env)
-        task_num = TaskScheduler.getDoneTaskNum(env)
-        out_of_ddl_task_num = TaskScheduler.getOutOfDDLTasks(env)
-        succ_ratio = task_num / max(1,task_num + out_of_ddl_task_num)
+        accumulated_reward += algorithm_module.getRewardByTask(env)        #累计奖励
+        task_num = TaskScheduler.getDoneTaskNum(env)  # 已完成的任务数
+        out_of_ddl_task_num = TaskScheduler.getOutOfDDLTasks(env)  # 超时任务数
+        succ_ratio = task_num / max(1, task_num + out_of_ddl_task_num)  # 计算任务成功率
+        # 运行data_manager更新并存储数据
+        data_manager.update_data()
+
+
+
         env.render()
         v2u_rate.append(env.getChannelAvgRate('V2U'))
         v2i_rate.append(env.getChannelAvgRate('V2I'))
         u2i_rate.append(env.getChannelAvgRate('U2I'))
-        print(f'Simulation time: {env.simulation_time:.2f}, Ratio: {succ_ratio:.2f}, ACC_Reward: {succ_ratio*accumulated_reward/max(1,task_num):.2f} V2U: {v2u_rate[-1]:.2f}, V2I: {v2i_rate[-1]:.2f}, U2I: {u2i_rate[-1]:.2f}', end='\r')
+        # ‘\r'让下面一行打印一直打印在同一行
+        print(f'Simulation time: {env.simulation_time:.2f}, 已完成任务数: {task_num:.2f}, 超时任务数: {out_of_ddl_task_num}, Ratio: {succ_ratio:.2f}, ACC_Reward: {succ_ratio*accumulated_reward/max(1,task_num):.2f} V2U: {v2u_rate[-1]:.2f}, V2I: {v2i_rate[-1]:.2f}, U2I: {u2i_rate[-1]:.2f}', end='\r')
     print()
     env.reset()
 env.close()

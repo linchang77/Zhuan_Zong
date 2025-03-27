@@ -28,5 +28,7 @@ docker run -it --rm \
     -v $(pwd):/app \
     airfogsim
 ```
-- 在终端中输入``` echo $DISPLAY ``` 查看你的DISPLAY变量
+- 在终端中输入``` echo $DISPLAY ``` 查看你的DISPLAY变量,
+- 在终端中输入```xhost +local:docker```确保容器可以访问X11
+
 
