@@ -16,10 +16,14 @@ class EntityScheduler(BaseScheduler):
             list: The node ids.
             list: The type list.
         """
-        vehicle_ids = env.vehicles.keys()
-        uav_ids = env.UAVs.keys()
-        rsu_ids = env.RSUs.keys()
-        cloud_server_ids = env.cloudServers.keys()
+        # vehicle_ids = env.vehicles.keys()
+        # uav_ids = env.UAVs.keys()
+        # rsu_ids = env.RSUs.keys()
+        # cloud_server_ids = env.cloudServers.keys()
+        vehicle_ids = list(env.vehicles.keys())  # 将dict_keys转换为list
+        uav_ids = list(env.UAVs.keys())  # 将dict_keys转换为list
+        rsu_ids = list(env.RSUs.keys())  # 将dict_keys转换为list
+        cloud_server_ids = list(env.cloudServers.keys())  # 将dict_keys转换为list
         all_ids = vehicle_ids + uav_ids + rsu_ids + cloud_server_ids
         type_list = ['vehicle'] * len(vehicle_ids) + ['uav'] * len(uav_ids) + ['rsu'] * len(rsu_ids) + ['cloud_server'] * len(cloud_server_ids)
         return all_ids, type_list
