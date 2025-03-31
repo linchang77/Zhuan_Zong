@@ -43,7 +43,7 @@ random.seed(0)
 v2u_rate = [0]
 v2i_rate = [0]
 u2i_rate = [0]
-for i in range(10):
+for i in range(1):
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     file_path = f"entity_info_{timestamp}_iteration_{i}.txt"
 

@@ -9,6 +9,9 @@ import os
 class DataManager:
     def __init__(self, env, sumo_net_file=None, output_dir="results", update_interval=10):
         self.env = env  # 绑定仿真环境
+
+        crossroads = EntityScheduler.getAllCrossroadPositions(self.env)
+        print(f"所有交叉路口坐标: {crossroads}")
         
         # 确保输出目录存在
         self.output_dir = output_dir
@@ -42,56 +45,44 @@ class DataManager:
         self.extract_sumo_traffic_topology()
 
 
-    def update_traffic_density(self, x_min=0, x_max=1000, y_min=0, y_max=1000):
+    def update_traffic_density(self, x_center=500, y_center=500, region_size=500):
         """
-        计算 UAV 和 车辆的交通流密度,返回：每平方公里的密度
-        :param x_min, x_max, y_min, y_max: 指定的区域范围
+        计算固定区域（如交叉路口附近）的 UAV 和 车辆交通流密度
+        :param x_center: 区域中心的 X 坐标
+        :param y_center: 区域中心的 Y 坐标
+        :param region_size: 计算密度的区域大小（单位：米），默认 500m x 500m
         :return: (uav_density, vehicle_density)
         """
-        # 使用 EntityScheduler 获取实体信息
-        # 获取所有 UAV 节点信息
+        # 计算区域范围（固定在某个交叉路口）
+        x_min, x_max = x_center - region_size / 2, x_center + region_size / 2
+        y_min, y_max = y_center - region_size / 2, y_center + region_size / 2
+
+        # 获取 UAV 和 车辆的节点信息
         uavs_nodes = EntityScheduler.getFogNodesByType(self.env, 'uav')
-        # 获取所有车辆节点信息
         vehicles_nodes = EntityScheduler.getFogNodesByType(self.env, 'vehicle')
-        
-        # 获取所有实体的位置，确定实际的坐标范围
-        all_nodes = uavs_nodes + vehicles_nodes
-        if not all_nodes:
-            self.uav_density_list.append(0)
-            self.vehicle_density_list.append(0)
-            return 0, 0
 
-        # 获取所有节点的坐标
-        positions_x = [node.to_dict()['position_x'] for node in all_nodes]
-        positions_y = [node.to_dict()['position_y'] for node in all_nodes]
-        
-        # 计算实际的坐标范围
-        x_min, x_max = min(positions_x), max(positions_x)
-        y_min, y_max = min(positions_y), max(positions_y)
-        
-        # 为避免范围过小，确保最小范围
-        width = max(x_max - x_min, 100)  # 最小宽度100米
-        height = max(y_max - y_min, 100)  # 最小高度100米
-    
-        # 计算面积（平方米）
-        area_m2 = width * height
-        # 转换为平方公里
-        area_km2 = area_m2 / 1000000
+        # 统计区域内的 UAV 和 车辆数量
+        uav_count = sum(1 for uav in uavs_nodes if x_min <= uav.to_dict()['position_x'] <= x_max and
+                                                        y_min <= uav.to_dict()['position_y'] <= y_max)
 
-        # 计算密度（每平方公里）
-        uav_density = len(uavs_nodes) / area_km2 if area_km2 > 0 else 0
-        vehicle_density = len(vehicles_nodes) / area_km2 if area_km2 > 0 else 0
-        
+        vehicle_count = sum(1 for vehicle in vehicles_nodes if x_min <= vehicle.to_dict()['position_x'] <= x_max and
+                                                                y_min <= vehicle.to_dict()['position_y'] <= y_max)
+
+        # 计算密度（单位：每平方公里）
+        area_km2 = (region_size * region_size) / 1e6  # 500m × 500m = 0.25 km²
+        uav_density = uav_count / area_km2 if area_km2 > 0 else 0
+        vehicle_density = vehicle_count / area_km2 if area_km2 > 0 else 0
+
         # 记录数据
         self.uav_density_list.append(uav_density)
         self.vehicle_density_list.append(vehicle_density)
 
         # 打印调试信息
-        print(f"区域范围: X({x_min:.1f}-{x_max:.1f}), Y({y_min:.1f}-{y_max:.1f}), 面积: {area_km2:.4f}平方公里")
-        print(f"UAV数量: {len(uavs_nodes)}, 密度: {uav_density:.2f}/km²; 车辆数量: {len(vehicles_nodes)}, 密度: {vehicle_density:.2f}/km²")
+        print(f"交叉路口固定区域: X({x_min:.1f} - {x_max:.1f}), Y({y_min:.1f} - {y_max:.1f})，面积: {area_km2:.4f} km²")
+        print(f"UAV 数量: {uav_count}, 车辆数量: {vehicle_count}")
+        print(f"UAV 密度: {uav_density:.2f}/km², 车辆密度: {vehicle_density:.2f}/km²")
 
         return uav_density, vehicle_density
-
 
     def update_task_completion_rate(self):
         """
