@@ -29,7 +29,7 @@ class DataManager:
         self.traffic_topology = {}
 
         # 输出文件路径
-        self.output_file = os.path.join(self.output_dir, "simulation_data.json")
+        self.output_file = os.path.join(self.output_dir, "simulation_data1.json")
 
         # 数据存储
         self.simulation_data = []  # 存储每个时间步的数据
@@ -44,7 +44,7 @@ class DataManager:
 
     def update_traffic_density(self, x_min=0, x_max=1000, y_min=0, y_max=1000):
         """
-        计算 UAV 和 车辆的交通流密度
+        计算 UAV 和 车辆的交通流密度,返回：每平方公里的密度
         :param x_min, x_max, y_min, y_max: 指定的区域范围
         :return: (uav_density, vehicle_density)
         """
@@ -54,20 +54,41 @@ class DataManager:
         # 获取所有车辆节点信息
         vehicles_nodes = EntityScheduler.getFogNodesByType(self.env, 'vehicle')
         
-        # 将节点对象转换为字典
-        uavs = [node.to_dict() for node in uavs_nodes]
-        vehicles = [node.to_dict() for node in vehicles_nodes]
-        
-        # 统计单位面积内的数量
-        uav_count = sum(1 for uav in uavs if x_min <= uav['position_x'] <= x_max and y_min <= uav['position_y'] <= y_max)
-        vehicle_count = sum(1 for vehicle in vehicles if x_min <= vehicle['position_x'] <= x_max and y_min <= vehicle['position_y'] <= y_max)
-                
-        area = (x_max - x_min) * (y_max - y_min)
-        uav_density = uav_count / area if area > 0 else 0
-        vehicle_density = vehicle_count / area if area > 0 else 0
+        # 获取所有实体的位置，确定实际的坐标范围
+        all_nodes = uavs_nodes + vehicles_nodes
+        if not all_nodes:
+            self.uav_density_list.append(0)
+            self.vehicle_density_list.append(0)
+            return 0, 0
 
+        # 获取所有节点的坐标
+        positions_x = [node.to_dict()['position_x'] for node in all_nodes]
+        positions_y = [node.to_dict()['position_y'] for node in all_nodes]
+        
+        # 计算实际的坐标范围
+        x_min, x_max = min(positions_x), max(positions_x)
+        y_min, y_max = min(positions_y), max(positions_y)
+        
+        # 为避免范围过小，确保最小范围
+        width = max(x_max - x_min, 100)  # 最小宽度100米
+        height = max(y_max - y_min, 100)  # 最小高度100米
+    
+        # 计算面积（平方米）
+        area_m2 = width * height
+        # 转换为平方公里
+        area_km2 = area_m2 / 1000000
+
+        # 计算密度（每平方公里）
+        uav_density = len(uavs_nodes) / area_km2 if area_km2 > 0 else 0
+        vehicle_density = len(vehicles_nodes) / area_km2 if area_km2 > 0 else 0
+        
+        # 记录数据
         self.uav_density_list.append(uav_density)
         self.vehicle_density_list.append(vehicle_density)
+
+        # 打印调试信息
+        print(f"区域范围: X({x_min:.1f}-{x_max:.1f}), Y({y_min:.1f}-{y_max:.1f}), 面积: {area_km2:.4f}平方公里")
+        print(f"UAV数量: {len(uavs_nodes)}, 密度: {uav_density:.2f}/km²; 车辆数量: {len(vehicles_nodes)}, 密度: {vehicle_density:.2f}/km²")
 
         return uav_density, vehicle_density
 
@@ -269,7 +290,7 @@ class DataManager:
         print(f"数据已保存至 {self.output_file}")
 
         
-    def plot_results(self, save_filename="simulation_results.png"):
+    def plot_results(self, save_filename="simulation_results1.png"):
         """
         可视化任务完成率和交通流密度
         """

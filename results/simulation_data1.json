@@ -1,0 +1,4180 @@
+{
+    "global_metrics": [
+        {
+            "simulation_time": 1.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.2951288472149156,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 2.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.3046210411559707,
+            "vehicle_density": 0.3292315773079958
+        },
+        {
+            "simulation_time": 3.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.343834191114728,
+            "vehicle_density": 0.3348334558735325
+        },
+        {
+            "simulation_time": 4.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7350064249954287,
+            "vehicle_density": 0.49571612142726534
+        },
+        {
+            "simulation_time": 5.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7257124016152618,
+            "vehicle_density": 0.4930606861757891
+        },
+        {
+            "simulation_time": 6.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7226342444877862,
+            "vehicle_density": 0.7382718190661941
+        },
+        {
+            "simulation_time": 7.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7184382471205448,
+            "vehicle_density": 0.7364735344802336
+        },
+        {
+            "simulation_time": 8.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7162793980096704,
+            "vehicle_density": 0.7355483134327159
+        },
+        {
+            "simulation_time": 9.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.713730556521836,
+            "vehicle_density": 0.7344559527950726
+        },
+        {
+            "simulation_time": 10.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.71020708642017,
+            "vehicle_density": 0.9772611922400971
+        },
+        {
+            "simulation_time": 11.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7090297767516673,
+            "vehicle_density": 0.9765884438580956
+        },
+        {
+            "simulation_time": 12.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7075950665765305,
+            "vehicle_density": 1.219710761840379
+        },
+        {
+            "simulation_time": 13.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.704564295904782,
+            "vehicle_density": 1.2175459256462728
+        },
+        {
+            "simulation_time": 14.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7005918390532817,
+            "vehicle_density": 1.21470845646663
+        },
+        {
+            "simulation_time": 15.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.69987202845225,
+            "vehicle_density": 1.2141943060373215
+        },
+        {
+            "simulation_time": 16.0,
+            "task_completion_rate": 0.9846153846153847,
+            "uav_density": 1.6999453243313833,
+            "vehicle_density": 1.6999453243313833
+        },
+        {
+            "simulation_time": 17.0,
+            "task_completion_rate": 0.9879518072289156,
+            "uav_density": 1.697858263188975,
+            "vehicle_density": 1.697858263188975
+        },
+        {
+            "simulation_time": 18.0,
+            "task_completion_rate": 0.9888888888888889,
+            "uav_density": 1.6888305512356059,
+            "vehicle_density": 1.6888305512356059
+        },
+        {
+            "simulation_time": 19.0,
+            "task_completion_rate": 0.9894736842105263,
+            "uav_density": 1.6737029539408652,
+            "vehicle_density": 1.6737029539408652
+        },
+        {
+            "simulation_time": 20.0,
+            "task_completion_rate": 0.98989898989899,
+            "uav_density": 1.6615042704996903,
+            "vehicle_density": 1.8988620234282176
+        },
+        {
+            "simulation_time": 21.0,
+            "task_completion_rate": 0.9903846153846154,
+            "uav_density": 1.6457196739101965,
+            "vehicle_density": 2.1159252950273957
+        },
+        {
+            "simulation_time": 22.0,
+            "task_completion_rate": 0.9821428571428571,
+            "uav_density": 1.6323805712615238,
+            "vehicle_density": 2.0987750201933877
+        },
+        {
+            "simulation_time": 23.0,
+            "task_completion_rate": 0.9830508474576272,
+            "uav_density": 1.6254940347091027,
+            "vehicle_density": 2.0899209017688465
+        },
+        {
+            "simulation_time": 24.0,
+            "task_completion_rate": 0.984375,
+            "uav_density": 1.6202901963239096,
+            "vehicle_density": 2.083230252416455
+        },
+        {
+            "simulation_time": 25.0,
+            "task_completion_rate": 0.9852941176470589,
+            "uav_density": 1.6163358922145858,
+            "vehicle_density": 2.3090512745922656
+        },
+        {
+            "simulation_time": 26.0,
+            "task_completion_rate": 0.9791666666666666,
+            "uav_density": 1.6127013984107728,
+            "vehicle_density": 2.3038591405868183
+        },
+        {
+            "simulation_time": 27.0,
+            "task_completion_rate": 0.9806451612903225,
+            "uav_density": 1.609402868852392,
+            "vehicle_density": 2.299146955503417
+        },
+        {
+            "simulation_time": 28.0,
+            "task_completion_rate": 0.9810126582278481,
+            "uav_density": 1.6082709095168561,
+            "vehicle_density": 2.297529870738366
+        },
+        {
+            "simulation_time": 29.0,
+            "task_completion_rate": 0.9820359281437125,
+            "uav_density": 1.6059872336488574,
+            "vehicle_density": 2.523694224305347
+        },
+        {
+            "simulation_time": 30.0,
+            "task_completion_rate": 0.9779005524861878,
+            "uav_density": 1.6032598597978136,
+            "vehicle_density": 2.977482596767368
+        },
+        {
+            "simulation_time": 31.0,
+            "task_completion_rate": 0.9791666666666666,
+            "uav_density": 1.5992244922149965,
+            "vehicle_density": 3.198448984429993
+        },
+        {
+            "simulation_time": 32.0,
+            "task_completion_rate": 0.9800995024875622,
+            "uav_density": 1.5949238867163282,
+            "vehicle_density": 3.4176940429635607
+        },
+        {
+            "simulation_time": 33.0,
+            "task_completion_rate": 0.9812206572769953,
+            "uav_density": 1.5928567978888974,
+            "vehicle_density": 3.4132645669047803
+        },
+        {
+            "simulation_time": 34.0,
+            "task_completion_rate": 0.9819004524886877,
+            "uav_density": 1.5870313125988393,
+            "vehicle_density": 3.40078138414037
+        },
+        {
+            "simulation_time": 35.0,
+            "task_completion_rate": 0.982532751091703,
+            "uav_density": 1.55495158923149,
+            "vehicle_density": 3.776311002419333
+        },
+        {
+            "simulation_time": 36.0,
+            "task_completion_rate": 0.9833333333333333,
+            "uav_density": 1.554804054142302,
+            "vehicle_density": 3.7759527029170195
+        },
+        {
+            "simulation_time": 37.0,
+            "task_completion_rate": 0.9838056680161943,
+            "uav_density": 1.5548411343216935,
+            "vehicle_density": 3.7760427547812556
+        },
+        {
+            "simulation_time": 38.0,
+            "task_completion_rate": 0.9846743295019157,
+            "uav_density": 1.5564266470420534,
+            "vehicle_density": 3.779893285673558
+        },
+        {
+            "simulation_time": 39.0,
+            "task_completion_rate": 0.9816849816849816,
+            "uav_density": 1.5614575105816293,
+            "vehicle_density": 4.015176455781332
+        },
+        {
+            "simulation_time": 40.0,
+            "task_completion_rate": 0.9825174825174825,
+            "uav_density": 1.5656190925400113,
+            "vehicle_density": 4.249537536894316
+        },
+        {
+            "simulation_time": 41.0,
+            "task_completion_rate": 0.9829931972789115,
+            "uav_density": 1.5672821945815782,
+            "vehicle_density": 4.477949127375938
+        },
+        {
+            "simulation_time": 42.0,
+            "task_completion_rate": 0.9801980198019802,
+            "uav_density": 1.561748512010262,
+            "vehicle_density": 4.685245536030787
+        },
+        {
+            "simulation_time": 43.0,
+            "task_completion_rate": 0.9808306709265175,
+            "uav_density": 1.5596291466037064,
+            "vehicle_density": 4.6788874398111195
+        },
+        {
+            "simulation_time": 44.0,
+            "task_completion_rate": 0.9815950920245399,
+            "uav_density": 1.5563529890800358,
+            "vehicle_density": 5.113731249834403
+        },
+        {
+            "simulation_time": 45.0,
+            "task_completion_rate": 0.9821958456973294,
+            "uav_density": 1.5537525277419622,
+            "vehicle_density": 5.549116170507007
+        },
+        {
+            "simulation_time": 46.0,
+            "task_completion_rate": 0.9829059829059829,
+            "uav_density": 1.549808676908681,
+            "vehicle_density": 5.977833468076341
+        },
+        {
+            "simulation_time": 47.0,
+            "task_completion_rate": 0.9833333333333333,
+            "uav_density": 1.5473878572060185,
+            "vehicle_density": 6.189551428824074
+        },
+        {
+            "simulation_time": 48.0,
+            "task_completion_rate": 0.9839142091152815,
+            "uav_density": 1.545079577123754,
+            "vehicle_density": 6.842495270119482
+        },
+        {
+            "simulation_time": 49.0,
+            "task_completion_rate": 0.9841688654353562,
+            "uav_density": 1.5409370618764795,
+            "vehicle_density": 7.044283711435335
+        },
+        {
+            "simulation_time": 50.0,
+            "task_completion_rate": 0.9847328244274809,
+            "uav_density": 1.5380571682305524,
+            "vehicle_density": 7.031118483339668
+        },
+        {
+            "simulation_time": 51.0,
+            "task_completion_rate": 0.9828009828009828,
+            "uav_density": 1.5348564344016398,
+            "vehicle_density": 7.2357517621791585
+        },
+        {
+            "simulation_time": 52.0,
+            "task_completion_rate": 0.9833729216152018,
+            "uav_density": 1.529669493620654,
+            "vehicle_density": 7.429823254728891
+        },
+        {
+            "simulation_time": 53.0,
+            "task_completion_rate": 0.9837962962962963,
+            "uav_density": 1.5266435029989835,
+            "vehicle_density": 7.197033656995209
+        },
+        {
+            "simulation_time": 54.0,
+            "task_completion_rate": 0.9819819819819819,
+            "uav_density": 1.5220580586463048,
+            "vehicle_density": 7.175416562189723
+        },
+        {
+            "simulation_time": 55.0,
+            "task_completion_rate": 0.9824945295404814,
+            "uav_density": 1.5250681781842343,
+            "vehicle_density": 7.189607125725677
+        },
+        {
+            "simulation_time": 56.0,
+            "task_completion_rate": 0.9829059829059829,
+            "uav_density": 1.5267813273811237,
+            "vehicle_density": 7.415795018708315
+        },
+        {
+            "simulation_time": 57.0,
+            "task_completion_rate": 0.9832635983263598,
+            "uav_density": 1.526146917744812,
+            "vehicle_density": 7.412713600474801
+        },
+        {
+            "simulation_time": 58.0,
+            "task_completion_rate": 0.9836065573770492,
+            "uav_density": 1.5262597572202723,
+            "vehicle_density": 7.849335894275686
+        },
+        {
+            "simulation_time": 59.0,
+            "task_completion_rate": 0.9839034205231388,
+            "uav_density": 1.5245823504408225,
+            "vehicle_density": 7.840709230838516
+        },
+        {
+            "simulation_time": 60.0,
+            "task_completion_rate": 0.984251968503937,
+            "uav_density": 1.5235210066851743,
+            "vehicle_density": 7.835250891523753
+        },
+        {
+            "simulation_time": 60.0,
+            "task_completion_rate": 0.984251968503937,
+            "uav_density": 1.5235210066851743,
+            "vehicle_density": 7.835250891523753
+        },
+        {
+            "simulation_time": 0.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.650859415702867,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 1.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.6657136691133076,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 2.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.6391980482700284,
+            "vehicle_density": 0.3770282926100041
+        },
+        {
+            "simulation_time": 3.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.3467168867625086,
+            "vehicle_density": 0.6704905390750024
+        },
+        {
+            "simulation_time": 4.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.355663478151075,
+            "vehicle_density": 1.3460934160863285
+        },
+        {
+            "simulation_time": 5.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.3518952964220756,
+            "vehicle_density": 1.3439401693840431
+        },
+        {
+            "simulation_time": 6.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9956739075518228,
+            "vehicle_density": 1.4254813625370162
+        },
+        {
+            "simulation_time": 7.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9958677246405334,
+            "vehicle_density": 1.4256198033146668
+        },
+        {
+            "simulation_time": 8.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9874088464324369,
+            "vehicle_density": 1.4195777474517406
+        },
+        {
+            "simulation_time": 9.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9198531893336623,
+            "vehicle_density": 1.645588448000282
+        },
+        {
+            "simulation_time": 10.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9293880176965945,
+            "vehicle_density": 1.9293880176965945
+        },
+        {
+            "simulation_time": 11.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9189207540170636,
+            "vehicle_density": 1.9189207540170636
+        },
+        {
+            "simulation_time": 12.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9151555547627201,
+            "vehicle_density": 1.9151555547627201
+        },
+        {
+            "simulation_time": 13.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9167427871957996,
+            "vehicle_density": 2.190563185366628
+        },
+        {
+            "simulation_time": 14.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9189826516749566,
+            "vehicle_density": 2.467263409296373
+        },
+        {
+            "simulation_time": 15.9,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9084295890891896,
+            "vehicle_density": 2.726327984413128
+        },
+        {
+            "simulation_time": 16.9,
+            "task_completion_rate": 0.9846153846153847,
+            "uav_density": 1.9061769206659178,
+            "vehicle_density": 2.723109886665597
+        },
+        {
+            "simulation_time": 17.9,
+            "task_completion_rate": 0.9852941176470589,
+            "uav_density": 1.8938337502389577,
+            "vehicle_density": 2.705476786055654
+        },
+        {
+            "simulation_time": 18.9,
+            "task_completion_rate": 0.9864864864864865,
+            "uav_density": 1.8865960670539577,
+            "vehicle_density": 3.234164686378213
+        },
+        {
+            "simulation_time": 19.9,
+            "task_completion_rate": 0.9871794871794872,
+            "uav_density": 1.8788843944636622,
+            "vehicle_density": 3.7577687889273244
+        },
+        {
+            "simulation_time": 20.9,
+            "task_completion_rate": 0.9882352941176471,
+            "uav_density": 1.882774388237492,
+            "vehicle_density": 3.765548776474984
+        },
+        {
+            "simulation_time": 21.9,
+            "task_completion_rate": 0.989247311827957,
+            "uav_density": 1.8782162074849817,
+            "vehicle_density": 3.7564324149699635
+        },
+        {
+            "simulation_time": 22.9,
+            "task_completion_rate": 0.9897959183673469,
+            "uav_density": 1.874763908481691,
+            "vehicle_density": 4.017351232460767
+        },
+        {
+            "simulation_time": 23.9,
+            "task_completion_rate": 0.9903846153846154,
+            "uav_density": 1.8696872567204528,
+            "vehicle_density": 4.006472692972399
+        },
+        {
+            "simulation_time": 24.9,
+            "task_completion_rate": 0.990909090909091,
+            "uav_density": 1.8637493170041841,
+            "vehicle_density": 3.993748536437537
+        },
+        {
+            "simulation_time": 25.9,
+            "task_completion_rate": 0.9915254237288136,
+            "uav_density": 1.8542629552822818,
+            "vehicle_density": 3.9734206184620326
+        },
+        {
+            "simulation_time": 26.9,
+            "task_completion_rate": 0.991869918699187,
+            "uav_density": 1.8404464609094002,
+            "vehicle_density": 3.9438138448058573
+        },
+        {
+            "simulation_time": 27.9,
+            "task_completion_rate": 0.9921259842519685,
+            "uav_density": 1.8215890468827907,
+            "vehicle_density": 4.163632107160664
+        },
+        {
+            "simulation_time": 28.9,
+            "task_completion_rate": 0.9926470588235294,
+            "uav_density": 1.8144422135312497,
+            "vehicle_density": 4.147296488071428
+        },
+        {
+            "simulation_time": 29.9,
+            "task_completion_rate": 0.993103448275862,
+            "uav_density": 1.8113865739388417,
+            "vehicle_density": 4.399081679565758
+        },
+        {
+            "simulation_time": 30.9,
+            "task_completion_rate": 0.9935064935064936,
+            "uav_density": 1.804416993491753,
+            "vehicle_density": 4.3821555556228295
+        },
+        {
+            "simulation_time": 31.9,
+            "task_completion_rate": 0.9938271604938271,
+            "uav_density": 1.7918993086280428,
+            "vehicle_density": 4.351755463810961
+        },
+        {
+            "simulation_time": 32.9,
+            "task_completion_rate": 0.9941176470588236,
+            "uav_density": 1.7817823447949086,
+            "vehicle_density": 5.090806699414024
+        },
+        {
+            "simulation_time": 33.9,
+            "task_completion_rate": 0.9943820224719101,
+            "uav_density": 1.7725718994373239,
+            "vehicle_density": 5.3177156983119716
+        },
+        {
+            "simulation_time": 34.9,
+            "task_completion_rate": 0.9945945945945946,
+            "uav_density": 1.7724951986701367,
+            "vehicle_density": 5.5706991958204295
+        },
+        {
+            "simulation_time": 35.9,
+            "task_completion_rate": 0.9947916666666666,
+            "uav_density": 1.7677696684096922,
+            "vehicle_density": 5.555847529287604
+        },
+        {
+            "simulation_time": 36.9,
+            "task_completion_rate": 0.9948717948717949,
+            "uav_density": 1.7512229378230093,
+            "vehicle_density": 5.754018224275602
+        },
+        {
+            "simulation_time": 37.9,
+            "task_completion_rate": 0.995,
+            "uav_density": 1.7477831673885844,
+            "vehicle_density": 5.742716121419634
+        },
+        {
+            "simulation_time": 38.9,
+            "task_completion_rate": 0.9953051643192489,
+            "uav_density": 1.7338922455725116,
+            "vehicle_density": 6.192472305616113
+        },
+        {
+            "simulation_time": 39.9,
+            "task_completion_rate": 0.995475113122172,
+            "uav_density": 1.7325973696968382,
+            "vehicle_density": 6.187847748917279
+        },
+        {
+            "simulation_time": 40.9,
+            "task_completion_rate": 0.9956521739130435,
+            "uav_density": 1.718563166356985,
+            "vehicle_density": 6.383234617897372
+        },
+        {
+            "simulation_time": 41.9,
+            "task_completion_rate": 0.995850622406639,
+            "uav_density": 1.7183054003510274,
+            "vehicle_density": 6.3822772013038165
+        },
+        {
+            "simulation_time": 42.9,
+            "task_completion_rate": 0.9960629921259843,
+            "uav_density": 1.7185600094328657,
+            "vehicle_density": 6.628731464955339
+        },
+        {
+            "simulation_time": 43.9,
+            "task_completion_rate": 0.9962962962962963,
+            "uav_density": 1.7071967389150469,
+            "vehicle_density": 7.072672204076623
+        },
+        {
+            "simulation_time": 44.9,
+            "task_completion_rate": 0.996415770609319,
+            "uav_density": 1.7036163559127122,
+            "vehicle_density": 7.301212953911624
+        },
+        {
+            "simulation_time": 45.9,
+            "task_completion_rate": 0.996551724137931,
+            "uav_density": 1.6892685799397977,
+            "vehicle_density": 7.2397224854562765
+        },
+        {
+            "simulation_time": 46.9,
+            "task_completion_rate": 0.9966666666666667,
+            "uav_density": 1.6869149332006823,
+            "vehicle_density": 7.711611123203119
+        },
+        {
+            "simulation_time": 47.9,
+            "task_completion_rate": 0.9967637540453075,
+            "uav_density": 1.683400492956788,
+            "vehicle_density": 7.45505932595149
+        },
+        {
+            "simulation_time": 48.9,
+            "task_completion_rate": 0.9968354430379747,
+            "uav_density": 1.6759416872182962,
+            "vehicle_density": 7.42202747196674
+        },
+        {
+            "simulation_time": 49.9,
+            "task_completion_rate": 0.9968944099378882,
+            "uav_density": 1.6670147372432236,
+            "vehicle_density": 7.382493836362848
+        },
+        {
+            "simulation_time": 50.9,
+            "task_completion_rate": 0.9970501474926253,
+            "uav_density": 1.6550528202700776,
+            "vehicle_density": 7.565955749806069
+        },
+        {
+            "simulation_time": 51.9,
+            "task_completion_rate": 0.9971830985915493,
+            "uav_density": 1.640877131688211,
+            "vehicle_density": 7.735563620815851
+        },
+        {
+            "simulation_time": 52.9,
+            "task_completion_rate": 0.9972602739726028,
+            "uav_density": 1.6173213351390383,
+            "vehicle_density": 8.086606675695192
+        },
+        {
+            "simulation_time": 53.9,
+            "task_completion_rate": 0.9973404255319149,
+            "uav_density": 1.6108423627249957,
+            "vehicle_density": 8.28433215115712
+        },
+        {
+            "simulation_time": 54.9,
+            "task_completion_rate": 0.9974293059125964,
+            "uav_density": 1.6166617019835627,
+            "vehicle_density": 8.545211853341689
+        },
+        {
+            "simulation_time": 55.9,
+            "task_completion_rate": 0.9974937343358395,
+            "uav_density": 1.610021988724964,
+            "vehicle_density": 8.740119367364091
+        },
+        {
+            "simulation_time": 56.9,
+            "task_completion_rate": 0.9975369458128078,
+            "uav_density": 1.4952474545426002,
+            "vehicle_density": 8.75787794803523
+        },
+        {
+            "simulation_time": 57.9,
+            "task_completion_rate": 0.9975669099756691,
+            "uav_density": 1.4982014178226526,
+            "vehicle_density": 8.77517973296125
+        },
+        {
+            "simulation_time": 58.9,
+            "task_completion_rate": 0.9976190476190476,
+            "uav_density": 1.508257870477691,
+            "vehicle_density": 9.049547222866146
+        },
+        {
+            "simulation_time": 59.9,
+            "task_completion_rate": 0.9976525821596244,
+            "uav_density": 1.5124787273501565,
+            "vehicle_density": 9.074872364100939
+        },
+        {
+            "simulation_time": 60.0,
+            "task_completion_rate": 0.9976525821596244,
+            "uav_density": 1.5139263728712344,
+            "vehicle_density": 9.083558237227408
+        },
+        {
+            "simulation_time": 0.8,
+            "task_completion_rate": 0.0,
+            "uav_density": 1.6373929876564557,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 1.8,
+            "task_completion_rate": 0.0,
+            "uav_density": 1.6270866118793845,
+            "vehicle_density": 0.46488188910839556
+        },
+        {
+            "simulation_time": 2.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6277459726335677,
+            "vehicle_density": 0.6976054168429576
+        },
+        {
+            "simulation_time": 3.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6199760568397144,
+            "vehicle_density": 0.9257006039084081
+        },
+        {
+            "simulation_time": 4.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6104355117611382,
+            "vehicle_density": 0.9202488638635075
+        },
+        {
+            "simulation_time": 5.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.606658002272747,
+            "vehicle_density": 0.9180902870129982
+        },
+        {
+            "simulation_time": 6.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.604297319435209,
+            "vehicle_density": 0.916741325391548
+        },
+        {
+            "simulation_time": 7.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.605568124350929,
+            "vehicle_density": 1.1468343745363778
+        },
+        {
+            "simulation_time": 8.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6145292899480486,
+            "vehicle_density": 1.153235207105749
+        },
+        {
+            "simulation_time": 9.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6168429836287292,
+            "vehicle_density": 1.6168429836287292
+        },
+        {
+            "simulation_time": 10.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6229431016281397,
+            "vehicle_density": 1.6229431016281397
+        },
+        {
+            "simulation_time": 11.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6256219772323683,
+            "vehicle_density": 1.8578536882655639
+        },
+        {
+            "simulation_time": 12.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6221181223144896,
+            "vehicle_density": 2.317311603306414
+        },
+        {
+            "simulation_time": 13.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6130147383033262,
+            "vehicle_density": 2.5347374459052268
+        },
+        {
+            "simulation_time": 14.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.611088380848402,
+            "vehicle_density": 2.5317103127617746
+        },
+        {
+            "simulation_time": 15.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6186586518573636,
+            "vehicle_density": 3.0060803534493896
+        },
+        {
+            "simulation_time": 16.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.619621662061217,
+            "vehicle_density": 3.470617847274036
+        },
+        {
+            "simulation_time": 17.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6180634683732167,
+            "vehicle_density": 3.46727886079975
+        },
+        {
+            "simulation_time": 18.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6112318895905475,
+            "vehicle_density": 3.682815747635537
+        },
+        {
+            "simulation_time": 19.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6156656895585304,
+            "vehicle_density": 3.9237595317850027
+        },
+        {
+            "simulation_time": 20.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6078499983285672,
+            "vehicle_density": 3.9047785673693776
+        },
+        {
+            "simulation_time": 21.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.604093796383,
+            "vehicle_density": 4.124812619270571
+        },
+        {
+            "simulation_time": 22.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.594771033254026,
+            "vehicle_density": 4.100839799796066
+        },
+        {
+            "simulation_time": 23.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5857727616956312,
+            "vehicle_density": 4.0777013872173375
+        },
+        {
+            "simulation_time": 24.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5721504825349504,
+            "vehicle_density": 4.042672669375587
+        },
+        {
+            "simulation_time": 25.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5633370009363299,
+            "vehicle_density": 4.243343288255753
+        },
+        {
+            "simulation_time": 26.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5471996651490916,
+            "vehicle_density": 4.19954194826182
+        },
+        {
+            "simulation_time": 27.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5324852009507677,
+            "vehicle_density": 4.159602688294941
+        },
+        {
+            "simulation_time": 28.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.530663250968982,
+            "vehicle_density": 4.154657395487237
+        },
+        {
+            "simulation_time": 29.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.537097826027819,
+            "vehicle_density": 4.172122670646937
+        },
+        {
+            "simulation_time": 30.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5392100254313617,
+            "vehicle_density": 4.39774292980389
+        },
+        {
+            "simulation_time": 31.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5457235049706524,
+            "vehicle_density": 4.416352871344721
+        },
+        {
+            "simulation_time": 32.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.552583148559914,
+            "vehicle_density": 4.4359518530283255
+        },
+        {
+            "simulation_time": 33.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4580790445774507,
+            "vehicle_density": 4.5825341401005595
+        },
+        {
+            "simulation_time": 34.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4664247073533958,
+            "vehicle_density": 4.608763365967816
+        },
+        {
+            "simulation_time": 35.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4776760154635706,
+            "vehicle_density": 4.644124620028365
+        },
+        {
+            "simulation_time": 36.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.49580375207842,
+            "vehicle_density": 4.914783756829094
+        },
+        {
+            "simulation_time": 37.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.516602032901491,
+            "vehicle_density": 4.983120965247757
+        },
+        {
+            "simulation_time": 38.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5330202739190908,
+            "vehicle_density": 5.25606951057974
+        },
+        {
+            "simulation_time": 39.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5349876334679187,
+            "vehicle_density": 5.262814743318578
+        },
+        {
+            "simulation_time": 40.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4213766565120187,
+            "vehicle_density": 5.279399009901784
+        },
+        {
+            "simulation_time": 41.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4277386674129469,
+            "vehicle_density": 5.303029336105231
+        },
+        {
+            "simulation_time": 42.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4406052230064428,
+            "vehicle_density": 5.350819399738216
+        },
+        {
+            "simulation_time": 43.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4605596202889373,
+            "vehicle_density": 5.424935732501767
+        },
+        {
+            "simulation_time": 44.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4768459378635317,
+            "vehicle_density": 5.485427769207403
+        },
+        {
+            "simulation_time": 45.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4891112804855933,
+            "vehicle_density": 5.530984756089347
+        },
+        {
+            "simulation_time": 46.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4988560072406856,
+            "vehicle_density": 5.5671794554654035
+        },
+        {
+            "simulation_time": 47.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.506242067317238,
+            "vehicle_density": 5.594613392892598
+        },
+        {
+            "simulation_time": 48.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.507866984036223,
+            "vehicle_density": 5.600648797848828
+        },
+        {
+            "simulation_time": 49.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5232381842875704,
+            "vehicle_density": 5.657741827353833
+        },
+        {
+            "simulation_time": 50.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5294542527391748,
+            "vehicle_density": 5.680830081602649
+        },
+        {
+            "simulation_time": 51.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5450836732575313,
+            "vehicle_density": 5.959608453993335
+        },
+        {
+            "simulation_time": 52.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.334270259824415,
+            "vehicle_density": 5.33708103929766
+        },
+        {
+            "simulation_time": 53.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3358521847000528,
+            "vehicle_density": 5.343408738800211
+        },
+        {
+            "simulation_time": 54.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3363747233568042,
+            "vehicle_density": 5.345498893427217
+        },
+        {
+            "simulation_time": 55.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3395665623513189,
+            "vehicle_density": 5.932366204698698
+        },
+        {
+            "simulation_time": 56.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.349903275915897,
+            "vehicle_density": 6.170986404186959
+        },
+        {
+            "simulation_time": 57.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3662840435158583,
+            "vehicle_density": 6.441053348003331
+        },
+        {
+            "simulation_time": 58.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3807569606871515,
+            "vehicle_density": 6.5092828146679995
+        },
+        {
+            "simulation_time": 59.8,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3870137693897107,
+            "vehicle_density": 6.538779198551493
+        },
+        {
+            "simulation_time": 60.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3912196712216471,
+            "vehicle_density": 6.558607021473479
+        },
+        {
+            "simulation_time": 0.7,
+            "task_completion_rate": 0.0,
+            "uav_density": 1.6199071786108727,
+            "vehicle_density": 0.23141531123012468
+        },
+        {
+            "simulation_time": 1.7,
+            "task_completion_rate": 0.0,
+            "uav_density": 1.6184824820923183,
+            "vehicle_density": 0.6936353494681364
+        },
+        {
+            "simulation_time": 2.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6136697822770696,
+            "vehicle_density": 0.6915727638330298
+        },
+        {
+            "simulation_time": 3.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6127353675620055,
+            "vehicle_density": 0.921563067178289
+        },
+        {
+            "simulation_time": 4.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6174429687655107,
+            "vehicle_density": 1.1553164062610792
+        },
+        {
+            "simulation_time": 5.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6040004654471565,
+            "vehicle_density": 1.1457146181765403
+        },
+        {
+            "simulation_time": 6.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6023847656418038,
+            "vehicle_density": 1.1445605468870028
+        },
+        {
+            "simulation_time": 7.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5998493105386626,
+            "vehicle_density": 1.1427495075276162
+        },
+        {
+            "simulation_time": 8.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5958462956659536,
+            "vehicle_density": 1.1398902111899667
+        },
+        {
+            "simulation_time": 9.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5967854410374522,
+            "vehicle_density": 1.368673235174959
+        },
+        {
+            "simulation_time": 10.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6000215907556228,
+            "vehicle_density": 1.3714470777905337
+        },
+        {
+            "simulation_time": 11.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.598525308844437,
+            "vehicle_density": 1.370164550438089
+        },
+        {
+            "simulation_time": 12.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6057207267309537,
+            "vehicle_density": 1.3763320514836745
+        },
+        {
+            "simulation_time": 13.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6037890413145799,
+            "vehicle_density": 1.3746763211267827
+        },
+        {
+            "simulation_time": 14.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6028956034723845,
+            "vehicle_density": 1.6028956034723845
+        },
+        {
+            "simulation_time": 15.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.61240135192682,
+            "vehicle_density": 1.8427444022020802
+        },
+        {
+            "simulation_time": 16.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6185197046458517,
+            "vehicle_density": 2.080953905973238
+        },
+        {
+            "simulation_time": 17.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6222638296857748,
+            "vehicle_density": 2.3175197566939643
+        },
+        {
+            "simulation_time": 18.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6229570068317434,
+            "vehicle_density": 2.3185100097596334
+        },
+        {
+            "simulation_time": 19.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6268517797373894,
+            "vehicle_density": 2.556481368158755
+        },
+        {
+            "simulation_time": 20.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6241543907061164,
+            "vehicle_density": 3.0162867255970736
+        },
+        {
+            "simulation_time": 21.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6317356172889457,
+            "vehicle_density": 3.030366146393756
+        },
+        {
+            "simulation_time": 22.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6303820192570937,
+            "vehicle_density": 3.02785232147746
+        },
+        {
+            "simulation_time": 23.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.1385060321464964,
+            "vehicle_density": 2.2770120642929927
+        },
+        {
+            "simulation_time": 24.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.1390659508931527,
+            "vehicle_density": 2.2781319017863053
+        },
+        {
+            "simulation_time": 25.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.140109775012424,
+            "vehicle_density": 2.280219550024848
+        },
+        {
+            "simulation_time": 26.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.1443502252985847,
+            "vehicle_density": 2.2887004505971693
+        },
+        {
+            "simulation_time": 27.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.144023102025297,
+            "vehicle_density": 2.288046204050594
+        },
+        {
+            "simulation_time": 28.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.1455357731626643,
+            "vehicle_density": 2.2910715463253286
+        },
+        {
+            "simulation_time": 29.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.1505557449866313,
+            "vehicle_density": 2.3011114899732625
+        },
+        {
+            "simulation_time": 30.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.15576447607022,
+            "vehicle_density": 2.31152895214044
+        },
+        {
+            "simulation_time": 31.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.163271969884212,
+            "vehicle_density": 2.326543939768424
+        },
+        {
+            "simulation_time": 32.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.1709600639010178,
+            "vehicle_density": 2.3419201278020356
+        },
+        {
+            "simulation_time": 33.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.1775572137605994,
+            "vehicle_density": 2.355114427521199
+        },
+        {
+            "simulation_time": 34.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.1890448016739805,
+            "vehicle_density": 2.378089603347961
+        },
+        {
+            "simulation_time": 35.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.1908455533424205,
+            "vehicle_density": 2.721932693354104
+        },
+        {
+            "simulation_time": 36.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.1992475382840158,
+            "vehicle_density": 2.7411372303634645
+        },
+        {
+            "simulation_time": 37.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.2147745842719988,
+            "vehicle_density": 2.77662762119314
+        },
+        {
+            "simulation_time": 38.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.218388333943346,
+            "vehicle_density": 2.7848876204419337
+        },
+        {
+            "simulation_time": 39.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.2222704668649669,
+            "vehicle_density": 2.7937610671199247
+        },
+        {
+            "simulation_time": 40.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.234902225051642,
+            "vehicle_density": 2.822633657260896
+        },
+        {
+            "simulation_time": 41.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.2427631317065535,
+            "vehicle_density": 3.018139034144487
+        },
+        {
+            "simulation_time": 42.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.257310034932609,
+            "vehicle_density": 3.233082946969566
+        },
+        {
+            "simulation_time": 43.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.2573311910827323,
+            "vehicle_density": 3.2331373484984547
+        },
+        {
+            "simulation_time": 44.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.2610334294288095,
+            "vehicle_density": 3.42280502273534
+        },
+        {
+            "simulation_time": 45.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.276267024388835,
+            "vehicle_density": 3.464153351912552
+        },
+        {
+            "simulation_time": 46.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.2764101410099595,
+            "vehicle_density": 4.011574728888444
+        },
+        {
+            "simulation_time": 47.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.2858360711605625,
+            "vehicle_density": 4.224889948098991
+        },
+        {
+            "simulation_time": 48.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.2918817256817525,
+            "vehicle_density": 4.0601997092855076
+        },
+        {
+            "simulation_time": 49.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3022209571644374,
+            "vehicle_density": 4.0926944368025175
+        },
+        {
+            "simulation_time": 50.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3174132669610517,
+            "vehicle_density": 4.516845486723605
+        },
+        {
+            "simulation_time": 51.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3224118010239065,
+            "vehicle_density": 4.722899289371095
+        },
+        {
+            "simulation_time": 52.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3342515223176472,
+            "vehicle_density": 5.146398728939496
+        },
+        {
+            "simulation_time": 53.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.344990320641273,
+            "vehicle_density": 5.379961282565092
+        },
+        {
+            "simulation_time": 54.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3577174281036548,
+            "vehicle_density": 5.430869712414619
+        },
+        {
+            "simulation_time": 55.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3705717083255389,
+            "vehicle_density": 6.069674708298815
+        },
+        {
+            "simulation_time": 56.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.385210555294209,
+            "vehicle_density": 6.332391109916384
+        },
+        {
+            "simulation_time": 57.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4006810837448285,
+            "vehicle_density": 6.603210823368477
+        },
+        {
+            "simulation_time": 58.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3994732022802097,
+            "vehicle_density": 7.1972907545839355
+        },
+        {
+            "simulation_time": 59.7,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.40606996232606,
+            "vehicle_density": 7.231216949105452
+        },
+        {
+            "simulation_time": 60.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.3460935618380059,
+            "vehicle_density": 7.1150659697151735
+        },
+        {
+            "simulation_time": 0.6,
+            "task_completion_rate": 0.0,
+            "uav_density": 2.6662248627885226,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 1.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.66412706439646,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 2.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.6451898078028253,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 3.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.6658112059570094,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 4.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.541855269275051,
+            "vehicle_density": 0.3631221813250073
+        },
+        {
+            "simulation_time": 5.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.534463019184571,
+            "vehicle_density": 0.3620661455977959
+        },
+        {
+            "simulation_time": 6.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.502577234502441,
+            "vehicle_density": 0.3575110335003487
+        },
+        {
+            "simulation_time": 7.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.110052093937347,
+            "vehicle_density": 0.6028720268392419
+        },
+        {
+            "simulation_time": 8.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.1001306085898874,
+            "vehicle_density": 0.6000373167399679
+        },
+        {
+            "simulation_time": 9.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.0793675480604055,
+            "vehicle_density": 0.5941050137315445
+        },
+        {
+            "simulation_time": 10.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.057975089248352,
+            "vehicle_density": 0.8819893239635794
+        },
+        {
+            "simulation_time": 11.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.0337880795828474,
+            "vehicle_density": 0.8716234626783632
+        },
+        {
+            "simulation_time": 12.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.00314089992134,
+            "vehicle_density": 1.1446519428121942
+        },
+        {
+            "simulation_time": 13.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.971934220167717,
+            "vehicle_density": 1.1268195543815527
+        },
+        {
+            "simulation_time": 14.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9442379542664587,
+            "vehicle_density": 1.3887413959046135
+        },
+        {
+            "simulation_time": 15.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9273231013969458,
+            "vehicle_density": 1.6519912297688106
+        },
+        {
+            "simulation_time": 16.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9097261810251442,
+            "vehicle_density": 1.6369081551644094
+        },
+        {
+            "simulation_time": 17.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9048202424075626,
+            "vehicle_density": 1.632703064920768
+        },
+        {
+            "simulation_time": 18.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8980173757550356,
+            "vehicle_density": 1.626872036361459
+        },
+        {
+            "simulation_time": 19.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.894526661462345,
+            "vehicle_density": 1.623879995539153
+        },
+        {
+            "simulation_time": 20.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8783454776393091,
+            "vehicle_density": 1.6100104094051222
+        },
+        {
+            "simulation_time": 21.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8626862378132134,
+            "vehicle_density": 1.596588203839897
+        },
+        {
+            "simulation_time": 22.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8559323587229648,
+            "vehicle_density": 1.5907991646196842
+        },
+        {
+            "simulation_time": 23.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8490845948347956,
+            "vehicle_density": 1.8490845948347956
+        },
+        {
+            "simulation_time": 24.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8281140867124632,
+            "vehicle_density": 1.8281140867124632
+        },
+        {
+            "simulation_time": 25.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6592049124168582,
+            "vehicle_density": 2.133263458821675
+        },
+        {
+            "simulation_time": 26.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.664316787811436,
+            "vehicle_density": 2.377595411159194
+        },
+        {
+            "simulation_time": 27.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6736558217345583,
+            "vehicle_density": 2.390936888192226
+        },
+        {
+            "simulation_time": 28.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.683181017817036,
+            "vehicle_density": 2.4045443111671947
+        },
+        {
+            "simulation_time": 29.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6878635558791337,
+            "vehicle_density": 2.6523570163814956
+        },
+        {
+            "simulation_time": 30.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.697216269508116,
+            "vehicle_density": 2.9095136048710564
+        },
+        {
+            "simulation_time": 31.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.583422657057983,
+            "vehicle_density": 2.9406420773933974
+        },
+        {
+            "simulation_time": 32.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5968844506059583,
+            "vehicle_density": 2.965642551125351
+        },
+        {
+            "simulation_time": 33.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6100994090567204,
+            "vehicle_density": 2.9901846168196236
+        },
+        {
+            "simulation_time": 34.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6233669394491148,
+            "vehicle_density": 3.4786434416766747
+        },
+        {
+            "simulation_time": 35.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6318270836307656,
+            "vehicle_density": 3.496772322065926
+        },
+        {
+            "simulation_time": 36.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6363616954468836,
+            "vehicle_density": 3.506489347386179
+        },
+        {
+            "simulation_time": 37.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.643896172517185,
+            "vehicle_density": 3.522634655393968
+        },
+        {
+            "simulation_time": 38.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6476082410051356,
+            "vehicle_density": 4.001334299583901
+        },
+        {
+            "simulation_time": 39.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6608335736744566,
+            "vehicle_density": 4.033452964637966
+        },
+        {
+            "simulation_time": 40.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.675335880233785,
+            "vehicle_density": 4.547340246348845
+        },
+        {
+            "simulation_time": 41.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6966543204545828,
+            "vehicle_density": 5.0899629613637485
+        },
+        {
+            "simulation_time": 42.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7198607595456297,
+            "vehicle_density": 5.650971067078498
+        },
+        {
+            "simulation_time": 43.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7262012721125706,
+            "vehicle_density": 5.671804179798446
+        },
+        {
+            "simulation_time": 44.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7176927853545998,
+            "vehicle_density": 5.64384772330797
+        },
+        {
+            "simulation_time": 45.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7113065219708172,
+            "vehicle_density": 5.867336646757088
+        },
+        {
+            "simulation_time": 46.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7076939915056941,
+            "vehicle_density": 5.854950828019523
+        },
+        {
+            "simulation_time": 47.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.707496479536096,
+            "vehicle_density": 6.342129781134071
+        },
+        {
+            "simulation_time": 48.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7217818822320274,
+            "vehicle_density": 6.3951898482903875
+        },
+        {
+            "simulation_time": 49.6,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7431779415663924,
+            "vehicle_density": 6.4746609258180285
+        },
+        {
+            "simulation_time": 50.6,
+            "task_completion_rate": 0.9971509971509972,
+            "uav_density": 1.7648871712014296,
+            "vehicle_density": 6.555295207319595
+        },
+        {
+            "simulation_time": 51.6,
+            "task_completion_rate": 0.997289972899729,
+            "uav_density": 1.712893842536333,
+            "vehicle_density": 6.6068762497829985
+        },
+        {
+            "simulation_time": 52.6,
+            "task_completion_rate": 0.9973544973544973,
+            "uav_density": 1.744450983162722,
+            "vehicle_density": 7.227011215959848
+        },
+        {
+            "simulation_time": 53.6,
+            "task_completion_rate": 0.9974160206718347,
+            "uav_density": 1.6719509488025688,
+            "vehicle_density": 7.165504066296724
+        },
+        {
+            "simulation_time": 54.6,
+            "task_completion_rate": 0.9974619289340102,
+            "uav_density": 1.692668095764307,
+            "vehicle_density": 7.737911294922546
+        },
+        {
+            "simulation_time": 55.6,
+            "task_completion_rate": 0.9975308641975309,
+            "uav_density": 1.7173369644561598,
+            "vehicle_density": 8.586684822280798
+        },
+        {
+            "simulation_time": 56.6,
+            "task_completion_rate": 0.9976133651551312,
+            "uav_density": 1.7454787932117124,
+            "vehicle_density": 8.727393966058562
+        },
+        {
+            "simulation_time": 57.6,
+            "task_completion_rate": 0.9976689976689976,
+            "uav_density": 1.771826861584882,
+            "vehicle_density": 8.85913430792441
+        },
+        {
+            "simulation_time": 58.6,
+            "task_completion_rate": 0.9977220956719818,
+            "uav_density": 1.7951562901467413,
+            "vehicle_density": 9.232232349326098
+        },
+        {
+            "simulation_time": 59.6,
+            "task_completion_rate": 0.9977876106194691,
+            "uav_density": 1.767420196990385,
+            "vehicle_density": 10.099543982802201
+        },
+        {
+            "simulation_time": 60.0,
+            "task_completion_rate": 0.9978213507625272,
+            "uav_density": 1.773072838810236,
+            "vehicle_density": 10.13184479320135
+        },
+        {
+            "simulation_time": 0.5,
+            "task_completion_rate": 0.0,
+            "uav_density": 2.389107261493239,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 1.5,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.388702542988313,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 2.5,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.3850020466786095,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 3.5,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.385174744690776,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 4.5,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.392386989134769,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 5.5,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.408318005308118,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 6.5,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.385167627467869,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 7.5,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8868567865316428,
+            "vehicle_density": 0.2695509695045204
+        },
+        {
+            "simulation_time": 8.5,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8863410399472211,
+            "vehicle_density": 0.5389545828420631
+        },
+        {
+            "simulation_time": 9.5,
+            "task_completion_rate": 0.9473684210526315,
+            "uav_density": 1.8940001236824955,
+            "vehicle_density": 0.541142892480713
+        },
+        {
+            "simulation_time": 10.5,
+            "task_completion_rate": 0.96,
+            "uav_density": 1.890880597953359,
+            "vehicle_density": 0.5402515994152454
+        },
+        {
+            "simulation_time": 11.5,
+            "task_completion_rate": 0.8787878787878788,
+            "uav_density": 1.8765090010023842,
+            "vehicle_density": 0.536145428857824
+        },
+        {
+            "simulation_time": 12.5,
+            "task_completion_rate": 0.9069767441860465,
+            "uav_density": 1.8591538735045907,
+            "vehicle_density": 0.7967802315019674
+        },
+        {
+            "simulation_time": 13.5,
+            "task_completion_rate": 0.9148936170212766,
+            "uav_density": 1.8328001578049147,
+            "vehicle_density": 0.7854857819163921
+        },
+        {
+            "simulation_time": 14.5,
+            "task_completion_rate": 0.9183673469387755,
+            "uav_density": 1.8312386448337468,
+            "vehicle_density": 0.7848165620716058
+        },
+        {
+            "simulation_time": 15.5,
+            "task_completion_rate": 0.9259259259259259,
+            "uav_density": 1.8225545489940054,
+            "vehicle_density": 1.301824677852861
+        },
+        {
+            "simulation_time": 16.5,
+            "task_completion_rate": 0.9411764705882353,
+            "uav_density": 1.8037070234545678,
+            "vehicle_density": 1.2883621596104056
+        },
+        {
+            "simulation_time": 17.5,
+            "task_completion_rate": 0.9518072289156626,
+            "uav_density": 1.7989665357961933,
+            "vehicle_density": 1.2849760969972808
+        },
+        {
+            "simulation_time": 18.5,
+            "task_completion_rate": 0.9545454545454546,
+            "uav_density": 1.791882709315041,
+            "vehicle_density": 1.279916220939315
+        },
+        {
+            "simulation_time": 19.5,
+            "task_completion_rate": 0.956989247311828,
+            "uav_density": 1.7812749653740676,
+            "vehicle_density": 1.5268071131777723
+        },
+        {
+            "simulation_time": 20.5,
+            "task_completion_rate": 0.9489795918367347,
+            "uav_density": 1.7849151025082974,
+            "vehicle_density": 1.7849151025082974
+        },
+        {
+            "simulation_time": 21.5,
+            "task_completion_rate": 0.9519230769230769,
+            "uav_density": 1.7864148627921161,
+            "vehicle_density": 1.7864148627921161
+        },
+        {
+            "simulation_time": 22.5,
+            "task_completion_rate": 0.9553571428571429,
+            "uav_density": 1.6963612037112676,
+            "vehicle_density": 1.938698518527163
+        },
+        {
+            "simulation_time": 23.5,
+            "task_completion_rate": 0.959349593495935,
+            "uav_density": 1.710007433603172,
+            "vehicle_density": 2.1985809860612213
+        },
+        {
+            "simulation_time": 24.5,
+            "task_completion_rate": 0.9621212121212122,
+            "uav_density": 1.724247054970213,
+            "vehicle_density": 2.2168890706759883
+        },
+        {
+            "simulation_time": 25.5,
+            "task_completion_rate": 0.9647887323943662,
+            "uav_density": 1.744538727930392,
+            "vehicle_density": 2.492198182757703
+        },
+        {
+            "simulation_time": 26.5,
+            "task_completion_rate": 0.9657534246575342,
+            "uav_density": 1.777581344196477,
+            "vehicle_density": 2.7933421123087494
+        },
+        {
+            "simulation_time": 27.5,
+            "task_completion_rate": 0.967741935483871,
+            "uav_density": 1.796799858456911,
+            "vehicle_density": 2.823542634718003
+        },
+        {
+            "simulation_time": 28.5,
+            "task_completion_rate": 0.9695121951219512,
+            "uav_density": 1.8226592183739592,
+            "vehicle_density": 3.1245586600696442
+        },
+        {
+            "simulation_time": 29.5,
+            "task_completion_rate": 0.9702380952380952,
+            "uav_density": 1.8483227940755318,
+            "vehicle_density": 3.16855336127234
+        },
+        {
+            "simulation_time": 30.5,
+            "task_completion_rate": 0.9714285714285714,
+            "uav_density": 1.8587305217982617,
+            "vehicle_density": 3.7174610435965234
+        },
+        {
+            "simulation_time": 31.5,
+            "task_completion_rate": 0.9723756906077348,
+            "uav_density": 1.8810059167318944,
+            "vehicle_density": 3.762011833463789
+        },
+        {
+            "simulation_time": 32.5,
+            "task_completion_rate": 0.972972972972973,
+            "uav_density": 1.8883587390654872,
+            "vehicle_density": 4.046483012283187
+        },
+        {
+            "simulation_time": 33.5,
+            "task_completion_rate": 0.9746192893401016,
+            "uav_density": 1.8896734357270262,
+            "vehicle_density": 4.31925356737606
+        },
+        {
+            "simulation_time": 34.5,
+            "task_completion_rate": 0.9757281553398058,
+            "uav_density": 1.8847771859785225,
+            "vehicle_density": 4.30806213937948
+        },
+        {
+            "simulation_time": 35.5,
+            "task_completion_rate": 0.9764150943396226,
+            "uav_density": 1.8807674639447953,
+            "vehicle_density": 4.567578126723075
+        },
+        {
+            "simulation_time": 36.5,
+            "task_completion_rate": 0.9771689497716894,
+            "uav_density": 1.8749961023365884,
+            "vehicle_density": 4.553561962817429
+        },
+        {
+            "simulation_time": 37.5,
+            "task_completion_rate": 0.9782608695652174,
+            "uav_density": 1.8694901111731779,
+            "vehicle_density": 4.540190269992004
+        },
+        {
+            "simulation_time": 38.5,
+            "task_completion_rate": 0.9794238683127572,
+            "uav_density": 1.8596789561224398,
+            "vehicle_density": 4.516363179154497
+        },
+        {
+            "simulation_time": 39.5,
+            "task_completion_rate": 0.9803149606299213,
+            "uav_density": 1.8483160035384298,
+            "vehicle_density": 4.752812580527391
+        },
+        {
+            "simulation_time": 40.5,
+            "task_completion_rate": 0.9809885931558935,
+            "uav_density": 1.740470042221019,
+            "vehicle_density": 5.4700487041232035
+        },
+        {
+            "simulation_time": 41.5,
+            "task_completion_rate": 0.9819494584837545,
+            "uav_density": 1.7407960731980028,
+            "vehicle_density": 5.71975852622201
+        },
+        {
+            "simulation_time": 42.5,
+            "task_completion_rate": 0.9822695035460993,
+            "uav_density": 1.7451325871918515,
+            "vehicle_density": 5.734007072201798
+        },
+        {
+            "simulation_time": 43.5,
+            "task_completion_rate": 0.9828767123287672,
+            "uav_density": 1.7537203967519326,
+            "vehicle_density": 6.263287131256901
+        },
+        {
+            "simulation_time": 44.5,
+            "task_completion_rate": 0.9838187702265372,
+            "uav_density": 1.7660450599736095,
+            "vehicle_density": 6.307303785620034
+        },
+        {
+            "simulation_time": 45.5,
+            "task_completion_rate": 0.9842271293375394,
+            "uav_density": 1.772999115907432,
+            "vehicle_density": 6.3321396996694
+        },
+        {
+            "simulation_time": 46.5,
+            "task_completion_rate": 0.9846153846153847,
+            "uav_density": 1.7893399837941073,
+            "vehicle_density": 6.390499942121812
+        },
+        {
+            "simulation_time": 47.5,
+            "task_completion_rate": 0.9855072463768116,
+            "uav_density": 1.8171566545865336,
+            "vehicle_density": 6.489845194951905
+        },
+        {
+            "simulation_time": 48.5,
+            "task_completion_rate": 0.9859943977591037,
+            "uav_density": 1.8245701135066388,
+            "vehicle_density": 6.776974707310372
+        },
+        {
+            "simulation_time": 49.5,
+            "task_completion_rate": 0.986449864498645,
+            "uav_density": 1.8284551334413668,
+            "vehicle_density": 6.791404781353648
+        },
+        {
+            "simulation_time": 50.5,
+            "task_completion_rate": 0.9842105263157894,
+            "uav_density": 1.8342547071641182,
+            "vehicle_density": 7.599055215394204
+        },
+        {
+            "simulation_time": 51.5,
+            "task_completion_rate": 0.9768637532133676,
+            "uav_density": 1.8510146779021222,
+            "vehicle_density": 8.197350716423683
+        },
+        {
+            "simulation_time": 52.5,
+            "task_completion_rate": 0.9776119402985075,
+            "uav_density": 1.8583325978228966,
+            "vehicle_density": 8.760710818307942
+        },
+        {
+            "simulation_time": 53.5,
+            "task_completion_rate": 0.975609756097561,
+            "uav_density": 1.8443052683501167,
+            "vehicle_density": 8.694581979364836
+        },
+        {
+            "simulation_time": 54.5,
+            "task_completion_rate": 0.9710843373493976,
+            "uav_density": 1.6801082892773613,
+            "vehicle_density": 8.400541446386807
+        },
+        {
+            "simulation_time": 55.5,
+            "task_completion_rate": 0.971764705882353,
+            "uav_density": 1.6752604224722418,
+            "vehicle_density": 9.094270864849312
+        },
+        {
+            "simulation_time": 56.5,
+            "task_completion_rate": 0.9724137931034482,
+            "uav_density": 1.6840162924215352,
+            "vehicle_density": 9.382376486348553
+        },
+        {
+            "simulation_time": 57.5,
+            "task_completion_rate": 0.9730941704035875,
+            "uav_density": 1.6852548984239126,
+            "vehicle_density": 9.389277291218942
+        },
+        {
+            "simulation_time": 58.5,
+            "task_completion_rate": 0.9674620390455532,
+            "uav_density": 1.6949740587749091,
+            "vehicle_density": 9.685566050142338
+        },
+        {
+            "simulation_time": 59.5,
+            "task_completion_rate": 0.9682203389830508,
+            "uav_density": 1.7032597407235441,
+            "vehicle_density": 10.706204084547991
+        },
+        {
+            "simulation_time": 60.0,
+            "task_completion_rate": 0.9666666666666667,
+            "uav_density": 1.6989259081618324,
+            "vehicle_density": 10.678962851302947
+        },
+        {
+            "simulation_time": 0.4,
+            "task_completion_rate": 0.0,
+            "uav_density": 1.8396259366587282,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 1.4,
+            "task_completion_rate": 0.0,
+            "uav_density": 1.84134210289509,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 2.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8484541802255996,
+            "vehicle_density": 0.7921946486681141
+        },
+        {
+            "simulation_time": 3.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8350384555936563,
+            "vehicle_density": 0.7864450523972812
+        },
+        {
+            "simulation_time": 4.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8505661903938297,
+            "vehicle_density": 1.3218329931384498
+        },
+        {
+            "simulation_time": 5.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8451161558010996,
+            "vehicle_density": 1.5815281335437996
+        },
+        {
+            "simulation_time": 6.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8323858566152509,
+            "vehicle_density": 2.094155264703144
+        },
+        {
+            "simulation_time": 7.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8288954800757142,
+            "vehicle_density": 2.0901662629436735
+        },
+        {
+            "simulation_time": 8.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.821591575469251,
+            "vehicle_density": 2.0818189433934298
+        },
+        {
+            "simulation_time": 9.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8300335574703857,
+            "vehicle_density": 2.091466922823298
+        },
+        {
+            "simulation_time": 10.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8265111315261036,
+            "vehicle_density": 2.08744129317269
+        },
+        {
+            "simulation_time": 11.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8279358542152921,
+            "vehicle_density": 2.0890695476746197
+        },
+        {
+            "simulation_time": 12.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8316534242522766,
+            "vehicle_density": 2.3549829740386414
+        },
+        {
+            "simulation_time": 13.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.835129268689514,
+            "vehicle_density": 2.883774565083522
+        },
+        {
+            "simulation_time": 14.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8369967903961697,
+            "vehicle_density": 2.886709242051124
+        },
+        {
+            "simulation_time": 15.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8235404256943888,
+            "vehicle_density": 2.8655635260911825
+        },
+        {
+            "simulation_time": 16.4,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.8305743003572066,
+            "vehicle_density": 3.1381273720409255
+        },
+        {
+            "simulation_time": 17.4,
+            "task_completion_rate": 0.9848484848484849,
+            "uav_density": 1.7642277231542247,
+            "vehicle_density": 3.2764229144292742
+        },
+        {
+            "simulation_time": 18.4,
+            "task_completion_rate": 0.9861111111111112,
+            "uav_density": 1.7687538250605175,
+            "vehicle_density": 3.2848285322552466
+        },
+        {
+            "simulation_time": 19.4,
+            "task_completion_rate": 0.9876543209876543,
+            "uav_density": 1.7689535697415222,
+            "vehicle_density": 3.285199486662827
+        },
+        {
+            "simulation_time": 20.4,
+            "task_completion_rate": 0.9883720930232558,
+            "uav_density": 1.7576218173101217,
+            "vehicle_density": 3.7663324656645463
+        },
+        {
+            "simulation_time": 21.4,
+            "task_completion_rate": 0.9891304347826086,
+            "uav_density": 1.7404931897077902,
+            "vehicle_density": 3.7296282636595506
+        },
+        {
+            "simulation_time": 22.4,
+            "task_completion_rate": 0.9897959183673469,
+            "uav_density": 1.7412118357481527,
+            "vehicle_density": 3.731168219460327
+        },
+        {
+            "simulation_time": 23.4,
+            "task_completion_rate": 0.9901960784313726,
+            "uav_density": 1.7236474181904102,
+            "vehicle_density": 3.9397655272923666
+        },
+        {
+            "simulation_time": 24.4,
+            "task_completion_rate": 0.9912280701754386,
+            "uav_density": 1.7075542936791546,
+            "vehicle_density": 3.9029812426952106
+        },
+        {
+            "simulation_time": 25.4,
+            "task_completion_rate": 0.9918032786885246,
+            "uav_density": 1.7037140866677827,
+            "vehicle_density": 3.8942036266692175
+        },
+        {
+            "simulation_time": 26.4,
+            "task_completion_rate": 0.9923076923076923,
+            "uav_density": 1.6997159379138382,
+            "vehicle_density": 4.127881563505036
+        },
+        {
+            "simulation_time": 27.4,
+            "task_completion_rate": 0.9929577464788732,
+            "uav_density": 1.6949555883159193,
+            "vehicle_density": 4.116320714481518
+        },
+        {
+            "simulation_time": 28.4,
+            "task_completion_rate": 0.9935064935064936,
+            "uav_density": 1.706450339589156,
+            "vehicle_density": 4.144236539002236
+        },
+        {
+            "simulation_time": 29.4,
+            "task_completion_rate": 0.9939393939393939,
+            "uav_density": 1.7018983524012194,
+            "vehicle_density": 4.376310049031708
+        },
+        {
+            "simulation_time": 30.4,
+            "task_completion_rate": 0.9943502824858758,
+            "uav_density": 1.7072801264447506,
+            "vehicle_density": 4.877943218413574
+        },
+        {
+            "simulation_time": 31.4,
+            "task_completion_rate": 0.9946236559139785,
+            "uav_density": 1.7047096404707065,
+            "vehicle_density": 4.870598972773448
+        },
+        {
+            "simulation_time": 32.4,
+            "task_completion_rate": 0.9948186528497409,
+            "uav_density": 1.668885857105592,
+            "vehicle_density": 5.006657571316777
+        },
+        {
+            "simulation_time": 33.4,
+            "task_completion_rate": 0.9949748743718593,
+            "uav_density": 1.667706130787046,
+            "vehicle_density": 5.003118392361138
+        },
+        {
+            "simulation_time": 34.4,
+            "task_completion_rate": 0.9953488372093023,
+            "uav_density": 1.6723677091757239,
+            "vehicle_density": 5.017103127527172
+        },
+        {
+            "simulation_time": 35.4,
+            "task_completion_rate": 0.9954954954954955,
+            "uav_density": 1.6882315702940816,
+            "vehicle_density": 5.547046588109125
+        },
+        {
+            "simulation_time": 36.4,
+            "task_completion_rate": 0.9956896551724138,
+            "uav_density": 1.6920619260278003,
+            "vehicle_density": 5.801355174952458
+        },
+        {
+            "simulation_time": 37.4,
+            "task_completion_rate": 0.9958677685950413,
+            "uav_density": 1.6749521149812132,
+            "vehicle_density": 6.221250712787364
+        },
+        {
+            "simulation_time": 38.4,
+            "task_completion_rate": 0.9960474308300395,
+            "uav_density": 1.6719402454586114,
+            "vehicle_density": 6.687760981834446
+        },
+        {
+            "simulation_time": 39.4,
+            "task_completion_rate": 0.9961977186311787,
+            "uav_density": 1.669890379487624,
+            "vehicle_density": 6.918117286448728
+        },
+        {
+            "simulation_time": 40.4,
+            "task_completion_rate": 0.9892086330935251,
+            "uav_density": 1.6685857947307805,
+            "vehicle_density": 6.912712578170376
+        },
+        {
+            "simulation_time": 41.4,
+            "task_completion_rate": 0.9896551724137931,
+            "uav_density": 1.6697274488140035,
+            "vehicle_density": 7.155974780631443
+        },
+        {
+            "simulation_time": 42.4,
+            "task_completion_rate": 0.9899328859060402,
+            "uav_density": 1.6650791267939422,
+            "vehicle_density": 7.1360534005454666
+        },
+        {
+            "simulation_time": 43.4,
+            "task_completion_rate": 0.9902912621359223,
+            "uav_density": 1.692921364513432,
+            "vehicle_density": 7.255377276486136
+        },
+        {
+            "simulation_time": 44.4,
+            "task_completion_rate": 0.9906832298136646,
+            "uav_density": 1.7012944826052239,
+            "vehicle_density": 7.291262068308103
+        },
+        {
+            "simulation_time": 45.4,
+            "task_completion_rate": 0.9909365558912386,
+            "uav_density": 1.7156925035102808,
+            "vehicle_density": 7.352967872186918
+        },
+        {
+            "simulation_time": 46.4,
+            "task_completion_rate": 0.9912790697674418,
+            "uav_density": 1.727210590261338,
+            "vehicle_density": 7.649075471157354
+        },
+        {
+            "simulation_time": 47.4,
+            "task_completion_rate": 0.9915492957746479,
+            "uav_density": 1.7530089574715888,
+            "vehicle_density": 8.013755234155834
+        },
+        {
+            "simulation_time": 48.4,
+            "task_completion_rate": 0.9918918918918919,
+            "uav_density": 1.7761967693512586,
+            "vehicle_density": 8.627241451134685
+        },
+        {
+            "simulation_time": 49.4,
+            "task_completion_rate": 0.9921465968586387,
+            "uav_density": 1.7949486416691214,
+            "vehicle_density": 8.974743208345608
+        },
+        {
+            "simulation_time": 50.4,
+            "task_completion_rate": 0.9923857868020305,
+            "uav_density": 1.7905648182582883,
+            "vehicle_density": 9.208619065328339
+        },
+        {
+            "simulation_time": 51.4,
+            "task_completion_rate": 0.9926289926289926,
+            "uav_density": 1.779496815564022,
+            "vehicle_density": 9.40591173940983
+        },
+        {
+            "simulation_time": 52.4,
+            "task_completion_rate": 0.9927710843373494,
+            "uav_density": 1.7725358628322907,
+            "vehicle_density": 9.622337541089578
+        },
+        {
+            "simulation_time": 53.4,
+            "task_completion_rate": 0.9929742388758782,
+            "uav_density": 1.6670751282061904,
+            "vehicle_density": 9.52614358974966
+        },
+        {
+            "simulation_time": 54.4,
+            "task_completion_rate": 0.9931506849315068,
+            "uav_density": 1.6579406665738885,
+            "vehicle_density": 9.710795332789917
+        },
+        {
+            "simulation_time": 55.4,
+            "task_completion_rate": 0.9933184855233853,
+            "uav_density": 1.6549272354355276,
+            "vehicle_density": 9.929563412613165
+        },
+        {
+            "simulation_time": 56.4,
+            "task_completion_rate": 0.9934782608695653,
+            "uav_density": 1.6462069603511853,
+            "vehicle_density": 9.6420693391998
+        },
+        {
+            "simulation_time": 57.4,
+            "task_completion_rate": 0.9935760171306209,
+            "uav_density": 1.6487294678931754,
+            "vehicle_density": 9.656844026231456
+        },
+        {
+            "simulation_time": 58.4,
+            "task_completion_rate": 0.9936974789915967,
+            "uav_density": 1.6596157158534226,
+            "vehicle_density": 9.720606335712905
+        },
+        {
+            "simulation_time": 59.4,
+            "task_completion_rate": 0.9938775510204082,
+            "uav_density": 1.6840266925840575,
+            "vehicle_density": 10.344735397302067
+        },
+        {
+            "simulation_time": 60.0,
+            "task_completion_rate": 0.9939516129032258,
+            "uav_density": 1.6958559558872452,
+            "vehicle_density": 10.417400871878792
+        },
+        {
+            "simulation_time": 0.3,
+            "task_completion_rate": 0.0,
+            "uav_density": 1.6481565322587453,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 1.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.640660954459692,
+            "vehicle_density": 0.23438013635138455
+        },
+        {
+            "simulation_time": 2.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6319480515104483,
+            "vehicle_density": 0.23313543593006403
+        },
+        {
+            "simulation_time": 3.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6255014988870318,
+            "vehicle_density": 0.23221449984100453
+        },
+        {
+            "simulation_time": 4.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6308948534447913,
+            "vehicle_density": 0.23298497906354163
+        },
+        {
+            "simulation_time": 5.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.549538573559006,
+            "vehicle_density": 0.4427253067311446
+        },
+        {
+            "simulation_time": 6.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4800156383986958,
+            "vehicle_density": 0.8457232219421119
+        },
+        {
+            "simulation_time": 7.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4869167172963362,
+            "vehicle_density": 1.062083369497383
+        },
+        {
+            "simulation_time": 8.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5017035111447272,
+            "vehicle_density": 1.0726453651033767
+        },
+        {
+            "simulation_time": 9.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.506917280073597,
+            "vehicle_density": 1.0763694857668549
+        },
+        {
+            "simulation_time": 10.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.512130347576663,
+            "vehicle_density": 1.2961117264942825
+        },
+        {
+            "simulation_time": 11.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5185982692949973,
+            "vehicle_density": 1.301655659395712
+        },
+        {
+            "simulation_time": 12.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5252557499253947,
+            "vehicle_density": 1.5252557499253947
+        },
+        {
+            "simulation_time": 13.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5401507694674492,
+            "vehicle_density": 1.5401507694674492
+        },
+        {
+            "simulation_time": 14.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.558872052162211,
+            "vehicle_density": 1.558872052162211
+        },
+        {
+            "simulation_time": 15.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5782414833200806,
+            "vehicle_density": 1.5782414833200806
+        },
+        {
+            "simulation_time": 16.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5971683595831763,
+            "vehicle_density": 1.5971683595831763
+        },
+        {
+            "simulation_time": 17.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6150267627950228,
+            "vehicle_density": 2.0764629807364576
+        },
+        {
+            "simulation_time": 18.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6332659314460563,
+            "vehicle_density": 2.0999133404306436
+        },
+        {
+            "simulation_time": 19.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6394163901443666,
+            "vehicle_density": 2.107821073042757
+        },
+        {
+            "simulation_time": 20.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6526158954005572,
+            "vehicle_density": 2.124791865515002
+        },
+        {
+            "simulation_time": 21.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6497280691426213,
+            "vehicle_density": 2.1210789460405133
+        },
+        {
+            "simulation_time": 22.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.66169220964857,
+            "vehicle_density": 2.3738460137836714
+        },
+        {
+            "simulation_time": 23.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6706632642013508,
+            "vehicle_density": 2.38666180600193
+        },
+        {
+            "simulation_time": 24.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6976947061913954,
+            "vehicle_density": 2.667805966872193
+        },
+        {
+            "simulation_time": 25.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7009987371916802,
+            "vehicle_density": 2.672998015586926
+        },
+        {
+            "simulation_time": 26.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7122518766386015,
+            "vehicle_density": 2.6906815204320877
+        },
+        {
+            "simulation_time": 27.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7181604342855892,
+            "vehicle_density": 2.699966396734497
+        },
+        {
+            "simulation_time": 28.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6957800873918834,
+            "vehicle_density": 2.6647972801872455
+        },
+        {
+            "simulation_time": 29.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7036249393291714,
+            "vehicle_density": 2.6771249046601264
+        },
+        {
+            "simulation_time": 30.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7012565710185226,
+            "vehicle_density": 2.916439836031753
+        },
+        {
+            "simulation_time": 31.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7015243369115292,
+            "vehicle_density": 3.1599737685499827
+        },
+        {
+            "simulation_time": 32.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7027087724890495,
+            "vehicle_density": 3.405417544978099
+        },
+        {
+            "simulation_time": 33.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.702872885200591,
+            "vehicle_density": 3.8922808804584936
+        },
+        {
+            "simulation_time": 34.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7007801142371732,
+            "vehicle_density": 4.373434579467017
+        },
+        {
+            "simulation_time": 35.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.707716890040473,
+            "vehicle_density": 4.635231558681284
+        },
+        {
+            "simulation_time": 36.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6856873610219951,
+            "vehicle_density": 5.057062083065985
+        },
+        {
+            "simulation_time": 37.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6944192167332923,
+            "vehicle_density": 5.325317538304633
+        },
+        {
+            "simulation_time": 38.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7065338872889173,
+            "vehicle_density": 5.3633922171937405
+        },
+        {
+            "simulation_time": 39.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.715445426815436,
+            "vehicle_density": 5.391399912848513
+        },
+        {
+            "simulation_time": 40.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.717535275879489,
+            "vehicle_density": 5.397968009906966
+        },
+        {
+            "simulation_time": 41.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.714897926944958,
+            "vehicle_density": 5.634664617104862
+        },
+        {
+            "simulation_time": 42.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6691067030245657,
+            "vehicle_density": 5.9610953679448775
+        },
+        {
+            "simulation_time": 43.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6581567858151727,
+            "vehicle_density": 5.921988520768474
+        },
+        {
+            "simulation_time": 44.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6578687625080655,
+            "vehicle_density": 6.157798260744243
+        },
+        {
+            "simulation_time": 45.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6649954395463407,
+            "vehicle_density": 6.8978382495491255
+        },
+        {
+            "simulation_time": 46.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6672917641663143,
+            "vehicle_density": 6.907351594403302
+        },
+        {
+            "simulation_time": 47.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6655110520067815,
+            "vehicle_density": 7.137904508600492
+        },
+        {
+            "simulation_time": 48.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6682122574481888,
+            "vehicle_density": 7.14948110334938
+        },
+        {
+            "simulation_time": 49.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6734648231798501,
+            "vehicle_density": 7.171992099342215
+        },
+        {
+            "simulation_time": 50.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.677601069107554,
+            "vehicle_density": 7.66903345877739
+        },
+        {
+            "simulation_time": 51.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7037656175584703,
+            "vehicle_density": 8.275432999569713
+        },
+        {
+            "simulation_time": 52.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.710553653957408,
+            "vehicle_density": 8.30840346207884
+        },
+        {
+            "simulation_time": 53.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.686643118590122,
+            "vehicle_density": 8.43321559295061
+        },
+        {
+            "simulation_time": 54.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6892943658554338,
+            "vehicle_density": 8.687799595827945
+        },
+        {
+            "simulation_time": 55.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.688383379318463,
+            "vehicle_density": 8.924312147826162
+        },
+        {
+            "simulation_time": 56.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6956500343344778,
+            "vehicle_density": 9.204957329244307
+        },
+        {
+            "simulation_time": 57.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6948018794821489,
+            "vehicle_density": 9.442467614257687
+        },
+        {
+            "simulation_time": 58.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6981759108929946,
+            "vehicle_density": 9.461265789260969
+        },
+        {
+            "simulation_time": 59.3,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.7145599087974448,
+            "vehicle_density": 9.797485193128255
+        },
+        {
+            "simulation_time": 60.0,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.716963330787695,
+            "vehicle_density": 10.792340936379798
+        },
+        {
+            "simulation_time": 0.2,
+            "task_completion_rate": 0.0,
+            "uav_density": 1.5677663828234443,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 1.2,
+            "task_completion_rate": 0.0,
+            "uav_density": 1.5648374324228467,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 2.2,
+            "task_completion_rate": 0.0,
+            "uav_density": 1.563117781683138,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 3.2,
+            "task_completion_rate": 0.0,
+            "uav_density": 1.5551936965088493,
+            "vehicle_density": 0.4443410561453855
+        },
+        {
+            "simulation_time": 4.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.557645523389319,
+            "vehicle_density": 0.445041578111234
+        },
+        {
+            "simulation_time": 5.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.549479525510489,
+            "vehicle_density": 0.4427084358601397
+        },
+        {
+            "simulation_time": 6.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5444358066610187,
+            "vehicle_density": 0.4412673733317196
+        },
+        {
+            "simulation_time": 7.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5535738483482286,
+            "vehicle_density": 0.8877564847704164
+        },
+        {
+            "simulation_time": 8.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5581439851502086,
+            "vehicle_density": 0.8903679915144049
+        },
+        {
+            "simulation_time": 9.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5622601779946534,
+            "vehicle_density": 1.1159001271390383
+        },
+        {
+            "simulation_time": 10.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5552371251452894,
+            "vehicle_density": 1.110883660818064
+        },
+        {
+            "simulation_time": 11.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5558324353806465,
+            "vehicle_density": 1.333570658897697
+        },
+        {
+            "simulation_time": 12.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.560863687055693,
+            "vehicle_density": 1.3378831603334511
+        },
+        {
+            "simulation_time": 13.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5602884059188866,
+            "vehicle_density": 1.5602884059188866
+        },
+        {
+            "simulation_time": 14.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5561441181423028,
+            "vehicle_density": 1.7784504207340603
+        },
+        {
+            "simulation_time": 15.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5531787303004967,
+            "vehicle_density": 1.7750614060577106
+        },
+        {
+            "simulation_time": 16.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5326273913120838,
+            "vehicle_density": 1.9705209316869647
+        },
+        {
+            "simulation_time": 17.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5273698148885624,
+            "vehicle_density": 1.9637611905710088
+        },
+        {
+            "simulation_time": 18.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5232425245571743,
+            "vehicle_density": 2.176060749367392
+        },
+        {
+            "simulation_time": 19.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5251561547536765,
+            "vehicle_density": 2.396673957470063
+        },
+        {
+            "simulation_time": 20.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5232031823713224,
+            "vehicle_density": 2.82880591011817
+        },
+        {
+            "simulation_time": 21.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5211404579251375,
+            "vehicle_density": 2.824975136146684
+        },
+        {
+            "simulation_time": 22.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5180209657003387,
+            "vehicle_density": 2.8191817934434864
+        },
+        {
+            "simulation_time": 23.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5236602815002322,
+            "vehicle_density": 2.829654808500431
+        },
+        {
+            "simulation_time": 24.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4972225772541807,
+            "vehicle_density": 3.208334094116102
+        },
+        {
+            "simulation_time": 25.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5004913178344015,
+            "vehicle_density": 3.2153385382165744
+        },
+        {
+            "simulation_time": 26.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5098960796690124,
+            "vehicle_density": 3.451191039243457
+        },
+        {
+            "simulation_time": 27.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5040026988937507,
+            "vehicle_density": 3.4377204546142877
+        },
+        {
+            "simulation_time": 28.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5124699647707571,
+            "vehicle_density": 3.457074205190302
+        },
+        {
+            "simulation_time": 29.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5166528223001168,
+            "vehicle_density": 3.466635022400267
+        },
+        {
+            "simulation_time": 30.2,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.521616495078108,
+            "vehicle_density": 3.4779805601785325
+        },
+        {
+            "simulation_time": 31.2,
+            "task_completion_rate": 0.9947916666666666,
+            "uav_density": 1.5275855109711516,
+            "vehicle_density": 3.4916240250769177
+        },
+        {
+            "simulation_time": 32.2,
+            "task_completion_rate": 0.9951690821256038,
+            "uav_density": 1.5228896675759254,
+            "vehicle_density": 3.4808906687449723
+        },
+        {
+            "simulation_time": 33.2,
+            "task_completion_rate": 0.9952380952380953,
+            "uav_density": 1.5275669010688941,
+            "vehicle_density": 3.7098053311673143
+        },
+        {
+            "simulation_time": 34.2,
+            "task_completion_rate": 0.995475113122172,
+            "uav_density": 1.5317907966562858,
+            "vehicle_density": 4.15771787663849
+        },
+        {
+            "simulation_time": 35.2,
+            "task_completion_rate": 0.9956140350877193,
+            "uav_density": 1.5240361621612966,
+            "vehicle_density": 4.136669583009233
+        },
+        {
+            "simulation_time": 36.2,
+            "task_completion_rate": 0.995850622406639,
+            "uav_density": 1.5224165761760975,
+            "vehicle_density": 4.349761646217422
+        },
+        {
+            "simulation_time": 37.2,
+            "task_completion_rate": 0.9959677419354839,
+            "uav_density": 1.5272616328478856,
+            "vehicle_density": 4.363604665279673
+        },
+        {
+            "simulation_time": 38.2,
+            "task_completion_rate": 0.9961685823754789,
+            "uav_density": 1.5221575693147231,
+            "vehicle_density": 4.349021626613495
+        },
+        {
+            "simulation_time": 39.2,
+            "task_completion_rate": 0.9962825278810409,
+            "uav_density": 1.5133674448007728,
+            "vehicle_density": 4.540102334402318
+        },
+        {
+            "simulation_time": 40.2,
+            "task_completion_rate": 0.9964664310954063,
+            "uav_density": 1.5082655966471772,
+            "vehicle_density": 4.955729817555011
+        },
+        {
+            "simulation_time": 41.2,
+            "task_completion_rate": 0.9966329966329966,
+            "uav_density": 1.1485885330131382,
+            "vehicle_density": 3.9380178274736166
+        },
+        {
+            "simulation_time": 42.2,
+            "task_completion_rate": 0.9871794871794872,
+            "uav_density": 1.1534079370831434,
+            "vehicle_density": 4.119314061011226
+        },
+        {
+            "simulation_time": 43.2,
+            "task_completion_rate": 0.9877300613496932,
+            "uav_density": 1.1602681693446084,
+            "vehicle_density": 4.475320081757776
+        },
+        {
+            "simulation_time": 44.2,
+            "task_completion_rate": 0.9880952380952381,
+            "uav_density": 1.1707235321536773,
+            "vehicle_density": 4.515647909735613
+        },
+        {
+            "simulation_time": 45.2,
+            "task_completion_rate": 0.9885714285714285,
+            "uav_density": 1.1788552245766777,
+            "vehicle_density": 4.715420898306711
+        },
+        {
+            "simulation_time": 46.2,
+            "task_completion_rate": 0.989010989010989,
+            "uav_density": 1.1844841185106674,
+            "vehicle_density": 4.7379364740426695
+        },
+        {
+            "simulation_time": 47.2,
+            "task_completion_rate": 0.9894736842105263,
+            "uav_density": 1.1891582513817514,
+            "vehicle_density": 4.756633005527005
+        },
+        {
+            "simulation_time": 48.2,
+            "task_completion_rate": 0.9896907216494846,
+            "uav_density": 1.1913678595551438,
+            "vehicle_density": 5.105862255236331
+        },
+        {
+            "simulation_time": 49.2,
+            "task_completion_rate": 0.9900497512437811,
+            "uav_density": 1.2010903098434471,
+            "vehicle_density": 5.319114229306694
+        },
+        {
+            "simulation_time": 50.2,
+            "task_completion_rate": 0.9903147699757869,
+            "uav_density": 1.2098014509739163,
+            "vehicle_density": 5.357692140027344
+        },
+        {
+            "simulation_time": 51.2,
+            "task_completion_rate": 0.9906103286384976,
+            "uav_density": 1.2181347175178077,
+            "vehicle_density": 5.394596606150291
+        },
+        {
+            "simulation_time": 52.2,
+            "task_completion_rate": 0.9908045977011494,
+            "uav_density": 1.2259387328203832,
+            "vehicle_density": 5.429157245347412
+        },
+        {
+            "simulation_time": 53.2,
+            "task_completion_rate": 0.9910913140311804,
+            "uav_density": 1.2372990779083508,
+            "vehicle_density": 5.479467345022696
+        },
+        {
+            "simulation_time": 54.2,
+            "task_completion_rate": 0.9912854030501089,
+            "uav_density": 1.2427128685207673,
+            "vehicle_density": 5.680973113237793
+        },
+        {
+            "simulation_time": 55.2,
+            "task_completion_rate": 0.9914346895074947,
+            "uav_density": 1.254430836882532,
+            "vehicle_density": 5.913745373874794
+        },
+        {
+            "simulation_time": 56.2,
+            "task_completion_rate": 0.9916666666666667,
+            "uav_density": 1.263321766172932,
+            "vehicle_density": 5.95565975481525
+        },
+        {
+            "simulation_time": 57.2,
+            "task_completion_rate": 0.9918533604887984,
+            "uav_density": 1.2628546846810251,
+            "vehicle_density": 5.953457799210547
+        },
+        {
+            "simulation_time": 58.2,
+            "task_completion_rate": 0.9920318725099602,
+            "uav_density": 1.2633297309256613,
+            "vehicle_density": 5.955697302935261
+        },
+        {
+            "simulation_time": 59.2,
+            "task_completion_rate": 0.9922928709055877,
+            "uav_density": 1.2799270245627685,
+            "vehicle_density": 6.0339416872244795
+        },
+        {
+            "simulation_time": 60.0,
+            "task_completion_rate": 0.9887218045112782,
+            "uav_density": 1.2872664497962505,
+            "vehicle_density": 6.252437041867503
+        },
+        {
+            "simulation_time": 0.1,
+            "task_completion_rate": 0.0,
+            "uav_density": 3.774672699945027,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 1.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 3.771121686188408,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 2.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 3.747187931553633,
+            "vehicle_density": 0.0
+        },
+        {
+            "simulation_time": 3.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.641795289873795,
+            "vehicle_density": 0.3773993271248278
+        },
+        {
+            "simulation_time": 4.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.627802944848478,
+            "vehicle_density": 0.37540042069263974
+        },
+        {
+            "simulation_time": 5.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.6169137428245355,
+            "vehicle_density": 0.3738448204035051
+        },
+        {
+            "simulation_time": 6.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.605548494757366,
+            "vehicle_density": 0.744442427073533
+        },
+        {
+            "simulation_time": 7.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.591355043547137,
+            "vehicle_density": 0.7403871552991821
+        },
+        {
+            "simulation_time": 8.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.6106113657923102,
+            "vehicle_density": 1.1188334424824187
+        },
+        {
+            "simulation_time": 9.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.6207056219555738,
+            "vehicle_density": 1.1231595522666744
+        },
+        {
+            "simulation_time": 10.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.382711250380145,
+            "vehicle_density": 1.7019366074143891
+        },
+        {
+            "simulation_time": 11.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.378250209036427,
+            "vehicle_density": 1.6987501493117334
+        },
+        {
+            "simulation_time": 12.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.380146058098731,
+            "vehicle_density": 1.7001043272133793
+        },
+        {
+            "simulation_time": 13.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.221547776839248,
+            "vehicle_density": 2.221547776839248
+        },
+        {
+            "simulation_time": 14.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.2236713739457294,
+            "vehicle_density": 2.2236713739457294
+        },
+        {
+            "simulation_time": 15.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.2393427899776897,
+            "vehicle_density": 2.2393427899776897
+        },
+        {
+            "simulation_time": 16.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.251533366491871,
+            "vehicle_density": 2.5731809902764238
+        },
+        {
+            "simulation_time": 17.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.2931442902562833,
+            "vehicle_density": 2.94832837318665
+        },
+        {
+            "simulation_time": 18.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.3263424354918647,
+            "vehicle_density": 2.9910117027752543
+        },
+        {
+            "simulation_time": 19.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.3707323312426385,
+            "vehicle_density": 3.0480844258833923
+        },
+        {
+            "simulation_time": 20.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.414602128404864,
+            "vehicle_density": 3.1044884508062536
+        },
+        {
+            "simulation_time": 21.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.4430760676759635,
+            "vehicle_density": 4.188130401730223
+        },
+        {
+            "simulation_time": 22.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.1362398553188946,
+            "vehicle_density": 3.967302588449376
+        },
+        {
+            "simulation_time": 23.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.1534221866123184,
+            "vehicle_density": 4.306844373224637
+        },
+        {
+            "simulation_time": 24.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.1470065521163284,
+            "vehicle_density": 4.294013104232657
+        },
+        {
+            "simulation_time": 25.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.148795126391091,
+            "vehicle_density": 4.297590252782182
+        },
+        {
+            "simulation_time": 26.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.1553341770030614,
+            "vehicle_density": 4.92647811886414
+        },
+        {
+            "simulation_time": 27.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.162332565167474,
+            "vehicle_density": 4.942474434668512
+        },
+        {
+            "simulation_time": 28.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.161305560575831,
+            "vehicle_density": 4.9401269956019
+        },
+        {
+            "simulation_time": 29.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.159927617189854,
+            "vehicle_density": 4.936977410719666
+        },
+        {
+            "simulation_time": 30.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.1568950460473846,
+            "vehicle_density": 4.930045819536879
+        },
+        {
+            "simulation_time": 31.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.144855196667224,
+            "vehicle_density": 5.208934049048973
+        },
+        {
+            "simulation_time": 32.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.135035828353796,
+            "vehicle_density": 5.490092130052618
+        },
+        {
+            "simulation_time": 33.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.1303029231112363,
+            "vehicle_density": 5.477921802286036
+        },
+        {
+            "simulation_time": 34.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.136269280065544,
+            "vehicle_density": 5.798445188749334
+        },
+        {
+            "simulation_time": 35.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.1409799478654863,
+            "vehicle_density": 5.811231287063463
+        },
+        {
+            "simulation_time": 36.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.1373058134087275,
+            "vehicle_density": 5.801258636395118
+        },
+        {
+            "simulation_time": 37.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.131203870208073,
+            "vehicle_density": 6.089153914880208
+        },
+        {
+            "simulation_time": 38.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 2.132880574130058,
+            "vehicle_density": 6.398641722390174
+        },
+        {
+            "simulation_time": 39.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.9194182142272869,
+            "vehicle_density": 6.3066598467468
+        },
+        {
+            "simulation_time": 40.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5500265451288293,
+            "vehicle_density": 5.757241453335652
+        },
+        {
+            "simulation_time": 41.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5546454111403036,
+            "vehicle_density": 5.774397241378271
+        },
+        {
+            "simulation_time": 42.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.559366982615223,
+            "vehicle_density": 6.237467930460892
+        },
+        {
+            "simulation_time": 43.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5705386765526306,
+            "vehicle_density": 6.730880042368417
+        },
+        {
+            "simulation_time": 44.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.48331094951345,
+            "vehicle_density": 6.992751619134835
+        },
+        {
+            "simulation_time": 45.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.4939825828353823,
+            "vehicle_density": 7.256486830914715
+        },
+        {
+            "simulation_time": 46.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.506497419945112,
+            "vehicle_density": 7.747701016860575
+        },
+        {
+            "simulation_time": 47.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.52124004425685,
+            "vehicle_density": 8.475480246573879
+        },
+        {
+            "simulation_time": 48.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5480354767634936,
+            "vehicle_density": 9.288212860580963
+        },
+        {
+            "simulation_time": 49.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.570909379295069,
+            "vehicle_density": 9.425456275770415
+        },
+        {
+            "simulation_time": 50.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.5904414565791125,
+            "vehicle_density": 9.997060584211566
+        },
+        {
+            "simulation_time": 51.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6124604250552406,
+            "vehicle_density": 10.135465528918655
+        },
+        {
+            "simulation_time": 52.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.644404453800025,
+            "vehicle_density": 10.571171488714446
+        },
+        {
+            "simulation_time": 53.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6708159778764093,
+            "vehicle_density": 10.979647854616404
+        },
+        {
+            "simulation_time": 54.1,
+            "task_completion_rate": 1.0,
+            "uav_density": 1.6934007750971878,
+            "vehicle_density": 11.128062236352948
+        },
+        {
+            "simulation_time": 55.1,
+            "task_completion_rate": 0.9977220956719818,
+            "uav_density": 1.7208159009476063,
+            "vehicle_density": 11.554049620648213
+        },
+        {
+            "simulation_time": 56.1,
+            "task_completion_rate": 0.995575221238938,
+            "uav_density": 1.7455712178415843,
+            "vehicle_density": 12.21899852489109
+        },
+        {
+            "simulation_time": 57.1,
+            "task_completion_rate": 0.9956331877729258,
+            "uav_density": 1.7742388574682029,
+            "vehicle_density": 12.673134696201448
+        },
+        {
+            "simulation_time": 58.1,
+            "task_completion_rate": 0.9957627118644068,
+            "uav_density": 1.7942097669381734,
+            "vehicle_density": 13.328415411540716
+        },
+        {
+            "simulation_time": 59.1,
+            "task_completion_rate": 0.9958847736625515,
+            "uav_density": 1.8159779814510322,
+            "vehicle_density": 13.749547573843529
+        },
+        {
+            "simulation_time": 60.0,
+            "task_completion_rate": 0.9959919839679359,
+            "uav_density": 1.8425904693627804,
+            "vehicle_density": 13.951042125175338
+        }
+    ],
+    "context_information": {
+        "edges": [
+            "-1005058308",
+            "-1083933252",
+            "-1101731479",
+            "-1123309047",
+            "-1283834363#1",
+            "-1283834363#3",
+            "-136017326#0",
+            "-136017326#1",
+            "-136362666",
+            "-136362670#0",
+            "-136362670#2",
+            "-136796732#0",
+            "-136796732#2",
+            "-136796732#3",
+            "-136796732#4",
+            "-136796732#5",
+            "-136798937#2",
+            "-154401632",
+            "-166724070#0",
+            "-166724070#2",
+            "-166724073#4",
+            "-226472185#0",
+            "-226472185#1",
+            "-226472185#2",
+            "-226472186#0",
+            "-226472186#1",
+            "-226472186#2",
+            "-226472187#0",
+            "-226472187#1",
+            "-240000349#0",
+            "-240000349#1",
+            "-27396076#1",
+            "-27496077",
+            "-27496946#0",
+            "-27496946#2",
+            "-39215742",
+            "-39215743",
+            "-39215746",
+            "-39215747#1",
+            "-39408913",
+            "-39609749",
+            "-39657461",
+            "-39686880",
+            "-39687227#1",
+            "-39687227#2",
+            "-436404912#1",
+            "-441927390#1",
+            "-47084752",
+            "-47090166",
+            "-47212854#1",
+            "-47220134#0",
+            "-47220134#1",
+            "-554299960",
+            "-68742006",
+            "-68742081#1",
+            "-68742090#4",
+            "-71461970",
+            "-74032712",
+            "-74427162",
+            "1005058306#0",
+            "10487419",
+            "10487419-AddedOffRampEdge",
+            "1058033659",
+            "1076783993",
+            "1083933252",
+            "1101731479",
+            "1116719084",
+            "1123309047",
+            "1123309048",
+            "1123309048-AddedOffRampEdge",
+            "1272508527#0",
+            "1272539175#2",
+            "1283834363#0",
+            "1283834363#2",
+            "1290439802#0",
+            "1290439802#0-AddedOnRampEdge",
+            "1290439803",
+            "1290439804",
+            "1290439804-AddedOnRampEdge",
+            "1290439805#0",
+            "1290439805#1",
+            "1290439805#1-AddedOffRampEdge",
+            "1290439805#1-AddedOnRampEdge",
+            "1294773292",
+            "1294773293",
+            "1294773294",
+            "1294773295",
+            "1294773295-AddedOnRampEdge",
+            "1294773296",
+            "1294773302",
+            "1294773303",
+            "136017326#0",
+            "136017326#1",
+            "136017339",
+            "136018511",
+            "136018514",
+            "136362666",
+            "136362667#0",
+            "136362667#0-AddedOnRampEdge",
+            "136362670#0",
+            "136362670#1",
+            "136796358",
+            "136796365",
+            "136796729",
+            "136796732#0",
+            "136796732#1",
+            "136796732#3",
+            "136796732#4",
+            "136796732#5",
+            "136798933#0",
+            "136798937#0",
+            "154401632",
+            "166724070#0",
+            "166724070#1",
+            "166724073#0",
+            "176802631",
+            "177046322",
+            "226472185#0",
+            "226472185#1",
+            "226472185#2",
+            "226472186#0",
+            "226472186#1",
+            "226472186#2",
+            "226472187#0",
+            "226472187#1",
+            "240000349#0",
+            "240000349#1",
+            "24474353#0",
+            "24474360#0",
+            "24474360#2",
+            "24474360#3",
+            "24474366#0",
+            "24474366#3",
+            "24474366#3-AddedOnRampEdge",
+            "27203811#0",
+            "27203811#1",
+            "27396076#1",
+            "27396076#2",
+            "27496077",
+            "27496946#0",
+            "27496946#1",
+            "27496947",
+            "39150193",
+            "39150278",
+            "39150363#0",
+            "39150570",
+            "39150942#0",
+            "39150977#0",
+            "39150977#1",
+            "39150988#0",
+            "39150988#0-AddedOffRampEdge",
+            "39150988#1",
+            "39151404",
+            "39151519#0",
+            "39151519#1",
+            "39151562#0",
+            "39151562#1",
+            "39151562#2",
+            "39151773",
+            "39151773-AddedOnRampEdge",
+            "39215740#0",
+            "39215740#1",
+            "39215741#0",
+            "39215742",
+            "39215743",
+            "39215746",
+            "39215747#0",
+            "39408913",
+            "39609749",
+            "39657461",
+            "39686880",
+            "39687227#1",
+            "39687227#2",
+            "39687259#0",
+            "39687259#1",
+            "433779881#0",
+            "433779881#1",
+            "433779886",
+            "436404908",
+            "436404909#0",
+            "436404909#1",
+            "437436729#0",
+            "43925759#0",
+            "43925759#3",
+            "43925952",
+            "441927390#0",
+            "445172913#0",
+            "445172914#0",
+            "445172914#1",
+            "445172915#0",
+            "445172915#1",
+            "445172915#3",
+            "445172915#4",
+            "445334262",
+            "47052569",
+            "47052597",
+            "47052771",
+            "47052875",
+            "47084752",
+            "47086049",
+            "47090166",
+            "47097486",
+            "47212854#0",
+            "47214205#0",
+            "47214205#1",
+            "47214205#2",
+            "47214205#3",
+            "47220134#0",
+            "47220134#1",
+            "481595026",
+            "481595027#0",
+            "481595027#1",
+            "50177930",
+            "554299960",
+            "68741995#0",
+            "68741995#1",
+            "68741995#2",
+            "68742006",
+            "68742081#0",
+            "68742090#0",
+            "71461988#0",
+            "71461988#2",
+            "72352243#0",
+            "72352243#3",
+            "74023918",
+            "74032712",
+            "74424207",
+            "74424213#0",
+            "74424219#0",
+            "74424223",
+            "74424225",
+            "74424227#0",
+            "74424229",
+            "74424239",
+            "74424241#0",
+            "74424243",
+            "74427162",
+            "74427163",
+            "74427164#0",
+            "74427164#1",
+            "74427164#2",
+            "74427164#2-AddedOffRampEdge",
+            "74446200",
+            "74507601"
+        ],
+        "signals": [
+            "472187895",
+            "826171421",
+            "300744528",
+            "601626794",
+            "joinedS_0",
+            "826170194",
+            "cluster_468728952_558631235",
+            "558631236",
+            "266073660",
+            "296250717",
+            "cluster_296250721_558624827",
+            "4342993130",
+            "298517193",
+            "826167789",
+            "GS_9721775503",
+            "266073387",
+            "GS_9721775504",
+            "GS_9721775505",
+            "GS_9721775502",
+            "GS_9721775506"
+        ],
+        "speed_limits": {
+            "-1005058308": 22.22,
+            "-1083933252": 13.89,
+            "-1101731479": 13.89,
+            "-1123309047": 11.11,
+            "-1283834363#1": 13.89,
+            "-1283834363#3": 13.89,
+            "-136017326#0": 22.22,
+            "-136017326#1": 22.22,
+            "-136362666": 11.11,
+            "-136362670#0": 11.11,
+            "-136362670#2": 11.11,
+            "-136796732#0": 8.33,
+            "-136796732#2": 8.33,
+            "-136796732#3": 8.33,
+            "-136796732#4": 8.33,
+            "-136796732#5": 8.33,
+            "-136798937#2": 11.11,
+            "-154401632": 8.33,
+            "-166724070#0": 1.39,
+            "-166724070#2": 1.39,
+            "-166724073#4": 1.39,
+            "-226472185#0": 11.11,
+            "-226472185#1": 11.11,
+            "-226472185#2": 11.11,
+            "-226472186#0": 8.33,
+            "-226472186#1": 8.33,
+            "-226472186#2": 8.33,
+            "-226472187#0": 11.11,
+            "-226472187#1": 11.11,
+            "-240000349#0": 13.89,
+            "-240000349#1": 13.89,
+            "-27396076#1": 22.22,
+            "-27496077": 22.22,
+            "-27496946#0": 11.11,
+            "-27496946#2": 11.11,
+            "-39215742": 13.89,
+            "-39215743": 13.89,
+            "-39215746": 13.89,
+            "-39215747#1": 22.22,
+            "-39408913": 22.22,
+            "-39609749": 22.22,
+            "-39657461": 11.11,
+            "-39686880": 13.89,
+            "-39687227#1": 13.89,
+            "-39687227#2": 13.89,
+            "-436404912#1": 22.22,
+            "-441927390#1": 13.89,
+            "-47084752": 8.33,
+            "-47090166": 8.33,
+            "-47212854#1": 22.22,
+            "-47220134#0": 13.89,
+            "-47220134#1": 13.89,
+            "-554299960": 13.89,
+            "-68742006": 11.11,
+            "-68742081#1": 13.89,
+            "-68742090#4": 13.89,
+            "-71461970": 11.11,
+            "-74032712": 22.22,
+            "-74427162": 22.22,
+            "1005058306#0": 22.22,
+            "10487419": 27.78,
+            "10487419-AddedOffRampEdge": 27.78,
+            "1058033659": 11.11,
+            "1076783993": 27.78,
+            "1083933252": 13.89,
+            "1101731479": 13.89,
+            "1116719084": 27.78,
+            "1123309047": 11.11,
+            "1123309048": 27.78,
+            "1123309048-AddedOffRampEdge": 27.78,
+            "1272508527#0": 27.78,
+            "1272539175#2": 27.78,
+            "1283834363#0": 13.89,
+            "1283834363#2": 13.89,
+            "1290439802#0": 27.78,
+            "1290439802#0-AddedOnRampEdge": 27.78,
+            "1290439803": 27.78,
+            "1290439804": 27.78,
+            "1290439804-AddedOnRampEdge": 27.78,
+            "1290439805#0": 27.78,
+            "1290439805#1": 27.78,
+            "1290439805#1-AddedOffRampEdge": 27.78,
+            "1290439805#1-AddedOnRampEdge": 27.78,
+            "1294773292": 22.22,
+            "1294773293": 22.22,
+            "1294773294": 22.22,
+            "1294773295": 22.22,
+            "1294773295-AddedOnRampEdge": 22.22,
+            "1294773296": 11.11,
+            "1294773302": 27.78,
+            "1294773303": 27.78,
+            "136017326#0": 22.22,
+            "136017326#1": 22.22,
+            "136017339": 13.89,
+            "136018511": 13.89,
+            "136018514": 13.89,
+            "136362666": 11.11,
+            "136362667#0": 27.78,
+            "136362667#0-AddedOnRampEdge": 27.78,
+            "136362670#0": 11.11,
+            "136362670#1": 11.11,
+            "136796358": 11.11,
+            "136796365": 27.78,
+            "136796729": 27.78,
+            "136796732#0": 8.33,
+            "136796732#1": 8.33,
+            "136796732#3": 8.33,
+            "136796732#4": 8.33,
+            "136796732#5": 8.33,
+            "136798933#0": 27.78,
+            "136798937#0": 11.11,
+            "154401632": 8.33,
+            "166724070#0": 1.39,
+            "166724070#1": 1.39,
+            "166724073#0": 1.39,
+            "176802631": 27.78,
+            "177046322": 27.78,
+            "226472185#0": 11.11,
+            "226472185#1": 11.11,
+            "226472185#2": 11.11,
+            "226472186#0": 8.33,
+            "226472186#1": 8.33,
+            "226472186#2": 8.33,
+            "226472187#0": 11.11,
+            "226472187#1": 11.11,
+            "240000349#0": 13.89,
+            "240000349#1": 13.89,
+            "24474353#0": 27.78,
+            "24474360#0": 27.78,
+            "24474360#2": 27.78,
+            "24474360#3": 27.78,
+            "24474366#0": 16.67,
+            "24474366#3": 16.67,
+            "24474366#3-AddedOnRampEdge": 16.67,
+            "27203811#0": 11.11,
+            "27203811#1": 11.11,
+            "27396076#1": 22.22,
+            "27396076#2": 22.22,
+            "27496077": 22.22,
+            "27496946#0": 11.11,
+            "27496946#1": 11.11,
+            "27496947": 13.89,
+            "39150193": 27.78,
+            "39150278": 27.78,
+            "39150363#0": 27.78,
+            "39150570": 27.78,
+            "39150942#0": 27.78,
+            "39150977#0": 27.78,
+            "39150977#1": 27.78,
+            "39150988#0": 22.22,
+            "39150988#0-AddedOffRampEdge": 22.22,
+            "39150988#1": 22.22,
+            "39151404": 11.11,
+            "39151519#0": 11.11,
+            "39151519#1": 11.11,
+            "39151562#0": 11.11,
+            "39151562#1": 11.11,
+            "39151562#2": 11.11,
+            "39151773": 22.22,
+            "39151773-AddedOnRampEdge": 22.22,
+            "39215740#0": 13.89,
+            "39215740#1": 13.89,
+            "39215741#0": 13.89,
+            "39215742": 13.89,
+            "39215743": 13.89,
+            "39215746": 13.89,
+            "39215747#0": 22.22,
+            "39408913": 22.22,
+            "39609749": 22.22,
+            "39657461": 11.11,
+            "39686880": 13.89,
+            "39687227#1": 13.89,
+            "39687227#2": 13.89,
+            "39687259#0": 13.89,
+            "39687259#1": 13.89,
+            "433779881#0": 27.78,
+            "433779881#1": 27.78,
+            "433779886": 27.78,
+            "436404908": 22.22,
+            "436404909#0": 11.11,
+            "436404909#1": 11.11,
+            "437436729#0": 16.67,
+            "43925759#0": 27.78,
+            "43925759#3": 27.78,
+            "43925952": 13.89,
+            "441927390#0": 13.89,
+            "445172913#0": 27.78,
+            "445172914#0": 27.78,
+            "445172914#1": 27.78,
+            "445172915#0": 11.11,
+            "445172915#1": 11.11,
+            "445172915#3": 11.11,
+            "445172915#4": 11.11,
+            "445334262": 11.11,
+            "47052569": 22.22,
+            "47052597": 22.22,
+            "47052771": 22.22,
+            "47052875": 22.22,
+            "47084752": 8.33,
+            "47086049": 27.78,
+            "47090166": 8.33,
+            "47097486": 27.78,
+            "47212854#0": 22.22,
+            "47214205#0": 13.89,
+            "47214205#1": 13.89,
+            "47214205#2": 13.89,
+            "47214205#3": 13.89,
+            "47220134#0": 13.89,
+            "47220134#1": 13.89,
+            "481595026": 13.89,
+            "481595027#0": 22.22,
+            "481595027#1": 22.22,
+            "50177930": 27.78,
+            "554299960": 13.89,
+            "68741995#0": 11.11,
+            "68741995#1": 11.11,
+            "68741995#2": 11.11,
+            "68742006": 11.11,
+            "68742081#0": 13.89,
+            "68742090#0": 13.89,
+            "71461988#0": 16.67,
+            "71461988#2": 16.67,
+            "72352243#0": 27.78,
+            "72352243#3": 27.78,
+            "74023918": 27.78,
+            "74032712": 22.22,
+            "74424207": 27.78,
+            "74424213#0": 27.78,
+            "74424219#0": 27.78,
+            "74424223": 27.78,
+            "74424225": 27.78,
+            "74424227#0": 27.78,
+            "74424229": 27.78,
+            "74424239": 27.78,
+            "74424241#0": 27.78,
+            "74424243": 27.78,
+            "74427162": 22.22,
+            "74427163": 27.78,
+            "74427164#0": 22.22,
+            "74427164#1": 22.22,
+            "74427164#2": 22.22,
+            "74427164#2-AddedOffRampEdge": 22.22,
+            "74446200": 13.89,
+            "74507601": 11.11
+        }
+    }
+}
