@@ -2,18 +2,18 @@
 
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-dir_name = os.path.dirname(__file__)
-
-from airfogsim import AirFogSimEnv, BaseAlgorithmModule
 import numpy as np
 import random
 import yaml
 import sys
 import time
 import datetime
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+dir_name = os.path.dirname(__file__)
+
+from airfogsim import AirFogSimEnv, BaseAlgorithmModule
 from airfogsim.scheduler import RewardScheduler, TaskScheduler
-# 导入数据处理的库
 from airfogsim.data_manager import DataManager
 
 def load_config(path):
@@ -69,7 +69,6 @@ for i in range(10):
 
         # ‘\r'让下面一行打印一直打印在同一行
         print(f'Simulation time: {env.simulation_time:.2f}, 已完成任务数: {task_num:.2f}, 超时任务数: {out_of_ddl_task_num}, Ratio: {succ_ratio:.2f}, ACC_Reward: {succ_ratio*accumulated_reward/max(1,task_num):.2f} V2U: {v2u_rate[-1]:.2f}, V2I: {v2i_rate[-1]:.2f}, U2I: {u2i_rate[-1]:.2f}', end='\r')
-    
     # 每次重置环境时强制更新一次数据
     data_manager.update_data(force_update=True)
     print()

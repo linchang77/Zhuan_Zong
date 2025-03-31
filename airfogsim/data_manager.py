@@ -142,11 +142,13 @@ class DataManager:
         '''
         
         # 使用时间戳来生成文件名
-        file_path = f"info/entity_info_{timestamp}_it{iteration}.txt"
+        directory = "info"
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+        file_path = f"{directory}/entity_info_{timestamp}_it{iteration}.txt"
 
         # # 获取所有节点的ID和类型
         all_ids, type_list = EntityScheduler.getAllNodeIdsWithType(self.env)
-
         if step % 10 == 0:
             with open(file_path, "a") as f:
                 # 写入调用次数和每次的实体信息
@@ -171,7 +173,11 @@ class DataManager:
         """
         获取所有任务，并计算不同状态任务的个数
         """
-        file_path = f"info/entity_info_{timestamp}_it{iteration}.txt"
+        # 使用时间戳来生成文件名
+        directory = "info"
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+        file_path = f"{directory}/entity_info_{timestamp}_it{iteration}.txt"
 
         # 统计任务状态
         status_counts = {
@@ -199,6 +205,11 @@ class DataManager:
         :param step: 当前仿真步数（可选）
         :param force_update: 是否强制更新，不考虑计数器
         """
+        # **更新实体信息（车辆 & UAV）**
+        if timestamp and iteration is not None and step is not None:
+            self.update_entity_info(timestamp, iteration, step)
+            self.get_task_status_counts(timestamp, iteration, step)
+
         # 计数器更新
         self.step_counter += 1
 
@@ -217,11 +228,6 @@ class DataManager:
             "uav_density": uav_density,
             "vehicle_density": vehicle_density
         })
-
-        # **更新实体信息（车辆 & UAV）**
-        if timestamp and iteration is not None and step is not None:
-            self.update_entity_info(timestamp, iteration, step)
-            self.get_task_status_counts(timestamp, iteration, step)
 
 
     # def update_data(self, timestamp, iteration, step):
