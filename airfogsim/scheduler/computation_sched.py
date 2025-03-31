@@ -40,6 +40,52 @@ class ComputationScheduler(BaseScheduler):
         total_remain_cpu += added_task_cpu
         assert total_remain_cpu >= 0
         return total_remain_cpu / cpu
+    
+    # 新增的一个函数，与getComputeDelayByNodeId类似但是返回更多信息
+    @staticmethod
+    def getComputeInfoByNodeId(env, node_id: str, added_task_cpu=0):
+        """获取指定节点的计算延迟、当前已用计算资源和剩余计算资源。
+
+        Args:
+            env (AirFogSimEnv): 环境对象。
+            node_id (str): 节点 ID。
+            added_task_cpu (float): 额外增加的计算任务 CPU 需求。
+
+        Returns:
+            dict: 包含以下键：
+                - "compute_delay" (float): 计算延迟。
+                - "used_cpu" (float): 当前已用计算资源。
+                - "remaining_cpu" (float): 剩余计算资源。
+        """
+        to_compute_tasks = env.task_manager.getToComputeTasks(node_id)
+        total_remain_cpu = 0  # 当前任务剩余计算量
+        total_used_cpu = 0    # 当前已用计算资源
+
+        # 计算当前任务的已用 CPU 和剩余 CPU
+        for task in to_compute_tasks:
+            task_cpu = task.getTaskCPU()
+            computed_cpu = task.getComputedSize()
+            remain_cpu = task_cpu - computed_cpu
+            assert remain_cpu >= 0
+            total_remain_cpu += remain_cpu
+            total_used_cpu += computed_cpu  # 计算当前已使用的 CPU
+
+        comp_node = env._getNodeById(node_id)
+        total_cpu = comp_node.getFogProfile().get('cpu', 0)
+        total_cpu = max(0.1, total_cpu)  # 确保 CPU 不能为 0，避免除零错误
+
+        total_remain_cpu += added_task_cpu  # 加上新任务的 CPU 需求
+        assert total_remain_cpu >= 0
+
+        # 计算剩余计算资源
+        remaining_cpu = max(0, total_cpu - total_used_cpu)  
+
+        return {
+            "compute_delay": total_remain_cpu / total_cpu,  # 计算延迟
+            "used_cpu": total_used_cpu,  # 已用 CPU
+            "remaining_cpu": remaining_cpu  # 剩余 CPU
+        }
+
 
     @staticmethod
     def setComputingCallBack(env, callback):

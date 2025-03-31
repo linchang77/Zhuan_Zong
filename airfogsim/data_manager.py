@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import time
 import datetime
-from airfogsim.scheduler import RewardScheduler, TaskScheduler, EntityScheduler
+from airfogsim.scheduler import RewardScheduler, TaskScheduler, EntityScheduler, ComputationScheduler
 
 class DataManager:
     def __init__(self, env):
@@ -22,8 +22,6 @@ class DataManager:
         self.uav_density_list = []
         self.vehicle_density_list = []
 
-        # 车辆和无人机信息
-        self.entity_info = []  # 用于存储每秒的车辆和无人机数据
 
 
 
@@ -68,6 +66,8 @@ class DataManager:
     
     def update_entity_info(self, timestamp, iteration, step):
         '''
+        获取车辆和无人机的位置、速度、正在使用的计算资源、剩余的计算资源
+        下面是一个车辆/无人机的所有信息
         id: UAV_0
         position_x: 659.0568260908746
         position_y: 2255.549149629989
@@ -90,27 +90,52 @@ class DataManager:
         # 使用时间戳来生成文件名
         file_path = f"info/entity_info_{timestamp}_it{iteration}.txt"
 
-        # 获取所有节点的ID和类型
+        # # 获取所有节点的ID和类型
         all_ids, type_list = EntityScheduler.getAllNodeIdsWithType(self.env)
-
-        # 统计调用次数
-        call_count = getattr(self, "call_count", 0) + 1
-        self.call_count = call_count  # 更新调用次数
 
         if step % 10 == 0:
             with open(file_path, "a") as f:
                 # 写入调用次数和每次的实体信息
-                f.write(f"Update Call #{call_count}:\n")
+                f.write(f"Entitied Update at Step {step}:\n")
                 
                 for node_id, node_type in zip(all_ids, type_list):
                     node_info = EntityScheduler.getNodeInfoById(self.env, node_id)
+
+                    # 调用 getComputeDelayByNodeId 获取计算资源信息
+                    compute_info = ComputationScheduler.getComputeInfoByNodeId(self.env, node_id)
+                    
                     f.write(f"Node ID: {node_info['id']}, Type: {node_type}, ")
                     f.write(f"Position (x, y, z): ({node_info['position_x']}, {node_info['position_y']}, {node_info['position_z']}), ")
-                    f.write(f"Speed: {node_info['speed']}, Angle: {node_info['angle']}, Acceleration: {node_info['acceleration']}\n")
+                    f.write(f"Speed: {node_info['speed']}, Angle: {node_info['angle']}, Acceleration: {node_info['acceleration']}, ")
+                    f.write(f"Compute Delay: {compute_info['compute_delay']:.4f}, ")
+                    f.write(f"Used CPU: {compute_info['used_cpu']:.2f}, Remaining CPU: {compute_info['remaining_cpu']:.2f}\n")
                 
                 # 添加分隔行以便区分不同调用
                 f.write("-" * 50 + "\n")
 
+    def get_task_status_counts(self, timestamp, iteration, step):
+        """
+        获取所有任务，并计算不同状态任务的个数
+        """
+        file_path = f"info/entity_info_{timestamp}_it{iteration}.txt"
+
+        # 统计任务状态
+        status_counts = {
+            "等待卸载": len(TaskScheduler.getAllToOffloadTasks(self.env)),  # 等待卸载
+            "正在卸载": len(TaskScheduler.getAllOffloadingTaskInfos(self.env)),  # 正在卸载
+            "计算中": len(TaskScheduler.getAllComputingTaskInfos(self.env)),  # 计算中
+            "已完成": TaskScheduler.getDoneTaskNum(self.env),  # 已完成
+            "失败": TaskScheduler.getOutOfDDLTasks(self.env)  # 失败（超时）
+        }
+
+        # 输出统计结果
+        if step % 10 == 0:
+            with open(file_path, "a") as f:
+                f.write(f"Task Status Update at Step {step}:\n")
+                for status, count in status_counts.items():
+                    f.write(f"{status}: {count}\n")
+                f.write("-" * 50 + "\n")
+        return status_counts
 
 
     def update_data(self, timestamp, iteration, step):
@@ -120,5 +145,7 @@ class DataManager:
         # self.update_task_completion_rate()
         # self.update_traffic_density()
         self.update_entity_info(timestamp, iteration, step)
+        self.get_task_status_counts(timestamp, iteration, step)
+
         
 
