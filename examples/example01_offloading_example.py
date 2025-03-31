@@ -1,3 +1,5 @@
+# example01_offloading_example.py
+
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -27,8 +29,9 @@ config = load_config(config_path)
 env = AirFogSimEnv(config, interactive_mode='graphic')
 # env = AirFogSimEnv(config, interactive_mode=None)
 
-# 初始化DataManager
-data_manager = DataManager(env)
+# 初始化DataManager，传入SUMO网络文件
+sumo_net_file = "./sumo_wujiaochang/osm.net.xml" 
+data_manager = DataManager(env, sumo_net_file, update_interval=10)
 
 # 3. Get algorithm module
 algorithm_module = BaseAlgorithmModule()
@@ -49,6 +52,7 @@ for i in range(10):
     while not env.isDone():
         algorithm_module.scheduleStep(env)
         env.step()
+
         accumulated_reward += algorithm_module.getRewardByTask(env)        #累计奖励
         task_num = TaskScheduler.getDoneTaskNum(env)  # 已完成的任务数
         out_of_ddl_task_num = TaskScheduler.getOutOfDDLTasks(env)  # 超时任务数
@@ -57,17 +61,22 @@ for i in range(10):
         step_count += 1
         data_manager.update_data(timestamp, i, step_count)  # 每10步更新一次数据
 
+
         env.render()
         v2u_rate.append(env.getChannelAvgRate('V2U'))
         v2i_rate.append(env.getChannelAvgRate('V2I'))
         u2i_rate.append(env.getChannelAvgRate('U2I'))
+
         # ‘\r'让下面一行打印一直打印在同一行
         print(f'Simulation time: {env.simulation_time:.2f}, 已完成任务数: {task_num:.2f}, 超时任务数: {out_of_ddl_task_num}, Ratio: {succ_ratio:.2f}, ACC_Reward: {succ_ratio*accumulated_reward/max(1,task_num):.2f} V2U: {v2u_rate[-1]:.2f}, V2I: {v2i_rate[-1]:.2f}, U2I: {u2i_rate[-1]:.2f}', end='\r')
-        # if step_count % 10 == 0:
-        #     time.sleep(2)
+    
+    # 每次重置环境时强制更新一次数据
+    data_manager.update_data(force_update=True)
     print()
     env.reset()
 env.close()
+
+
 # plt绘制
 import matplotlib.pyplot as plt
 plt.plot(v2u_rate[1:],label='V2U')
@@ -75,4 +84,8 @@ plt.plot(v2i_rate[1:],label='V2I')
 plt.plot(u2i_rate[1:],label='U2I')
 plt.legend()
 plt.savefig('rate.png',dpi=300)
+
+# 进行存储数据和可视化
+data_manager.save_to_json()
+data_manager.plot_results()
 print('Simulation done!')
