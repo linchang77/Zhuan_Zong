@@ -70,10 +70,30 @@ for i in range(1):
         # ‘\r'让下面一行打印一直打印在同一行
         print(f'Simulation time: {env.simulation_time:.2f}, 已完成任务数: {task_num:.2f}, 超时任务数: {out_of_ddl_task_num}, Ratio: {succ_ratio:.2f}, ACC_Reward: {succ_ratio*accumulated_reward/max(1,task_num):.2f} V2U: {v2u_rate[-1]:.2f}, V2I: {v2i_rate[-1]:.2f}, U2I: {u2i_rate[-1]:.2f}', end='\r')
     # 每次重置环境时强制更新一次数据
-    data_manager.update_data(force_update=True)
-    print()
-    env.reset()
+    # data_manager.update_data(force_update=True)
+    # print()
+    # env.reset()
 env.close()
+
+# 在仿真结束后，生成交通流密度相关的数据和可视化
+print("\n生成交通流密度数据和可视化...")
+
+# 1. 计算全局的车辆和UAV交通流密度热力图
+print("正在生成全局交通流密度热力图...")
+data_manager.compute_traffic_density_map(grid_size=100)
+
+# 2. 找出车辆最多的交叉路口
+print("正在查找最拥堵的交叉路口...")
+congested_id, vehicle_density, uav_density = data_manager.find_most_congested_intersection()
+print(f"最拥堵的交叉路口ID: {congested_id}, 车辆密度: {vehicle_density:.2f}/km², UAV密度: {uav_density:.2f}/km²")
+
+# 3. 保存每个交叉路口的交通流密度数据到JSON
+print("正在保存交叉路口交通流密度数据...")
+data_manager.save_intersection_density_to_json(output_file="results/intersection_density.json")
+
+# 4. 生成交通流热力图
+print("正在生成交通流热力图...")
+data_manager.generate_traffic_heatmap(time_window=60, output_file="results/traffic_heatmap.png")
 
 
 # plt绘制
@@ -86,5 +106,4 @@ plt.savefig('rate.png',dpi=300)
 
 # 进行存储数据和可视化
 data_manager.save_to_json()
-data_manager.plot_results()
 print('Simulation done!')
