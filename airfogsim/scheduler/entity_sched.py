@@ -1,9 +1,37 @@
-
+import xml.etree.ElementTree as ET
 from .base_sched import BaseScheduler
 import numpy as np
 class EntityScheduler(BaseScheduler):
     """The entity scheduler for entities.
     """
+
+    @staticmethod
+    def getAllCrossroadPositions(env):
+        """Extract all crossroad positions from the SUMO network file.
+
+        Args:
+            env (AirFogSimEnv): The simulation environment.
+
+        Returns:
+            dict: A dictionary mapping junction IDs to their positions (x, y).
+        """
+        sumo_net_file = env.config['sumo']['sumo_net']  # 读取网络文件路径
+        tree = ET.parse(sumo_net_file)
+        root = tree.getroot()
+
+        # 改为返回字典格式，键为交叉口ID，值为(x, y)坐标元组
+        crossroad_positions = {}
+
+        for junction in root.findall("junction"):
+            junction_id = junction.get("id")
+            junction_type = junction.get("type")
+            x = junction.get("x")
+            y = junction.get("y")
+
+            if junction_type in ["priority", "traffic_light"]:  # 只选取这两种类型的交叉口
+                crossroad_positions[junction_id] = (float(x), float(y))
+
+        return crossroad_positions
     
     @staticmethod
     def getAllNodeIdsWithType(env):
