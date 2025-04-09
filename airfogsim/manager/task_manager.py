@@ -609,7 +609,7 @@ class TaskManager:
         if max_value is not None and attribute > max_value:
             attribute = max_value
         return attribute
-
+    # 生成任务所需要的cpu
     def _generateCPU(self):
         cpu = 0
         if self._task_cpu_model == 'Uniform':
@@ -618,7 +618,7 @@ class TaskManager:
             cpu = np.random.normal(self._task_cpu_mean, self._task_cpu_std)
         cpu = self._checkAttribute(cpu, 'cpu')
         return cpu
-        
+    # 生成任务的大小    
     def _generateSize(self, size_type='offload'):
         assert size_type in ['offload', 'return'], 'The size type should be either offload or return.'
         size = 0
@@ -637,7 +637,7 @@ class TaskManager:
         elif size_type == 'return':
             size = self._checkAttribute(size, 'returned_size')
         return size
-        
+    # 生成任务的截止时间    
     def _generateDeadline(self):
         deadline = 0
         if self._task_deadline_model == 'Uniform':
@@ -646,7 +646,7 @@ class TaskManager:
             deadline = np.random.normal(self._task_deadline_mean, self._task_deadline_std)
         deadline = self._checkAttribute(deadline, 'deadline')
         return deadline
-        
+    # 生成任务的优先级    
     def _generatePriority(self):
         priority = 0
         if self._task_priority_model == 'Uniform':
