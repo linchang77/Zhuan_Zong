@@ -558,10 +558,12 @@ class DataManager:
         :param step: 当前仿真步数（可选）
         :param force_update: 是否强制更新，不考虑计数器
         """
-        # **更新实体信息（车辆 & UAV）**
-        if timestamp and iteration is not None and step is not None:
-            self.update_entity_info(timestamp, iteration, step)
-            self.get_task_status_counts(timestamp, iteration, step)
+
+        # 暂时用不到
+        # # **更新实体信息（车辆 & UAV）**
+        # if timestamp and iteration is not None and step is not None:
+        #     self.update_entity_info(timestamp, iteration, step)
+        #     self.get_task_status_counts(timestamp, iteration, step)
 
         # 计数器更新
         self.step_counter += 1
