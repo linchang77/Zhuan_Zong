@@ -7,6 +7,7 @@ import random
 import yaml
 import sys
 import time
+import json
 import datetime
 
 SEED = 42  # 你可以用任何你喜欢的整数
@@ -24,6 +25,9 @@ from airfogsim.data_manager import DataManager
 def load_config(path):
     with open(path, 'r') as file:
         config = yaml.safe_load(file)
+        # print("任务大小范围（MB）:", config['task']['task_min_size'], "~", config['task']['task_max_size'])
+        # print("任务CPU需求范围（GHz·s）:", config['task']['task_min_cpu'], "~", config['task']['task_max_cpu'])
+        # print("任务DDL（秒）:", config['task']['task_min_deadline'], "~", config['task']['task_max_deadline'])
         return config
 
 # 1. Load the configuration file
@@ -50,7 +54,24 @@ v2i_rate = [0]
 u2i_rate = [0]
 for i in range(1):
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    file_path = f"entity_info_{timestamp}_iteration_{i}.txt"
+    # 使用时间戳来生成文件名
+    # 在json文件中写入config文件中的内容
+    directory = "info"
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    file_path = f"{directory}/entity_info_{timestamp}_it{i}.json"
+    task_config_info = {
+        "task_config": {
+            "task_min_size": config['task'].get('task_min_size'),
+            "task_max_size": config['task'].get('task_max_size'),
+            "task_min_cpu": config['task'].get('task_min_cpu'),
+            "task_max_cpu": config['task'].get('task_max_cpu'),
+            "task_min_deadline": config['task'].get('task_min_deadline'),
+            "task_max_deadline": config['task'].get('task_max_deadline')
+        }
+    }
+    with open(file_path, 'w') as f:
+        json.dump(task_config_info, f, indent=4)
 
     step_count = 0  # 初始化步骤计数器
 
@@ -63,9 +84,20 @@ for i in range(1):
         out_of_ddl_task_num = TaskScheduler.getOutOfDDLTasks(env)  # 超时任务数
         succ_ratio = task_num / max(1, task_num + out_of_ddl_task_num)  # 计算任务成功率
         
+        # 在json文件中写入任务完成率
+        with open(file_path, 'r') as f:
+            json_data = json.load(f)
+        if "succ_ratio_list" not in json_data:
+            json_data["succ_ratio_list"] = []
+        json_data["succ_ratio_list"].append({
+            "step": step_count,
+            "succ_ratio": round(succ_ratio, 4)
+        })
+        with open(file_path, 'w') as f:
+            json.dump(json_data, f, indent=4)
+
         step_count += 1
         data_manager.update_data(timestamp, i, step_count)  # 每10步更新一次数据
-
 
         env.render()
         v2u_rate.append(env.getChannelAvgRate('V2U'))
