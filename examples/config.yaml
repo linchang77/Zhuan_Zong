@@ -39,30 +39,30 @@ task: # default task profile for all nodes
   task_generation_kwargs:
     lambda: 0.1 # Poission -> lambda; Uniform -> low, high; Normal -> mean, std; Exponential -> beta
   task_min_cpu: 1.5
-  task_max_cpu: 2.0
+  task_max_cpu: 1.5
   task_min_size: 1.5
-  task_max_size: 2.0
+  task_max_size: 1.5
   task_min_required_returned_size: 0
   task_max_required_returned_size: 0
-  task_min_deadline: 1
+  task_min_deadline: 2
   task_max_deadline: 2
-  task_min_priority: 0.5
+  task_min_priority: 1
   task_max_priority: 1
   cpu_model: "Uniform" # supported model:['Uniform', 'Normal']
   cpu_kwargs:
-    low: 0.2
+    low: 0.7
     high: 0.7
   size_model: "Uniform" # supported model:['Uniform', 'Normal']
   size_kwargs:
-    low: 0.2
+    low: 0.7
     high: 0.7
   deadline_model: "Uniform" # supported model:['Uniform', 'Normal']
   deadline_kwargs:
-    low: 0.5
+    low: 1
     high: 1
   priority_model: "Uniform" # supported model:['Uniform', 'Normal']
   priority_kwargs:
-    low: 0.5
+    low: 1
     high: 1
   required_returned_size_model: "Uniform" # supported model:['Uniform', 'Normal']
   required_returned_size_kwargs:
@@ -146,6 +146,7 @@ mission:
   sensor_accuracy_range: [0,1]
   distance_threshold: 150
   predictable_seconds: 2
+  
   mission_generation_model: "Poisson" # supported model:['Poisson', 'Uniform', 'Normal', 'Exponential']
   generation_model_args:
     Poisson:

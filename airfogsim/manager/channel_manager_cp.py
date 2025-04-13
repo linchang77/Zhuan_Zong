@@ -13,6 +13,10 @@ if os.environ.get('useCUPY') == 'True':
         print("CuPy not available. Using NumPy instead.")
 else:
     import numpy as cp
+
+SEED = 42  # 你可以用任何你喜欢的整数
+
+cp.random.seed(SEED)
 class ChannelManagerCP:
     """ChannelManager is the class for managing the wireless communication channels in the airfogsim environment. It provides the APIs for the agent to interact with the channels."""
     def __init__(self, config_channel, n_RSU=1, n_UAV=1, n_Veh=1, hei_UAVs=100, RSU_positions=[], simulation_interval=0.1):

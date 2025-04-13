@@ -5,6 +5,10 @@ from .airfogsim_env import AirFogSimEnv
 # from .algorithm.DDQN.DDQN_env import  DDQN_Env
 import numpy as np
 
+SEED = 42  # 你可以用任何你喜欢的整数
+
+random.seed(SEED)
+np.random.seed(SEED)
 
 class BaseAlgorithmModule:
     """Use different schedulers to interact with the environment before calling env.step(). Manipulate different environments with the same algorithm design at the same time for learning sampling efficiency.\n

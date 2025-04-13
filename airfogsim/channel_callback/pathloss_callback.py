@@ -13,6 +13,10 @@ else:
 
 MAX_PL = 500 # The maximum path loss in dB, does not have a physical meaning
 
+# 固定随机种子
+SEED = 42  # 你可以用任何你喜欢的整数
+
+cp.random.seed(SEED)
 
 def PathLossCallback(pathloss_type):
     """The callback function to get the path loss.

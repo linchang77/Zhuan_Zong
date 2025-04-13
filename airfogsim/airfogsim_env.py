@@ -18,6 +18,10 @@ import numpy as np
 import time
 from .utils.tk_utils import parse_location_info
 
+# 固定种子
+SEED = 42  # 你可以用任何你喜欢的整数
+
+np.random.seed(SEED)
 
 class AirFogSimEnv():
     """AirFogSimEnv is the main class for the airfogsim environment. It provides the simulation of communication, computation, storage, battery, vehicle/UAV trajectory, cloud/cloudlet nodes, AI models for entities, blockchain, authentication, and privacy. It also provides the APIs for the agent to interact with the environment. The agent can be a DRL agent, a rule-based agent, or a human player.
@@ -210,6 +214,7 @@ class AirFogSimEnv():
         # 2. Update sensors (generate new sensor after generating new vehicles)
         self._updateSensor()
         sim_step_per_traffic_step = int(self.traffic_interval / self.simulation_interval)
+        # 目前的配置下就是sim_step_per_traffic_step = 1
         for _ in range(sim_step_per_traffic_step):
             # 3. Update the authentication and privacy
             self._updateAuthPrivacy()

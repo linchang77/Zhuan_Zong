@@ -9,6 +9,11 @@ import sys
 import time
 import datetime
 
+SEED = 42  # 你可以用任何你喜欢的整数
+
+random.seed(SEED)
+np.random.seed(SEED)
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 dir_name = os.path.dirname(__file__)
 

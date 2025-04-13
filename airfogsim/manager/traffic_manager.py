@@ -3,6 +3,12 @@ import numpy as np
 import random
 import pandas as pd
 import sumolib
+
+SEED = 42  # 你可以用任何你喜欢的整数
+
+random.seed(SEED)
+np.random.seed(SEED)
+
 class TrafficManager():
     """The traffic manager class. It manages both vehicle traffic and UAV traffic. It also manipulates the positions of the vehicles, UAVs, RSUs, and cloud servers.
     """

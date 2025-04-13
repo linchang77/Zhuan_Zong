@@ -7,7 +7,8 @@ import os
 
 # 线程数量=4
 torch.set_num_threads(4)
-
+SEED = 42  # 你可以用任何你喜欢的整数
+np.random.seed(SEED)
 
 class MADDPG_Agent:
     def __init__(self, args, n_agents):  # 添加agent_id参数

@@ -1,7 +1,9 @@
 from ..entities.block import Blockchain, Block
 import numpy as np
 from ..enum_const import EnumerateConstants
+SEED = 42  # 你可以用任何你喜欢的整数
 
+np.random.seed(SEED)
 class BlockchainManager:
     
     def __init__(self, RSUs):

@@ -1,7 +1,9 @@
 import random
 from ..entities.sensor import Sensor
 
+SEED = 42  # 你可以用任何你喜欢的整数
 
+random.seed(SEED)
 class SensorManager:
     """ Sensor Manager is responsible for generating and deploying sensors and managing the sensor status.
     """

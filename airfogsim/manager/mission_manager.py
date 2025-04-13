@@ -4,7 +4,10 @@ from ..entities.mission import Mission
 
 import numpy as np
 
+SEED = 42  # 你可以用任何你喜欢的整数
 
+random.seed(SEED)
+np.random.seed(SEED)
 class MissionManager:
     """MissionManager class is responsible for managing the missions for each node according to its ids.
     """

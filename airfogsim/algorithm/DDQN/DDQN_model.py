@@ -6,7 +6,10 @@ from torch.nn import functional as F
 import numpy as np
 import collections  # 队列
 import random
+SEED = 42  # 你可以用任何你喜欢的整数
 
+random.seed(SEED)
+np.random.seed(SEED)
 
 # ----------------------------------- #
 # （1）经验回放池

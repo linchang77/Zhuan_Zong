@@ -1,4 +1,7 @@
 import random
+SEED = 42  # 你可以用任何你喜欢的整数
+
+random.seed(SEED)
 class ReplayBuffer:
     def __init__(self, capacity):
         self.buffer = []

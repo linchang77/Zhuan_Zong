@@ -29,6 +29,10 @@ from collections import defaultdict
 import math
 import optparse
 
+SEED = 42  # 你可以用任何你喜欢的整数
+
+random.seed(SEED)
+
 if 'SUMO_HOME' in os.environ:
     sys.path.append(os.path.join(os.environ['SUMO_HOME'], 'tools'))
 import sumolib  # noqa

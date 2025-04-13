@@ -11,6 +11,11 @@ if os.environ.get('useCUPY') == 'True':
 else:
     import numpy as cp
 
+# 固定随机种子
+SEED = 42  # 你可以用任何你喜欢的整数
+
+cp.random.seed(SEED)
+
 def FastFadingCallback(fastfading_type):
     """The callback function to get the fast fading.
 

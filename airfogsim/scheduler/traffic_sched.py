@@ -5,6 +5,9 @@ import numpy as np
 
 from .base_sched import BaseScheduler
 
+SEED = 42  # 你可以用任何你喜欢的整数
+
+np.random.seed(SEED)
 
 class TrafficScheduler(BaseScheduler):
     @staticmethod

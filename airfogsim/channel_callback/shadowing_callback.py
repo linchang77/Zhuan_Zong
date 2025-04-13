@@ -11,6 +11,10 @@ if os.environ.get('useCUPY') == 'True':
 else:
     import numpy as cp
 
+SEED = 42  # 你可以用任何你喜欢的整数
+# 固定随机种子
+cp.random.seed(SEED)
+
 def ShadowingCallback(shadowing_type):
     """The callback function to get the shadowing.
 

@@ -1,7 +1,9 @@
 import networkx as nx
 import random
 import matplotlib.pyplot as plt
+SEED = 42  # 你可以用任何你喜欢的整数
 
+random.seed(SEED)
 def generate_random_dag(num_nodes, edge_probability):
     """
     Generates a random DAG using NetworkX.

@@ -2,7 +2,10 @@ import random
 from collections import deque
 
 import numpy as np
+SEED = 42  # 你可以用任何你喜欢的整数
 
+random.seed(SEED)
+np.random.seed(SEED)
 
 class EnergyManager:
     """EnergyManager class is responsible for managing the battery energy for UAV.

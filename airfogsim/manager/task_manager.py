@@ -7,6 +7,11 @@ import itertools
 import random
 import networkx as nx
 
+SEED = 42  # 你可以用任何你喜欢的整数
+
+random.seed(SEED)
+np.random.seed(SEED)
+
 def generate_random_dag(node_ids, edge_probability):
     """
     Generates a random DAG using NetworkX.
@@ -77,7 +82,7 @@ class TaskManager:
         self._task_dependencies = {}
 
         self._task_generation_model = task_generation_model
-        assert task_generation_model in TaskManager.SUPPORTED_TASK_GENERATION_MODELS, 'The task generation model is not supported. Only support {}'.format(TaskManager.SUPPORTED_TASK_GENERATION_MODELS)
+        # assert task_generation_model in TaskManager.SUPPORTED_TASK_GENERATION_MODELS, 'The task generation model is not supported. Only support {}'.format(TaskManager.SUPPORTED_TASK_GENERATION_MODELS)
         self._generated_task_history = {} # key: node id, value: list of task info
         self._to_generate_task_infos = {} # use Node Id as the key, and the value is the task info list
         self._waiting_to_offload_tasks = {} # after generating, waiting to offload
@@ -706,6 +711,9 @@ class TaskManager:
                 continue
             last_generation_time = max(last_generation_time, cur_time)
             last_generation_time += simulation_interval
+            # constant情况下一个prediction seconds只产生两个任务
+            index = 0
+        
             while last_generation_time <= cur_time + self._predictable_seconds:
                 if self._task_generation_model == 'Poisson':
                     kwlambda = kwargsDict.get('lambda', self._task_generation_lambda)
@@ -730,12 +738,21 @@ class TaskManager:
                     task_num = np.random.exponential(kwbeta * simulation_interval)
                     assert kwbeta * simulation_interval > 0, 'There is no task to generate.'
                     task_num = int(task_num)
+                # index要小于2
+                elif self._task_generation_model == 'Constant' :
+                    # assert kwconstant > 0, 'There is no task to generate.'
+                    if index < 2:
+                        task_num = 1
+                        index += 1
+                    else:
+                        task_num = 0
+                    index += 1
 
                 elif self._task_generation_model == 'None':# 不生成任务
                     break 
 
                 else:
-                    raise NotImplementedError('The task generation model is not implemented.')
+                    raise NotImplementedError(f'The task generation model "{self._task_generation_model}" is not implemented.')
 
                 if task_num == 0 and abs(cur_time + self._predictable_seconds - last_generation_time) < 1e-3:
                     task_num = 1 # 保证最后一个时间点至少有一个任务
