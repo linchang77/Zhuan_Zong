@@ -5,13 +5,13 @@ import os
 import numpy as np
 import random
 import yaml
-import sys
 import time
 import json
 import datetime
+import matplotlib.pyplot as plt
 
-SEED = 42  # 你可以用任何你喜欢的整数
-
+# 设置随机种子
+SEED = 42
 random.seed(SEED)
 np.random.seed(SEED)
 
@@ -22,12 +22,25 @@ from airfogsim import AirFogSimEnv, BaseAlgorithmModule
 from airfogsim.scheduler import RewardScheduler, TaskScheduler
 from airfogsim.data_manager import DataManager
 
+# 平均速率计算工具函数（基于 EntityScheduler）
+def get_vehicle_avg_speed(env):
+    from airfogsim.scheduler import EntityScheduler
+    vehicle_nodes = EntityScheduler.getFogNodesByType(env, 'vehicle')
+    vehicle_list = [v.to_dict() for v in vehicle_nodes]
+    speeds = [v['speed'] for v in vehicle_list if 'speed' in v]
+    return sum(speeds) / len(speeds) if speeds else 0.0
+
+def get_uav_avg_speed(env):
+    from airfogsim.scheduler import EntityScheduler
+    uav_nodes = EntityScheduler.getFogNodesByType(env, 'uav')
+    uav_list = [u.to_dict() for u in uav_nodes]
+    speeds = [u['speed'] for u in uav_list if 'speed' in u]
+    return sum(speeds) / len(speeds) if speeds else 0.0
+
+# 加载配置
 def load_config(path):
     with open(path, 'r') as file:
         config = yaml.safe_load(file)
-        # print("任务大小范围（MB）:", config['task']['task_min_size'], "~", config['task']['task_max_size'])
-        # print("任务CPU需求范围（GHz·s）:", config['task']['task_min_cpu'], "~", config['task']['task_max_cpu'])
-        # print("任务DDL（秒）:", config['task']['task_min_deadline'], "~", config['task']['task_max_deadline'])
         return config
 
 # 1. Load the configuration file
@@ -46,20 +59,28 @@ data_manager = DataManager(env, sumo_net_file, update_interval=10)
 algorithm_module = BaseAlgorithmModule()
 algorithm_module.initialize(env)
 RewardScheduler.setModel(env, 'REWARD', '1/task_delay')
+
 accumulated_reward = 0
 np.random.seed(0)
 random.seed(0)
 v2u_rate = [0]
 v2i_rate = [0]
 u2i_rate = [0]
+
+# 创建主输出目录
+main_timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+main_output_dir = os.path.join("info", main_timestamp)
+os.makedirs(main_output_dir, exist_ok=True)
+
 for i in range(1):
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    # 使用时间戳来生成文件名
-    # 在json文件中写入config文件中的内容
-    directory = "info"
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-    file_path = f"{directory}/entity_info_{timestamp}_it{i}.json"
+    # 本轮输出信息
+    round_dir = os.path.join(main_output_dir, f"round_{i}")
+    os.makedirs(round_dir, exist_ok=True)
+
+    mode1_file = os.path.join(round_dir, "mode1_info.json")
+    mode2_file = os.path.join(round_dir, "mode2_info.json")
+
+    # 初始化信息结构
     task_config_info = {
         "task_config": {
             "task_min_size": config['task'].get('task_min_size'),
@@ -70,8 +91,9 @@ for i in range(1):
             "task_max_deadline": config['task'].get('task_max_deadline')
         }
     }
-    with open(file_path, 'w') as f:
-        json.dump(task_config_info, f, indent=4)
+    mode1_info = dict(task_config_info)
+    mode1_info["succ_ratio_list"] = []
+    mode2_info = {"succ_ratio_list": []}
 
     step_count = 0  # 初始化步骤计数器
 
@@ -83,26 +105,39 @@ for i in range(1):
         task_num = TaskScheduler.getDoneTaskNum(env)  # 已完成的任务数
         out_of_ddl_task_num = TaskScheduler.getOutOfDDLTasks(env)  # 超时任务数
         succ_ratio = task_num / max(1, task_num + out_of_ddl_task_num)  # 计算任务成功率
-        
-        # 在json文件中写入任务完成率
-        with open(file_path, 'r') as f:
-            json_data = json.load(f)
-        if "succ_ratio_list" not in json_data:
-            json_data["succ_ratio_list"] = []
-        json_data["succ_ratio_list"].append({
-            "step": step_count,
-            "succ_ratio": round(succ_ratio, 4)
-        })
-        with open(file_path, 'w') as f:
-            json.dump(json_data, f, indent=4)
 
         step_count += 1
-        data_manager.update_data(timestamp, i, step_count)  # 每10步更新一次数据
+        # data_manager.update_data(main_timestamp, i, step_count)  # 每10步更新一次数据
 
         env.render()
         v2u_rate.append(env.getChannelAvgRate('V2U'))
         v2i_rate.append(env.getChannelAvgRate('V2I'))
         u2i_rate.append(env.getChannelAvgRate('U2I'))
+
+        # mode1: 每步记录
+        mode1_info["succ_ratio_list"].append({
+            "step": step_count,
+            "succ_ratio": round(succ_ratio, 4)
+        })
+        with open(mode1_file, 'w') as f1:
+            json.dump(mode1_info, f1, indent=4)
+
+        # mode2: 每5步记录
+        if step_count % 5 == 0:
+            avg_speed_car = get_vehicle_avg_speed(env)
+            avg_speed_uav = get_uav_avg_speed(env)
+            mode2_info["succ_ratio_list"].append({
+                "step": step_count,
+                "succ_ratio": round(succ_ratio, 4),
+                "avg_speed_car": round(avg_speed_car, 2),
+                "avg_speed_uav": round(avg_speed_uav, 2),
+                "v2u_rate": round(v2u_rate[-1], 2),
+                "v2i_rate": round(v2i_rate[-1], 2),
+                "u2i_rate": round(u2i_rate[-1], 2)
+            })
+
+        with open(mode2_file, 'w') as f2:
+            json.dump(mode2_info, f2, indent=4)
 
         # ‘\r'让下面一行打印一直打印在同一行
         print(f'Simulation time: {env.simulation_time:.2f}, 已完成任务数: {task_num:.2f}, 超时任务数: {out_of_ddl_task_num}, Ratio: {succ_ratio:.2f}, ACC_Reward: {succ_ratio*accumulated_reward/max(1,task_num):.2f} V2U: {v2u_rate[-1]:.2f}, V2I: {v2i_rate[-1]:.2f}, U2I: {u2i_rate[-1]:.2f}', end='\r')

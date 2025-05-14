@@ -1,7 +1,7 @@
 
 simulation:
   vehicle_count: 50
-  max_simulation_time: 60
+  max_simulation_time: 300
   # 每 0.1 秒进行一次调度，比如任务生成、计算、传输等。
   simulation_interval: 0.1 # in seconds, for transmission, computation, task generation and assignment, etc.
   # 同样是每 0.1 秒模拟一次交通（要和 SUMO 设置一致）。
