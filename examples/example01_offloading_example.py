@@ -19,7 +19,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 dir_name = os.path.dirname(__file__)
 
 from airfogsim import AirFogSimEnv, BaseAlgorithmModule
-from airfogsim.scheduler import RewardScheduler, TaskScheduler
+from airfogsim.scheduler import RewardScheduler, TaskScheduler, EntityScheduler, ComputationScheduler
 from airfogsim.data_manager import DataManager
 
 # 平均速率计算工具函数（基于 EntityScheduler）
@@ -93,7 +93,7 @@ for i in range(1):
     }
     mode1_info = dict(task_config_info)
     mode1_info["succ_ratio_list"] = []
-    mode2_info = {"succ_ratio_list": []}
+    mode2_info = {"info_list": []}
 
     step_count = 0  # 初始化步骤计数器
 
@@ -126,14 +126,47 @@ for i in range(1):
         if step_count % 5 == 0:
             avg_speed_car = get_vehicle_avg_speed(env)
             avg_speed_uav = get_uav_avg_speed(env)
-            mode2_info["succ_ratio_list"].append({
+
+             # === 任务状态统计 ===
+            status_counts = {
+                "waiting": len(TaskScheduler.getAllToOffloadTasks(env)),
+                "offloading": len(TaskScheduler.getAllOffloadingTaskInfos(env)),
+                "computing": len(TaskScheduler.getAllComputingTaskInfos(env)),
+                "done": TaskScheduler.getDoneTaskNum(env),
+                "failed": TaskScheduler.getOutOfDDLTasks(env)
+            }
+
+            # === 正在执行的任务详情（每个实体） ===
+            running_tasks_info = []
+            compute_delays = []
+            all_ids, type_list = EntityScheduler.getAllNodeIdsWithType(env)
+            for node_id, node_type in zip(all_ids, type_list):
+                total_remain_cpu, cpu, compute_delay = ComputationScheduler.getComputeStatusByNodeId(env, node_id)
+                if total_remain_cpu > 0:
+                    entity_task_info = {
+                        "node_id": node_id,
+                        "node_type": node_type,
+                        "remaining_cpu": round(total_remain_cpu, 2),
+                        "cpu": round(cpu, 2),
+                        "compute_delay": round(compute_delay, 4)
+                    }
+                    running_tasks_info.append(entity_task_info)
+                    compute_delays.append(compute_delay)
+            avg_running_compute_delay = (
+                round(sum(compute_delays) / len(compute_delays), 4) if compute_delays else 0.0
+            )
+
+            mode2_info["info_list"].append({
                 "step": step_count,
                 "succ_ratio": round(succ_ratio, 4),
                 "avg_speed_car": round(avg_speed_car, 2),
                 "avg_speed_uav": round(avg_speed_uav, 2),
                 "v2u_rate": round(v2u_rate[-1], 2),
                 "v2i_rate": round(v2i_rate[-1], 2),
-                "u2i_rate": round(u2i_rate[-1], 2)
+                "u2i_rate": round(u2i_rate[-1], 2),
+                "task_status": status_counts,
+                "running_tasks": running_tasks_info,
+                "avg_running_compute_delay": avg_running_compute_delay
             })
 
         with open(mode2_file, 'w') as f2:
