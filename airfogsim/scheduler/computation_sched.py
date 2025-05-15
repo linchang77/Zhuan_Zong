@@ -43,6 +43,43 @@ class ComputationScheduler(BaseScheduler):
     
     # 新增的一个函数，与getComputeDelayByNodeId类似但是返回更多信息
     @staticmethod
+    def getComputeStatusByNodeId(env, node_id: str, added_task_cpu=0):
+        """
+        获取指定节点的剩余计算量、计算能力和计算时延。
+
+        Args:
+            env (AirFogSimEnv): 环境对象。
+            node_id (str): 节点 ID。
+            added_task_cpu (float): 额外增加的计算任务 CPU 需求。
+
+        Returns:
+            tuple: (total_remain_cpu, cpu, compute_delay)
+                - total_remain_cpu (float): 节点剩余计算量。
+                - cpu (float): 节点计算能力。
+                - compute_delay (float): 计算时延，剩余计算量除以计算能力。
+        """
+        to_compute_tasks = env.task_manager.getToComputeTasks(node_id)
+        total_remain_cpu = 0
+        for task in to_compute_tasks:
+            task_cpu = task.getTaskCPU()
+            computed_cpu = task.getComputedSize()
+            remain_cpu = task_cpu - computed_cpu
+            assert remain_cpu >= 0
+            total_remain_cpu += remain_cpu
+
+        comp_node = env._getNodeById(node_id)
+        cpu = comp_node.getFogProfile().get('cpu', 0)
+        cpu = max(0.1, cpu)  # 避免除零错误
+
+        total_remain_cpu += added_task_cpu
+        assert total_remain_cpu >= 0
+
+        compute_delay = total_remain_cpu / cpu
+
+        return total_remain_cpu, cpu, compute_delay
+
+    # 新增的一个函数，与getComputeDelayByNodeId类似但是返回更多信息
+    @staticmethod
     def getComputeInfoByNodeId(env, node_id: str, added_task_cpu=0):
         """获取指定节点的计算延迟、当前已用计算资源和剩余计算资源。
 
