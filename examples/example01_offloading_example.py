@@ -21,6 +21,7 @@ dir_name = os.path.dirname(__file__)
 from airfogsim import AirFogSimEnv, BaseAlgorithmModule
 from airfogsim.scheduler import RewardScheduler, TaskScheduler, EntityScheduler, ComputationScheduler
 from airfogsim.data_manager import DataManager
+from live_plot import MultiLivePlot
 
 # 平均速率计算工具函数（基于 EntityScheduler）
 def get_vehicle_avg_speed(env):
@@ -53,7 +54,7 @@ env = AirFogSimEnv(config, interactive_mode='graphic')
 
 # 初始化DataManager，传入SUMO网络文件
 sumo_net_file = "./sumo_wujiaochang/osm.net.xml" 
-data_manager = DataManager(env, sumo_net_file, update_interval=10)
+# data_manager = DataManager(env, sumo_net_file, update_interval=10)
 
 # 3. Get algorithm module
 algorithm_module = BaseAlgorithmModule()
@@ -66,6 +67,10 @@ random.seed(0)
 v2u_rate = [0]
 v2i_rate = [0]
 u2i_rate = [0]
+
+# 数据提取动态图
+# plot_titles = ["succ_ratio", "avg_speed_car", "avg_speed_uav", "v2u_rate", "v2i_rate", "u2i_rate", "avg_running_compute_delay"]
+# plotter = MultiLivePlot(plot_titles, ncols=3)
 
 # 创建主输出目录
 main_timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -169,8 +174,19 @@ for i in range(1):
                 "avg_running_compute_delay": avg_running_compute_delay
             })
 
+            # plotter.update(step_count, [
+            #     succ_ratio,
+            #     avg_speed_car,
+            #     avg_speed_uav,
+            #     v2u_rate[-1],
+            #     v2i_rate[-1],
+            #     u2i_rate[-1],
+            #     avg_running_compute_delay
+            # ])
+
         with open(mode2_file, 'w') as f2:
             json.dump(mode2_info, f2, indent=4)
+
 
         # ‘\r'让下面一行打印一直打印在同一行
         print(f'Simulation time: {env.simulation_time:.2f}, 已完成任务数: {task_num:.2f}, 超时任务数: {out_of_ddl_task_num}, Ratio: {succ_ratio:.2f}, ACC_Reward: {succ_ratio*accumulated_reward/max(1,task_num):.2f} V2U: {v2u_rate[-1]:.2f}, V2I: {v2i_rate[-1]:.2f}, U2I: {u2i_rate[-1]:.2f}', end='\r')
@@ -179,36 +195,39 @@ for i in range(1):
     # print()
     # env.reset()
 env.close()
+# 数据提取动态图
+# plotter.save_gif('info/multi_plot.gif', duration=300)  # 每帧 300ms，可根据需要调整
+# print('GIF saved at info/multi_plot.gif')
 
-# 在仿真结束后，生成交通流密度相关的数据和可视化
-print("\n生成交通流密度数据和可视化...")
+# # 在仿真结束后，生成交通流密度相关的数据和可视化
+# print("\n生成交通流密度数据和可视化...")
 
-# 1. 计算全局的车辆和UAV交通流密度热力图
-print("正在生成全局交通流密度热力图...")
-data_manager.compute_traffic_density_map(grid_size=100)
+# # 1. 计算全局的车辆和UAV交通流密度热力图
+# print("正在生成全局交通流密度热力图...")
+# data_manager.compute_traffic_density_map(grid_size=100)
 
-# 2. 找出车辆最多的交叉路口
-print("正在查找最拥堵的交叉路口...")
-congested_id, vehicle_density, uav_density = data_manager.find_most_congested_intersection()
-print(f"最拥堵的交叉路口ID: {congested_id}, 车辆密度: {vehicle_density:.2f}/km², UAV密度: {uav_density:.2f}/km²")
+# # 2. 找出车辆最多的交叉路口
+# print("正在查找最拥堵的交叉路口...")
+# congested_id, vehicle_density, uav_density = data_manager.find_most_congested_intersection()
+# print(f"最拥堵的交叉路口ID: {congested_id}, 车辆密度: {vehicle_density:.2f}/km², UAV密度: {uav_density:.2f}/km²")
 
-# 3. 保存每个交叉路口的交通流密度数据到JSON
-print("正在保存交叉路口交通流密度数据...")
-data_manager.save_intersection_density_to_json(output_file="results/intersection_density.json")
+# # 3. 保存每个交叉路口的交通流密度数据到JSON
+# print("正在保存交叉路口交通流密度数据...")
+# data_manager.save_intersection_density_to_json(output_file="results/intersection_density.json")
 
-# 4. 生成交通流热力图
-print("正在生成交通流热力图...")
-data_manager.generate_traffic_heatmap(time_window=60, output_file="results/traffic_heatmap.png")
+# # 4. 生成交通流热力图
+# print("正在生成交通流热力图...")
+# data_manager.generate_traffic_heatmap(time_window=60, output_file="results/traffic_heatmap.png")
 
 
-# plt绘制
-import matplotlib.pyplot as plt
-plt.plot(v2u_rate[1:],label='V2U')
-plt.plot(v2i_rate[1:],label='V2I')
-plt.plot(u2i_rate[1:],label='U2I')
-plt.legend()
-plt.savefig('rate.png',dpi=300)
+# # plt绘制
+# import matplotlib.pyplot as plt
+# plt.plot(v2u_rate[1:],label='V2U')
+# plt.plot(v2i_rate[1:],label='V2I')
+# plt.plot(u2i_rate[1:],label='U2I')
+# plt.legend()
+# plt.savefig('rate.png',dpi=300)
 
-# 进行存储数据和可视化
-data_manager.save_to_json()
+# # 进行存储数据和可视化
+# data_manager.save_to_json()
 print('Simulation done!')
