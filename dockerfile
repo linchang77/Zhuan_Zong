@@ -10,6 +10,10 @@ RUN apt-get update && apt-get install -y \
     software-properties-common \
     x11-apps \
     xauth \
+    python3-pyqt5 \
+    python3-pyqt5.qtsvg \
+    libxcb-xinerama0 \
+    libqt5x11extras5 \
     && rm -rf /var/lib/apt/lists/*
 
 # ---------------------------------
@@ -73,7 +77,11 @@ RUN rm -rf /var/lib/apt/lists/* && \
 WORKDIR /app
 COPY . /app      
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir PyQt5 pyyaml matplotlib
 
 # 设置环境变量
 ENV DISPLAY=host.docker.internal:0.0
 ENV SUMO_HOME=/usr/local/share/sumo
+ENV QT_X11_NO_MITSHM=1
+ENV QT_GRAPHICSSYSTEM=native
+

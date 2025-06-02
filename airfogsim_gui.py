@@ -2,10 +2,11 @@ import sys
 import os
 import yaml
 import subprocess
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton, QVBoxLayout, 
-                            QHBoxLayout, QWidget, QLabel, QLineEdit, QGroupBox, 
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton, QVBoxLayout,
+                            QHBoxLayout, QWidget, QLabel, QLineEdit, QGroupBox,
                             QFormLayout, QMessageBox, QTextEdit, QScrollArea)
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
+from simulation_env import SimulationEnvironment
 
 # 配置文件路径
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), 'examples/config.yaml')
@@ -17,148 +18,10 @@ class SimulationThread(QThread):
     
     def run(self):
         try:
-            # 设置环境变量以确保可以导入airfogsim
-            current_dir = os.path.dirname(os.path.abspath(__file__))
-            sys.path.append(current_dir)
-            
-            # 导入必要的模块
-            import random
-            import numpy as np
-            import json
-            import datetime
-            from airfogsim import AirFogSimEnv, BaseAlgorithmModule
-            from airfogsim.scheduler import RewardScheduler, TaskScheduler, EntityScheduler
-            from airfogsim.data_manager import DataManager
-            
-            SEED = 42
-            
-            def load_config(path):
-                with open(path, 'r') as file:
-                    config = yaml.safe_load(file)
-                    return config
-            
-            self.update_signal.emit("开始模拟...")
-            random.seed(SEED)
-            np.random.seed(SEED)
-            
-            # 加载配置文件
-            config = load_config(CONFIG_PATH)
-            
-            # 创建环境
-            self.update_signal.emit("创建模拟环境...")
-            env = AirFogSimEnv(config, interactive_mode='graphic')
-            
-            # 初始化DataManager
-            sumo_net_file = "./sumo_wujiaochang/osm.net.xml"
-            data_manager = DataManager(env, sumo_net_file=sumo_net_file)
-            
-            # 获取算法模块
-            algorithm_module = BaseAlgorithmModule()
-            algorithm_module.initialize(env)
-            RewardScheduler.setModel(env, 'REWARD', '1/task_delay')
-            accumulated_reward = 0
-            np.random.seed(0)
-            random.seed(0)
-            
-            # 初始化通道速率列表
-            v2u_rate = [0]
-            v2i_rate = [0]
-            
-            # 初始化特征日志
-            feature_log = []
-            
-            # 定义感兴趣的区域范围
-            region_x = [1250, 1500]  # x坐标范围
-            region_y = [1400, 1600]  # y坐标范围
-            
-            # 开始模拟
-            self.update_signal.emit("开始执行模拟步骤...")
-            step_count = 0
-            
-            while not env.isDone():
-                algorithm_module.scheduleStep(env)
-                env.step()
-                step_count += 1
-                env.render()
-                
-                # 获取通道平均速率
-                v2u_rate.append(env.getChannelAvgRate('V2U'))
-                v2i_rate.append(env.getChannelAvgRate('V2I'))
-                
-                status_msg = f'模拟时间: {env.simulation_time:.2f}, V2U: {v2u_rate[-1]:.2f}, V2I: {v2i_rate[-1]:.2f}'
-                self.update_signal.emit(status_msg)
-                
-                # 每10步获取一次车辆密度
-                if step_count % 10 == 0:
-                    # 获取指定区域的车辆密度
-                    _, vehicle_density = data_manager.update_traffic_density(
-                        x_min=region_x[0],
-                        x_max=region_x[1],
-                        y_min=region_y[0],
-                        y_max=region_y[1]
-                    )
-                    # 单位转化为平方公里
-                    vehicle_density = vehicle_density * 1e6
-                    
-                    # 获取区域内车辆的平均速度
-                    # 使用EntityScheduler获取所有车辆节点
-                    vehicles_nodes = EntityScheduler.getFogNodesByType(env, 'vehicle')
-                    
-                    # 将节点对象转换为字典并筛选在指定区域内的车辆
-                    vehicles_in_region = []
-                    for node in vehicles_nodes:
-                        vehicle_dict = node.to_dict()
-                        if (region_x[0] <= vehicle_dict['position_x'] <= region_x[1] and
-                            region_y[0] <= vehicle_dict['position_y'] <= region_y[1]):
-                            vehicles_in_region.append(vehicle_dict)
-                    
-                    # 计算平均速度
-                    total_speed = 0
-                    if vehicles_in_region:
-                        for vehicle in vehicles_in_region:
-                            total_speed += vehicle['speed']
-                        avg_speed = total_speed / len(vehicles_in_region)
-                    else:
-                        avg_speed = 0
-                    
-                    # 保存本步特征
-                    feature_log.append({
-                        "step": step_count,
-                        "simulation_time": env.simulation_time,
-                        "vehicle_density": vehicle_density,
-                        "vehicle_count": len(vehicles_in_region),
-                        "vehicle_avg_speed": avg_speed,
-                        "v2u_rate": v2u_rate[-1],
-                        "v2i_rate": v2i_rate[-1]
-                    })
-                    
-                    density_msg = f"\n第 {step_count} 步:\n"
-                    density_msg += f"车辆密度: {vehicle_density:.2f}/km²\n"
-                    density_msg += f"区域内车辆数量: {len(vehicles_in_region)}\n"
-                    density_msg += f"车辆平均速度: {avg_speed:.2f} m/s\n"
-                    density_msg += f"V2U通道速率: {v2u_rate[-1]:.2f}\n"
-                    density_msg += f"V2I通道速率: {v2i_rate[-1]:.2f}"
-                    self.update_signal.emit(density_msg)
-            
-            self.update_signal.emit("\n模拟结束")
-            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            
-            # 保存特征日志到文件
-            directory = "info"
-            if not os.path.exists(directory):
-                os.makedirs(directory)
-            
-            feature_file_path = f"{directory}/traffic_density_{timestamp}.json"
-            with open(feature_file_path, "w") as f:
-                json.dump(feature_log, f, indent=2)
-            
-            self.update_signal.emit(f"密度数据已保存至: {feature_file_path}")
-            
-            # 结束环境
-            env.close()
-            self.update_signal.emit('模拟完成!')
+            self.simulation_env = SimulationEnvironment(CONFIG_PATH, self.update_signal.emit)
+            self.simulation_env.initialize()
+            self.simulation_env.run_simulation()
             self.finished_signal.emit()
-            
         except Exception as e:
             self.update_signal.emit(f"模拟过程中出错: {str(e)}")
             self.finished_signal.emit()
