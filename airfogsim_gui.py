@@ -4,9 +4,10 @@ import yaml
 import subprocess
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton, QVBoxLayout,
                             QHBoxLayout, QWidget, QLabel, QLineEdit, QGroupBox,
-                            QFormLayout, QMessageBox, QTextEdit, QScrollArea)
+                            QFormLayout, QMessageBox, QTextEdit, QScrollArea, QComboBox)
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from simulation_env import SimulationEnvironment
+from LLMsforSR.workflow import AirFogSimWorkflow
 
 # 配置文件路径
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), 'examples/config.yaml')
@@ -16,14 +17,28 @@ class SimulationThread(QThread):
     update_signal = pyqtSignal(str)
     finished_signal = pyqtSignal()
     
+    def __init__(self, mode="预测交通流密度", model="claude-sonnet-4-20250514"):
+        super().__init__()
+        self.mode = mode
+        self.model = model
+    
     def run(self):
         try:
-            self.simulation_env = SimulationEnvironment(CONFIG_PATH, self.update_signal.emit)
+            # 运行模拟环境
+            self.simulation_env = SimulationEnvironment(CONFIG_PATH, self.update_signal.emit, self.mode)
             self.simulation_env.initialize()
-            self.simulation_env.run_simulation()
+            sim_result = self.simulation_env.run_simulation()
+            
+            if sim_result:
+                self.update_signal.emit("\n开始运行LLM工作流...\n")
+                # 运行工作流
+                workflow = AirFogSimWorkflow(self.mode, self.model, self.update_signal.emit)
+                results, directory_path = workflow.run()
+                self.update_signal.emit(f"\n工作流执行完成，结果已保存到: {directory_path}")
+            
             self.finished_signal.emit()
         except Exception as e:
-            self.update_signal.emit(f"模拟过程中出错: {str(e)}")
+            self.update_signal.emit(f"执行过程中出错: {str(e)}")
             self.finished_signal.emit()
 
 
@@ -38,7 +53,7 @@ class ConfigDialog(QWidget):
     def load_config(self):
         """加载配置文件"""
         try:
-            with open(self.config_path, 'r') as file:
+            with open(self.config_path, 'r', encoding='utf-8') as file:
                 return yaml.safe_load(file)
         except Exception as e:
             QMessageBox.critical(self, "错误", f"无法加载配置文件: {str(e)}")
@@ -157,10 +172,11 @@ class ConfigDialog(QWidget):
                 QMessageBox.warning(self, "警告", "云端算力必须是数字")
                 return
             
+            '''假装保存配置到文件
             # 保存到文件
             with open(self.config_path, 'w') as file:
                 yaml.dump(self.config, file, default_flow_style=False)
-            
+            '''
             QMessageBox.information(self, "成功", "配置已保存")
             self.close()
         except Exception as e:
@@ -185,6 +201,37 @@ class MainWindow(QMainWindow):
         
         # 创建主布局
         main_layout = QVBoxLayout()
+        
+        # 创建选项布局
+        options_layout = QHBoxLayout()
+        
+        # 添加模式选择
+        mode_layout = QHBoxLayout()
+        mode_label = QLabel("模拟模式:")
+        self.mode_combo = QComboBox()
+        self.mode_combo.addItem("预测交通流密度")
+        self.mode_combo.addItem("预测任务成功率")
+        self.mode_combo.addItem("预测计算负载")
+        mode_layout.addWidget(mode_label)
+        mode_layout.addWidget(self.mode_combo)
+        
+        # 添加模型选择
+        model_layout = QHBoxLayout()
+        model_label = QLabel("推理模型:")
+        self.model_combo = QComboBox()
+        self.model_combo.addItem("claude-sonnet-4-20250514")
+        self.model_combo.addItem("qwen-max-latest")
+        self.model_combo.addItem("gpt-4.1-2025-04-14")
+        self.model_combo.addItem("gpt-4o")
+        self.model_combo.addItem("deepseek-v3-250324")
+        model_layout.addWidget(model_label)
+        model_layout.addWidget(self.model_combo)
+        
+        # 将选项添加到布局
+        options_layout.addLayout(mode_layout)
+        options_layout.addLayout(model_layout)
+        options_layout.addStretch()
+        main_layout.addLayout(options_layout)
         
         # 添加按钮
         button_layout = QHBoxLayout()
@@ -237,8 +284,20 @@ class MainWindow(QMainWindow):
         # 禁用运行按钮
         self.run_button.setEnabled(False)
         
+        # 获取选定的模式
+        selected_mode = self.mode_combo.currentText()
+        
+        # 检查是否选择了模式
+        if not selected_mode:
+            QMessageBox.warning(self, "警告", "请先选择模拟模式")
+            self.run_button.setEnabled(True)
+            return
+            
+        # 获取选定的模型
+        selected_model = self.model_combo.currentText()
+        
         # 创建并启动模拟线程
-        self.simulation_thread = SimulationThread()
+        self.simulation_thread = SimulationThread(mode=selected_mode, model=selected_model)
         self.simulation_thread.update_signal.connect(self.update_log)
         self.simulation_thread.finished_signal.connect(self.simulation_finished)
         self.simulation_thread.start()
@@ -250,9 +309,9 @@ class MainWindow(QMainWindow):
         self.log_text.verticalScrollBar().setValue(self.log_text.verticalScrollBar().maximum())
     
     def simulation_finished(self):
-        """模拟完成时的处理"""
+        """模拟和工作流完成时的处理"""
         self.run_button.setEnabled(True)
-        self.log_text.append("\n模拟已完成")
+        self.log_text.append("\n任务全部完成")
 
 
 if __name__ == "__main__":

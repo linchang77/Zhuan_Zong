@@ -10,7 +10,7 @@ import datetime
 SEED = 42  # 你可以用任何你喜欢的整数
 
 def load_config(path):
-    with open(path, 'r') as file:
+    with open(path, 'r', encoding='utf-8') as file:
         config = yaml.safe_load(file)
         return config
 

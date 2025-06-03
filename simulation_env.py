@@ -15,16 +15,18 @@ class SimulationEnvironment:
     提供初始化和运行模拟的方法
     """
     
-    def __init__(self, config_path, update_callback=None):
+    def __init__(self, config_path, update_callback=None, mode="预测交通流密度"):
         """
         初始化模拟环境
         
         参数:
             config_path: 配置文件路径
             update_callback: 回调函数，用于更新UI显示，接收字符串参数
+            mode: 模拟模式，默认为"预测交通流密度"
         """
         self.config_path = config_path
         self.update_callback = update_callback
+        self.mode = mode
         self.SEED = 42
         self.env = None
         self.data_manager = None
@@ -45,7 +47,7 @@ class SimulationEnvironment:
     
     def load_config(self):
         """加载配置文件"""
-        with open(self.config_path, 'r') as file:
+        with open(self.config_path, 'r', encoding='utf-8') as file:
             config = yaml.safe_load(file)
             return config
     

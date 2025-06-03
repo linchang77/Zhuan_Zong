@@ -40,7 +40,7 @@ def get_uav_avg_speed(env):
 
 # 加载配置
 def load_config(path):
-    with open(path, 'r') as file:
+    with open(path, 'r', encoding='utf-8') as file:
         config = yaml.safe_load(file)
         return config
 
