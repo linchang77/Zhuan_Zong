@@ -38,6 +38,29 @@ def get_uav_avg_speed(env):
     speeds = [u['speed'] for u in uav_list if 'speed' in u]
     return sum(speeds) / len(speeds) if speeds else 0.0
 
+def calculate_vehicle_density(env, region_x, region_y):
+    # 获取所有车辆节点
+    vehicles_nodes = EntityScheduler.getFogNodesByType(env, 'vehicle')
+    
+    # 将节点对象转换为字典并筛选在指定区域内的车辆
+    vehicles_in_region = []
+    for node in vehicles_nodes:
+        vehicle_dict = node.to_dict()
+        if (region_x[0] <= vehicle_dict['position_x'] <= region_x[1] and
+            region_y[0] <= vehicle_dict['position_y'] <= region_y[1]):
+            vehicles_in_region.append(vehicle_dict)
+    
+    # 计算车辆数量
+    vehicle_count = len(vehicles_in_region)
+    
+    # 计算区域面积（假设单位是米，转换为平方公里）
+    area_km2 = (region_x[1] - region_x[0]) * (region_y[1] - region_y[0]) / 1e6
+    
+    # 计算车辆密度
+    vehicle_density = vehicle_count / area_km2 if area_km2 > 0 else 0
+    
+    return vehicle_density, vehicle_count
+
 # 加载配置
 def load_config(path):
     with open(path, 'r') as file:
@@ -69,8 +92,8 @@ v2i_rate = [0]
 u2i_rate = [0]
 
 # 数据提取动态图
-# plot_titles = ["succ_ratio", "avg_speed_car", "avg_speed_uav", "v2u_rate", "v2i_rate", "u2i_rate", "avg_running_compute_delay"]
-# plotter = MultiLivePlot(plot_titles, ncols=3)
+mode = 3
+plotter = MultiLivePlot(mode=mode)
 
 # 创建主输出目录
 main_timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -174,19 +197,54 @@ for i in range(1):
                 "avg_running_compute_delay": avg_running_compute_delay
             })
 
-            # plotter.update(step_count, [
-            #     succ_ratio,
-            #     avg_speed_car,
-            #     avg_speed_uav,
-            #     v2u_rate[-1],
-            #     v2i_rate[-1],
-            #     u2i_rate[-1],
-            #     avg_running_compute_delay
-            # ])
+            region_x = [1250, 1500]  # x坐标范围
+            region_y = [1400, 1600]  # y坐标范围
+            
+            # 计算车辆密度
+            vehicle_density, vehicle_count = calculate_vehicle_density(
+                env=env,
+                region_x=region_x,
+                region_y=region_y
+            )
+            
+            # 获取区域内车辆的平均速度
+            vehicles_in_region = []
+            for node in EntityScheduler.getFogNodesByType(env, 'vehicle'):
+                vehicle_dict = node.to_dict()
+                if (region_x[0] <= vehicle_dict['position_x'] <= region_x[1] and
+                    region_y[0] <= vehicle_dict['position_y'] <= region_y[1]):
+                    vehicles_in_region.append(vehicle_dict)
+            
+            # 计算平均速度
+            total_speed = 0
+            if vehicles_in_region:
+                for vehicle in vehicles_in_region:
+                    total_speed += vehicle['speed']
+                avg_speed = total_speed / len(vehicles_in_region)
+            else:
+                avg_speed = 0
+
+            plotter.update(step_count, {
+                "succ_ratio": succ_ratio,
+                "avg_speed_car": avg_speed_car,
+                "avg_speed_uav": avg_speed_uav,
+                "v2u_rate": v2u_rate[-1],
+                "v2i_rate": v2i_rate[-1],
+                "u2i_rate": u2i_rate[-1],
+                "avg_running_compute_delay": avg_running_compute_delay,
+                "task_status": {
+                    "waiting": len(TaskScheduler.getAllToOffloadTasks(env)),
+                    "offloading": len(TaskScheduler.getAllOffloadingTaskInfos(env)),
+                    "computing": len(TaskScheduler.getAllComputingTaskInfos(env)),
+                    "done": TaskScheduler.getDoneTaskNum(env),
+                    "failed": TaskScheduler.getOutOfDDLTasks(env)
+                },
+                "vehicle_density": vehicle_density,
+                "vehicle_avg_speed": avg_speed
+            })
 
         with open(mode2_file, 'w') as f2:
             json.dump(mode2_info, f2, indent=4)
-
 
         # ‘\r'让下面一行打印一直打印在同一行
         print(f'Simulation time: {env.simulation_time:.2f}, 已完成任务数: {task_num:.2f}, 超时任务数: {out_of_ddl_task_num}, Ratio: {succ_ratio:.2f}, ACC_Reward: {succ_ratio*accumulated_reward/max(1,task_num):.2f} V2U: {v2u_rate[-1]:.2f}, V2I: {v2i_rate[-1]:.2f}, U2I: {u2i_rate[-1]:.2f}', end='\r')
