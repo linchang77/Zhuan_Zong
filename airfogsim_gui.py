@@ -2,10 +2,13 @@ import sys
 import os
 import yaml
 import subprocess
+from drawpic.plot_utils import DrawPlot
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton, QVBoxLayout,
                             QHBoxLayout, QWidget, QLabel, QLineEdit, QGroupBox,
-                            QFormLayout, QMessageBox, QTextEdit, QScrollArea, QComboBox)
+                            QFormLayout, QMessageBox, QTextEdit, QScrollArea, QComboBox,
+                            QDialog)
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
+from PyQt5.QtGui import QPixmap
 from simulation_env import SimulationEnvironment
 from LLMsforSR.workflow import AirFogSimWorkflow
 
@@ -15,31 +18,45 @@ CONFIG_PATH = os.path.join(os.path.dirname(__file__), 'examples/config.yaml')
 class SimulationThread(QThread):
     """模拟线程，用于在后台运行模拟"""
     update_signal = pyqtSignal(str)
-    finished_signal = pyqtSignal()
+    finished_signal = pyqtSignal(bool, str)  # (success, mode)
     
     def __init__(self, mode="预测交通流密度", model="claude-sonnet-4-20250514"):
         super().__init__()
         self.mode = mode
         self.model = model
+        self.simulation_env = None
+        self.workflow = None
     
     def run(self):
         try:
-            # 运行模拟环境
+            # 第一步：运行模拟环境
+            self.update_signal.emit("开始运行模拟环境...")
             self.simulation_env = SimulationEnvironment(CONFIG_PATH, self.update_signal.emit, self.mode)
             self.simulation_env.initialize()
             sim_result = self.simulation_env.run_simulation()
             
+            # 第二步：如果模拟成功，运行LLM工作流
             if sim_result:
-                self.update_signal.emit("\n开始运行LLM工作流...\n")
-                # 运行工作流
-                workflow = AirFogSimWorkflow(self.mode, self.model, self.update_signal.emit)
-                results, directory_path = workflow.run()
-                self.update_signal.emit(f"\n工作流执行完成，结果已保存到: {directory_path}")
-            
-            self.finished_signal.emit()
+                self.update_signal.emit("\n模拟环境运行完成，开始运行LLM工作流...\n")
+                self.workflow = AirFogSimWorkflow(self.mode, self.model, self.update_signal.emit)
+                results, directory_path = self.workflow.run()
+                self.update_signal.emit(f"\nLLM工作流执行完成，结果已保存到: {directory_path}")
+                self.finished_signal.emit(True, self.mode)
+            else:
+                self.update_signal.emit("\n模拟环境运行失败，终止执行")
+                self.finished_signal.emit(False, "")
         except Exception as e:
-            self.update_signal.emit(f"执行过程中出错: {str(e)}")
+            error_msg = f"执行过程中出错: {str(e)}"
+            self.update_signal.emit(error_msg)
+            print(error_msg)  # 同时在控制台打印错误信息以便调试
             self.finished_signal.emit()
+        finally:
+            # 确保环境正确关闭
+            if self.simulation_env:
+                try:
+                    self.simulation_env.env.close()
+                except:
+                    pass
 
 
 class ConfigDialog(QWidget):
@@ -301,6 +318,48 @@ class MainWindow(QMainWindow):
         self.simulation_thread.update_signal.connect(self.update_log)
         self.simulation_thread.finished_signal.connect(self.simulation_finished)
         self.simulation_thread.start()
+        
+    def draw_plot(self, mode):
+        """在主线程中显示绘图结果"""
+        self.update_log("\n开始绘制曲线图...")
+        plotter = DrawPlot()
+        
+        # 获取对应的图片保存路径
+        if mode == "预测交通流密度":
+            img_path = plotter.draw_density()
+        elif mode == "预测任务成功率":
+            img_path = plotter.draw_success_rate()
+        elif mode == "预测计算负载":
+            img_path = plotter.draw_compute_delay()
+            
+        # 创建显示弹窗
+        dialog = QDialog(self)
+        dialog.setWindowTitle(f"{mode}曲线图")
+        dialog.setModal(True)
+        
+        # 创建布局
+        layout = QVBoxLayout()
+        
+        # 创建标签显示图片
+        label = QLabel()
+        pixmap = QPixmap(img_path)
+        # 等比例缩放图片
+        scaled_pixmap = pixmap.scaled(900, 600, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        label.setPixmap(scaled_pixmap)
+        layout.addWidget(label)
+        
+        # 添加关闭按钮
+        close_button = QPushButton("关闭")
+        close_button.clicked.connect(dialog.close)
+        layout.addWidget(close_button)
+        
+        dialog.setLayout(layout)
+        
+        # 适应图片大小调整弹窗
+        dialog.adjustSize()
+        dialog.show()
+        
+        self.update_log("曲线图绘制完成")
     
     def update_log(self, message):
         """更新日志显示"""
@@ -308,9 +367,11 @@ class MainWindow(QMainWindow):
         # 滚动到底部
         self.log_text.verticalScrollBar().setValue(self.log_text.verticalScrollBar().maximum())
     
-    def simulation_finished(self):
+    def simulation_finished(self, success, mode):
         """模拟和工作流完成时的处理"""
         self.run_button.setEnabled(True)
+        if success:
+            self.draw_plot(mode)
         self.log_text.append("\n任务全部完成")
 
 
