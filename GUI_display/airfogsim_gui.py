@@ -8,8 +8,8 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton, QVBoxLayout
                             QFormLayout, QMessageBox, QTextEdit, QScrollArea, QComboBox,
                             QDialog)
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
-from PyQt5.QtGui import QPixmap
-from simulation_env import SimulationEnvironment
+from PyQt5.QtGui import QPixmap, QMovie
+from GUI_display.simulation_env import SimulationEnvironment
 from LLMsforSR.workflow import AirFogSimWorkflow
 
 # 配置文件路径
@@ -200,6 +200,74 @@ class ConfigDialog(QWidget):
             QMessageBox.critical(self, "错误", f"保存配置时出错: {str(e)}")
 
 
+class GifViewDialog(QDialog):
+    """GIF动画查看对话框"""
+    def __init__(self, gif_path, mode_name, parent=None):
+        super().__init__(parent)
+        self.gif_path = gif_path
+        self.mode_name = mode_name
+        self.init_ui()
+    
+    def init_ui(self):
+        """初始化用户界面"""
+        self.setWindowTitle(f"{self.mode_name} - 模拟数据动图")
+        self.setModal(True)
+        
+        # 创建主布局
+        layout = QVBoxLayout()
+        
+        # 检查gif文件是否存在
+        if not os.path.exists(self.gif_path):
+            # 如果gif文件不存在，显示提示信息
+            no_gif_label = QLabel("暂无此模式的模拟数据动图")
+            no_gif_label.setAlignment(Qt.AlignCenter)
+            no_gif_label.setStyleSheet("font-size: 16px; color: #666; padding: 50px;")
+            layout.addWidget(no_gif_label)
+        else:
+            # 创建标签显示gif
+            self.gif_label = QLabel()
+            self.gif_label.setAlignment(Qt.AlignCenter)
+            
+            # 创建QMovie来播放gif
+            self.movie = QMovie(self.gif_path)
+            self.gif_label.setMovie(self.movie)
+            
+            # 开始播放
+            self.movie.start()
+            
+            layout.addWidget(self.gif_label)
+        
+        # 添加控制按钮
+        button_layout = QHBoxLayout()
+        
+        if os.path.exists(self.gif_path):
+            # 暂停/播放按钮
+            self.play_pause_button = QPushButton("暂停")
+            self.play_pause_button.clicked.connect(self.toggle_play_pause)
+            button_layout.addWidget(self.play_pause_button)
+        
+        # 关闭按钮
+        close_button = QPushButton("关闭")
+        close_button.clicked.connect(self.close)
+        button_layout.addWidget(close_button)
+        
+        layout.addLayout(button_layout)
+        self.setLayout(layout)
+        
+        # 设置窗口大小
+        self.resize(800, 600)
+    
+    def toggle_play_pause(self):
+        """切换播放/暂停状态"""
+        if hasattr(self, 'movie'):
+            if self.movie.state() == QMovie.Running:
+                self.movie.setPaused(True)
+                self.play_pause_button.setText("播放")
+            else:
+                self.movie.setPaused(False)
+                self.play_pause_button.setText("暂停")
+
+
 class MainWindow(QMainWindow):
     """主窗口"""
     def __init__(self):
@@ -228,7 +296,7 @@ class MainWindow(QMainWindow):
         self.mode_combo = QComboBox()
         self.mode_combo.addItem("预测交通流密度")
         self.mode_combo.addItem("预测任务成功率")
-        self.mode_combo.addItem("预测计算负载")
+        self.mode_combo.addItem("预测计算时延")
         mode_layout.addWidget(mode_label)
         mode_layout.addWidget(self.mode_combo)
         
@@ -263,6 +331,11 @@ class MainWindow(QMainWindow):
         self.run_button.clicked.connect(self.run_simulation)
         button_layout.addWidget(self.run_button)
         
+        # 查看上次模拟动图按钮
+        view_gif_button = QPushButton("查看可视化指标动图")
+        view_gif_button.clicked.connect(self.view_simulation_gif)
+        button_layout.addWidget(view_gif_button)
+        
         main_layout.addLayout(button_layout)
         
         # 添加日志显示区域
@@ -287,6 +360,30 @@ class MainWindow(QMainWindow):
         """打开配置对话框"""
         self.config_dialog = ConfigDialog(CONFIG_PATH)
         self.config_dialog.show()
+    
+    def view_simulation_gif(self):
+        """查看模拟数据动图"""
+        # 获取当前选择的模式
+        selected_mode = self.mode_combo.currentText()
+        
+        # 根据模式确定对应的gif文件路径
+        gif_mapping = {
+            "预测交通流密度": "mode3_traffic_density.gif",
+            "预测任务成功率": "mode1_success_rate.gif",
+            "预测计算时延": "mode2_delay.gif"
+        }
+        
+        gif_filename = gif_mapping.get(selected_mode)
+        if not gif_filename:
+            QMessageBox.warning(self, "警告", "未知的模拟模式")
+            return
+        
+        # 构建gif文件的完整路径
+        gif_path = os.path.join(os.path.dirname(__file__), gif_filename)
+        
+        # 创建并显示gif查看对话框
+        self.gif_dialog = GifViewDialog(gif_path, selected_mode, self)
+        self.gif_dialog.show()
     
     def run_simulation(self):
         """运行模拟"""
@@ -329,7 +426,7 @@ class MainWindow(QMainWindow):
             img_path = plotter.draw_density()
         elif mode == "预测任务成功率":
             img_path = plotter.draw_success_rate()
-        elif mode == "预测计算负载":
+        elif mode == "预测计算时延":
             img_path = plotter.draw_compute_delay()
             
         # 创建显示弹窗

@@ -1,6 +1,24 @@
-simulation:
+general_prompt = """"I am working with a simulation platform called AirFogSim, which is designed for modeling and evaluating air-fog-cloud collaborative computing systems. This platform focuses on key problems such as UAV coordination, task offloading, radio resource (RB) allocation, and computing resource scheduling in integrated aerial and fog computing environments.
+
+The architecture of AirFogSim consists of several modular components:
+
+Environment: Simulates the network and task environment.
+
+Schedulers: Manage task scheduling, communication, computing, and UAV mobility.
+
+Algorithm Layer: Implements optimization strategies for decision-making.
+
+Entity Modeling: Defines mobile devices, fog nodes, UAVs, and tasks.
+
+Algorithm development is done by extending the BaseAlgorithmModule class. Key methods include:
+
+Each method relies on APIs from corresponding schedulers (e.g., entity_scheduler, task_scheduler, comm_scheduler, comp_scheduler) to gather environmental data and entity states. All interactions between the algorithm and the environment are abstracted to ensure modularity and prevent direct state mutation.
+
+Based on this platform structure, please help me derive relevant mathematical formulas or optimization objectives for algorithm design. For example, task offloading could involve minimizing latency and energy consumption under bandwidth and CPU constraints; UAV trajectory planning may optimize coverage and service continuity. Formulas should be clear, grounded in the system context, and aligned with real-time scheduling scenarios."""
+
+config = """simulation:
   vehicle_count: 50
-  max_simulation_time: 300
+  max_simulation_time: 20
   # 每 0.1 秒进行一次调度，比如任务生成、计算、传输等。
   simulation_interval: 0.1 # in seconds, for transmission, computation, task generation and assignment, etc.
   # 同样是每 0.1 秒模拟一次交通（要和 SUMO 设置一致）。
@@ -183,4 +201,30 @@ energy:
   hover_unit_cost: 1.2
   sensing_unit_cost: 0.5
   receive_unit_cost: 0.1
-  send_unit_cost: 0.1
+  send_unit_cost: 0.1"""
+
+All_intersection_coordinates ='''
+{'10487419-AddedOffRampNode': (2218.33, 1824.99), 
+ '1123309048-AddedOffRampNode': (828.97, 1363.94), 
+ '11999265104': (1623.04, 1996.52), 
+ '1290439802#0-AddedOnRampNode': (1842.39, 1711.5), 
+ '1290439804-AddedOnRampNode': (2356.25, 1855.71), 
+ '1290439805#1-AddedOffRampNode': (1875.69, 1681.72), 
+ '1290439805#1-AddedOnRampNode': (1854.47, 1674.82), 
+ '1294773295-AddedOnRampNode': (1351.43, 1527.12), 
+ '136362667#0-AddedOnRampNode': (829.59, 1319.18), 
+ '1494769964': (253.88, 2178.51), 
+ '1781735772': (558.13, 1830.67), 
+ '1781735803': (681.89, 1922.49), 
+ '1781735921': (554.38, 2041.89), 
+ '1781939174': (561.82, 2050.36), 
+ '1782735824': (1442.2, 2019.81), 
+ '1782735842': (716.69, 1923.74), 
+ '1871924355': (284.06, 1124.89), 
+ '1871924379': (574.31, 1235.63), 
+ '1871924414': (1445.93, 1559.83), 
+ '1874530665': (1496.73, 1107.59), 
+ '1876002870': (2092.13, 1573.83), 
+ '24474366#3-AddedOnRampNode': (1530.75, 1013.56), 
+ '2477681335': (565.34, 1035.97), 
+ '266073268': (1399.81, 1513.49), '266073277': (1305.71, 1452.11), '266073292': (1361.67, 1446.83), '266073387': (1703.29, 580.24), '266073460': (1303.51, 153.12), '266073660': (557.1, 796.47), '296250717': (829.12, 1038.63), '298517010': (1181.05, 1848.3), '298517193': (1701.73, 2022.58), '298517194': (2024.55, 2131.67), '300744528': (2316.87, 817.08), '301862189': (2072.15, 2141.57), '301867172': (1441.22, 1569.85), '301874385': (1285.44, 1884.77), '301874388': (1235.7, 1989.15), '39150988#0-AddedOffRampNode': (1356.62, 1512.71), '39151773-AddedOnRampNode': (1697.23, 1864.51), '4322760749': (700.59, 1282.63), '4322760750': (733.33, 1292.56), '4322760824': (734.86, 1330.22), '4322760830': (677.89, 1328.07), '4342992774': (1451.03, 1545.67), '4342993100': (1698.07, 1988.14), '4342993107': (1693.82, 1964.42), '4342993116': (1598.28, 1399.21), '4342993130': (1743.94, 950.35), '4352514142': (1509.77, 1113.24), '4426438804': (1759.37, 1643.91), '4426438807': (1770.65, 1234.05), '4426450249': (1707.6, 1832.61), '461741552': (1907.65, 1705.59), '468731792': (1290.86, 1520.45), '468734868': (697.62, 1288.24), '468735237': (692.37, 1298.36), '468735907': (365.55, 1179.0), '468738040': (1421.04, 1529.27), '468741333': (2182.67, 1825.97), '468742514': (1701.55, 2004.56), '468811709': (1349.7, 1561.5), '469770338': (1565.37, 1695.35), '469770340': (1479.6, 1949.05), '469770345': (1407.3, 1642.33), '469770347': (1718.96, 1744.59), '472187895': (1326.39, 816.57), '472195891': (1700.92, 2137.84), '475384381': (0.0, 1576.98), '475845271': (1538.74, 1778.0), '475851328': (401.67, 886.61), '475851862': (485.19, 926.48), '475851871': (685.06, 1029.82), '475852014': (980.11, 949.75), '475852541': (592.02, 981.71), '475852543': (648.3, 873.23), '475852675': (733.1, 952.04), '486095071': (2469.45, 285.15), '558627333': (1202.28, 1856.32), '558631236': (1171.01, 866.12), '600129548': (778.27, 1332.13), '600130459': (1903.03, 1719.45), '600131735': (2123.59, 1792.98), '600132035': (1937.01, 1743.85), '600133474': (1971.39, 1710.74), '600133489': (2261.58, 1823.49), '600463137': (979.21, 1773.63), '600463140': (1118.02, 1460.73), '600512469': (1020.55, 1972.53), '600512526': (1111.8, 1995.56), '601150139': (2907.69, 1257.37), '601150148': (2901.51, 1820.47), '601626794': (1858.16, 637.07), '601626795': (1959.81, 362.41), '74427164#2-AddedOffRampNode': (1528.11, 1965.1), '826167789': (462.74, 1767.12), '826167995': (982.69, 2047.85), '826168011': (493.99, 1775.18), '826169818': (740.87, 1863.31), '826170194': (738.19, 1950.69), '826170716': (892.7, 1915.8), '826171421': (861.92, 1997.8), '826171425': (843.05, 2047.52), '826173462': (709.16, 2048.5), '86687514': (912.05, 1378.21), '92613981': (917.36, 1364.12), '9721775502': (1387.22, 1470.63), '9721775503': (1331.11, 1440.92), '9721775504': (1292.03, 1473.19), '9721775505': (1306.04, 1540.14), '9721775506': (1374.57, 1554.75), '9721777797': (1743.61, 1637.09), '9721777798': (1735.49, 1634.93), '9721777799': (1734.74, 1640.53), '9721777800': (1742.55, 1642.75), '9933045795': (1800.77, 1006.67), '9933045802': (1876.0, 1513.0), 'cluster_296250721_558624827': (1585.89, 887.73), 'cluster_4342993109_4342993124_4342993125': (1755.15, 1477.82), 'cluster_468728952_558631235': (1069.68, 910.77), 'cluster_4698504529_4698504532_4698504533': (1591.85, 1628.53), 'cluster_475851165_9873945210': (891.73, 533.73), 'cluster_9721777795_9721777796': (1733.04, 1671.98)}'''

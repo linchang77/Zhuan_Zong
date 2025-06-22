@@ -21,7 +21,7 @@ dir_name = os.path.dirname(__file__)
 from airfogsim import AirFogSimEnv, BaseAlgorithmModule
 from airfogsim.scheduler import RewardScheduler, TaskScheduler, EntityScheduler, ComputationScheduler
 from airfogsim.data_manager import DataManager
-from live_plot import MultiLivePlot
+from GUI_display.live_plot import MultiLivePlot
 
 # 平均速率计算工具函数（基于 EntityScheduler）
 def get_vehicle_avg_speed(env):
